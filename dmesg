@@ -1,0 +1,250 @@
+[    0.000000] Booting Linux on physical CPU 0xf03
+[    0.000000] Initializing cgroup subsys cpuset
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Linux version 4.4.15 (jenkins@abfb73072b4e) (gcc version 4.9.2 (GCC) ) #1 SMP PREEMPT Thu Jun 7 13:54:08 PDT 2018
+[    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=50c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] Machine model: Socionext SC2000A EVB w/ RTOS VBD
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] On node 0 totalpages: 20992
+[    0.000000] free_area_init_node: node 0, pgdat 80640700, node_mem_map 85150000
+[    0.000000]   DMA zone: 164 pages used for memmap
+[    0.000000]   DMA zone: 0 pages reserved
+[    0.000000]   DMA zone: 20992 pages, LIFO batch:3
+[    0.000000] DT missing boot CPU MPIDR[23:0], fall back to default cpu_logical_map
+[    0.000000] PERCPU: Embedded 12 pages/cpu @85129000 s19712 r8192 d21248 u49152
+[    0.000000] pcpu-alloc: s19712 r8192 d21248 u49152 alloc=12*4096
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 20828
+[    0.000000] Kernel command line: consoleblank=0 loglevel=8 init=/sbin/finit root=/dev/nandblk rootwait ro console=ttyUSI0,115200n8 console=/dev/tty1 
+[    0.000000] PID hash table entries: 512 (order: -1, 2048 bytes)
+[    0.000000] Dentry cache hash table entries: 16384 (order: 4, 65536 bytes)
+[    0.000000] Inode-cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Memory: 76268K/83968K available (3600K kernel code, 296K rwdata, 2272K rodata, 204K init, 310K bss, 7700K reserved, 0K cma-reserved, 0K highmem)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+[    0.000000]     vmalloc : 0x85800000 - 0xff800000   (1952 MB)
+[    0.000000]     lowmem  : 0x80000000 - 0x85200000   (  82 MB)
+[    0.000000]     pkmap   : 0x7fe00000 - 0x80000000   (   2 MB)
+[    0.000000]     modules : 0x7f800000 - 0x7fe00000   (   6 MB)
+[    0.000000]       .text : 0x80008000 - 0x805c458c   (5874 kB)
+[    0.000000]       .init : 0x805c5000 - 0x805f8000   ( 204 kB)
+[    0.000000]       .data : 0x805f8000 - 0x80642340   ( 297 kB)
+[    0.000000]        .bss : 0x80644000 - 0x80691a40   ( 311 kB)
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] 	Build-time adjustment of leaf fanout to 32.
+[    0.000000] 	RCU restricting CPUs from NR_CPUS=4 to nr_cpu_ids=1.
+[    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=32, nr_cpu_ids=1
+[    0.000000] NR_IRQS:16 nr_irqs:16 16
+[    0.000000] NO_HZ: Clearing 0 from nohz_full range for timekeeping
+[    0.000000] NO_HZ: Full dynticks CPUs: .
+[    0.000000] 	Note: kernel parameter 'rcu_nocbs=' contains nonexistent CPUs.
+[    0.000000] 	Offload RCU callbacks from CPUs: .
+[    0.000000] clocksource: peri-timer: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 70787423951 ns
+[    0.000000] Architected cp15 timer(s) running at 40.00MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x939a85c40, max_idle_ns: 440795202120 ns
+[    0.000010] sched_clock: 56 bits at 40MHz, resolution 25ns, wraps every 4398046511100ns
+[    0.000034] Switching to timer-based delay loop, resolution 25ns
+[    0.001261] Console: colour dummy device 80x30
+[    0.001293] Calibrating delay loop... 79.87 BogoMIPS (lpj=399360)
+[    0.079504] pid_max: default: 32768 minimum: 301
+[    0.079673] Security Framework initialized
+[    0.079755] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.079776] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.081008] Initializing cgroup subsys debug
+[    0.081086] CPU: Testing write buffer coherency: ok
+[    0.081601] Setting up static identity map for 0x40008280 - 0x400082cc
+[    0.081957] MCPM boot on cpu_3 cluster_15
+[    0.129985] Brought up 1 CPUs
+[    0.130009] SMP: Total of 1 processors activated (79.87 BogoMIPS).
+[    0.130022] CPU: All CPU(s) started in SVC mode.
+[    0.131103] devtmpfs: initialized
+[    0.149828] VFP support v0.3: implementor 41 architecture 2 part 30 variant 7 rev 5
+[    0.150498] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.159757] pinctrl core: initialized pinctrl subsystem
+[    0.160483] regulator-dummy: no parameters
+[    0.161532] NET: Registered protocol family 16
+[    0.162176] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    0.189533] cpuidle: using governor ladder
+[    0.219530] cpuidle: using governor menu
+[    0.227751] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+[    0.227770] hw-breakpoint: maximum watchpoint size is 8 bytes.
+[    0.228175] find no power domain device.
+[    0.300868] SCSI subsystem initialized
+[    0.301386] usbcore: registered new interface driver usbfs
+[    0.301525] usbcore: registered new interface driver hub
+[    0.301661] usbcore: registered new device driver usb
+[    0.301925] media: Linux media interface: v0.10
+[    0.302036] Linux video capture interface: v2.00
+[    0.304054] clocksource: Switched to clocksource arch_sys_counter
+[    0.304651] FS-Cache: Loaded
+[    0.322294] NET: Registered protocol family 2
+[    0.323574] TCP established hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.323619] TCP bind hash table entries: 1024 (order: 1, 8192 bytes)
+[    0.323666] TCP: Hash tables configured (established 1024 bind 1024)
+[    0.323766] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.323827] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.324272] NET: Registered protocol family 1
+[    0.324361] PCI: CLS 0 bytes, default 64
+[    0.325535] Lineo Warp!! module loaded
+[    0.326877] futex hash table entries: 256 (order: 2, 16384 bytes)
+[    0.338533] VFS: Disk quotas dquot_6.6.0
+[    0.338643] VFS: Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+[    0.339601] romfs: ROMFS MTD (C) 2007 Red Hat, Inc.
+[    0.354160] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+[    0.354194] io scheduler noop registered
+[    0.354221] io scheduler deadline registered
+[    0.354267] io scheduler cfq registered (default)
+[    0.354506] milbeaut-pinctrl 1d022000.pinctrl: continuing without EXIU support
+[    0.359290] Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+[    0.362253] 1e700000.usio_uart: ttyUSI1 at MMIO 0x1e700000 (irq = 21, base_baud = 6250000) is a sn-usio-uart
+[    0.362824] 1e700010.usio_uart: ttyUSI0 at MMIO 0x1e700010 (irq = 23, base_baud = 6250000) is a sn-usio-uart
+[    0.958665] console [ttyUSI0] enabled
+[    1.144380] brd: module loaded
+[    1.170186] loop: module loaded
+[    1.183635] sni_ipcu_ch_init:225 [ERROR] request_irq ACK is failed. ret=-22 IRQ=0 devname=[]
+[    1.191972] vblk_ipcu_init:242 Cannot init send ipcu channel. -retry probe-
+[    1.200448] tun: Universal TUN/TAP device driver, 1.6
+[    1.205439] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    1.214977] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    1.221350] ehci-pci: EHCI PCI platform driver
+[    1.226023] ehci-platform: EHCI generic platform driver
+[    1.231326] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    1.237447] ohci-platform: OHCI generic platform driver
+[    1.243266] usbcore: registered new interface driver usb-storage
+[    1.249693] usbcore: registered new interface driver uvcvideo
+[    1.255307] USB Video Class driver (1.1.1)
+[    1.259572] sdhci: Secure Digital Host Controller Interface driver
+[    1.265614] sdhci: Copyright(c) Pierre Ossman
+[    1.270314] f_sdh30 1b000000.mmc: sdhci_f_sdh30_probe: starting host
+[    1.304152] f_sdh30 1b000000.mmc: Looking up vmmc-supply from device tree
+[    1.310787] f_sdh30 1b000000.mmc: Looking up vmmc-supply property in node /mmc@1b000000 failed
+[    1.319419] f_sdh30 1b000000.mmc: Looking up vqmmc-supply from device tree
+[    1.326263] f_sdh30 1b000000.mmc: Looking up vqmmc-supply property in node /mmc@1b000000 failed
+[    1.334939] f_sdh30 1b000000.mmc: No vmmc regulator found
+[    1.340292] f_sdh30 1b000000.mmc: No vqmmc regulator found
+[    1.419165] mmc0: SDHCI controller on f_sdh30 [1b000000.mmc] using ADMA
+[    1.443670] sdhci-pltfm: SDHCI platform and OF driver helper
+[    1.450337] usbcore: registered new interface driver usbhid
+[    1.455778] usbhid: USB HID core driver
+[    1.463957] exFAT: FS Version 1.2.4
+[    1.469549] exFAT: Core Version 1.2.4
+[    1.473177] Netfilter messages via NETLINK v0.30.
+[    1.477912] nf_conntrack version 0.5.0 (1191 buckets, 4764 max)
+[    1.483980] ctnetlink v0.93: registering with nfnetlink.
+[    1.490911] xt_time: kernel timezone is -0000
+[    1.503397] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    1.509066] NET: Registered protocol family 10
+[    1.528014] sit: IPv6 over IPv4 tunneling driver
+[    1.533735] NET: Registered protocol family 17
+[    1.538151] tipc: Activated (version 2.0.0)
+[    1.542374] NET: Registered protocol family 30
+[    1.546974] tipc: Started in single node mode
+[    1.551458] Registering SWP/SWPB emulation handler
+[    1.560624] registered taskstats version 1
+[    1.568995] mmc0: queuing unknown CIS tuple 0x01 (3 bytes)
+[    1.577551] Key type encrypted registered
+[    1.586101] mmc0: queuing unknown CIS tuple 0x1a (5 bytes)
+[    1.594884] mmc0: queuing unknown CIS tuple 0x1b (8 bytes)
+[    1.600875] mmc0: queuing unknown CIS tuple 0x14 (0 bytes)
+[    1.622394] mmc0: queuing unknown CIS tuple 0x80 (1 bytes)
+[    1.627869] mmc0: queuing unknown CIS tuple 0x81 (1 bytes)
+[    1.633335] mmc0: queuing unknown CIS tuple 0x82 (1 bytes)
+[    1.639605] mmc0: new ultra high speed 1SDR104 SDIO card at address 0001
+[    1.654543] EXT4-fs (nandblk): couldn't mount as ext3 due to feature incompatibilities
+[    1.664146] EXT4-fs (nandblk): couldn't mount as ext2 due to feature incompatibilities
+[    1.737780] EXT4-fs (nandblk): mounted filesystem with ordered data mode. Opts: (null)
+[    1.745671] VFS: Mounted root (ext4 filesystem) readonly on device 254:0.
+[    1.753983] devtmpfs: mounted
+[    1.757541] Freeing unused kernel memory: 204K (805c5000 - 805f8000)
+[    1.763729] This architecture does not have kernel memory protection.
+[    2.897897] random: dbus-daemon urandom read with 29 bits of entropy available
+[    6.602949] random: nonblocking pool is initialized
+[    6.817385] Loading modules backported from Linux version v4.4.2-0-g1cb8570
+[    6.844094] Backport generated by backports.git v4.4.2-1-0-gbec4037
+[    7.021988] cfg80211: World regulatory domain updated:
+[    7.027422] cfg80211:  DFS Master region: unset
+[    7.034641] cfg80211:   (start_freq - end_freq @ bandwidth), (max_antenna_gain, max_eirp), (dfs_cac_time)
+[    7.067415] cfg80211:   (2402000 KHz - 2472000 KHz @ 40000 KHz), (300 mBi, 2000 mBm), (N/A)
+[    7.067452] cfg80211:   (2457000 KHz - 2482000 KHz @ 40000 KHz), (300 mBi, 2000 mBm), (N/A)
+[    7.067473] cfg80211:   (2474000 KHz - 2494000 KHz @ 20000 KHz), (300 mBi, 2000 mBm), (N/A)
+[    7.067494] cfg80211:   (5170000 KHz - 5250000 KHz @ 80000 KHz), (300 mBi, 2000 mBm), (N/A)
+[    7.067516] cfg80211:   (5735000 KHz - 5835000 KHz @ 80000 KHz), (300 mBi, 2000 mBm), (N/A)
+[    7.067537] cfg80211:   (57240000 KHz - 63720000 KHz @ 2160000 KHz), (N/A, 0 mBm), (N/A)
+[    8.159227] sh (174): drop_caches: 3
+[    9.565628] android_work: sent uevent USB_STATE=CONNECTED
+[    9.712946] configfs-gadget gadget: high-speed config #1: c
+[    9.713260] android_work: sent uevent USB_STATE=CONFIGURED
+[   16.598931] wlan: loading driver v4.5.20.036.006
+[   16.602780] hifDeviceInserted: Dumping clocks (50000000,200000000)
+[   16.609422] HIFDumpCCCR 0(43) 1(3) 2(0) 3(0) 4(0) 5(0) 6(0) 7(6) 8(17) 9(0) A(10) B(0) C(0) D(0) E(0) F(0) 10(0) 11(0) 12(1) 13(7) 14(7) 15(37) 16(1) 
+[   16.624992] ath_hif_sdio: HIF (Atheros/multi-bss)
+[   16.626974] /proc/cld/athdiagpfs created
+[   16.630623] wlan: [235:E :HDD] hdd_apply_cfg_ini: MAX_CFG_INI_ITEMS too small, must be at least 529
+[   16.635252] wlan: [235:E :HDD] hdd_apply_cfg_ini: Reg Parameter gBadPeerTxCtlPctLevelIeeeB < allowed Minimum [1 < 8]. Enforcing Default= 1
+[   16.636631] wlan: [235:E :HDD] wlan_hdd_cfg80211_init: wiphy->bands[i] is NULL, i = 2
+[   16.744402] AR6000: configuration opcode 3 is not used for Linux SDIO stack 
+[   16.752142] NUM_DEV=1 FWMODE=0x2 FWSUBMODE=0x0 FWBR_BUF 0
+[   16.759504] crystal_freq: 48000000Hz
+[   16.759790] Step 1a:    66666
+[   16.760206] Step 1b:    6AAA8
+[   16.760488] Step 2a:      400
+[   16.760905] Step 2b:      160
+[   16.761199] Step 3a:        0
+[   16.761634] Step 3b:        1
+[   16.762150] Step 5a:    11458
+[   16.762697] Step 5b:    5000E
+[   16.763280] Step 7a:    5000E
+[   16.763725] Step 7b:    4000E
+[   16.765285] Step 9a:        3
+[   16.765986] Step 9b:        1
+[   16.766467] Step 10a:    4000E
+[   16.766876] Step 10b:        E
+[   16.773585] ar6k_wlan mmc0:0001:1: Direct firmware load for wlan/qca_cld/2g_scpc_cal.bin failed with error -2
+[   16.784620] Board extended Data download address: 0x0
+[   16.806959] wlan: [235:E :VOS] ol_transfer_bin_file: transferring file: bdwlan30.bin size 8124 bytes done!
+[   16.807134] ol_download_firmware: Using 0x1234 for the remainder of init
+[   16.870939] wlan: [235:E :VOS] ol_transfer_bin_file: transferring file: otp30.bin size 24037 bytes done!
+[   16.871494] ol_transfer_bin_file: Loading setup file qsetup30.bin
+[   16.871695] ar6k_wlan mmc0:0001:1: Direct firmware load for qsetup30.bin failed with error -2
+[   16.881227] ol_transfer_bin_file: Failed to get qsetup30.bin
+[   18.243234] wlan: [235:E :VOS] ol_transfer_bin_file: transferring file: qwlan30.bin size 594984 bytes done!
+[   18.245264] +HTCCreate ..  HIF :84f62000 
+[   18.249195] HIF Interrupt processing is SYNC ONLY
+[   18.253804] AR6000: configuration opcode 7 is only used for RTOS systems, not Linux systems
+[   18.277482] AR6000: configuration opcode 5 is not used for Linux SDIO stack 
+[   18.284595] -HTCCreate (0x8402c800) 
+[   18.288277] ol_if_dfs_attach: called; ptr=841dda9c, radar_info=84023d9c
+[   18.296788] wlan: [235:E :SAP] dfs_init_radar_filters[201]: Unknown dfs domain 0 
+[   18.296915] +HWT
+[   18.299224] Target Ready! : transmit resources : 3 size:1792, MaxMsgsPerHTCBundle = 32
+[   18.307861] HTC Service Index : 1 TX : 0x100 : alloc:3 
+[   18.312943] HTC Service:0x0001, ULpipe:1 DLpipe:0 id:0 Ready
+[   18.318863] -HWT
+[   18.320761] MAILBOX SWAP Service is enabled!
+[   18.325214] Reduced Tx Complete service is enabled!
+[   18.331416] is_full_reorder_offloaded? 0
+[   18.335602] HTC Service TX : 0x300 : allocation is zero! 
+[   18.342326] HTC Service:0x0300, ULpipe:1 DLpipe:0 id:1 Ready
+[   18.348271] HTC Service:0x0300 ep:1 TX flow control disabled
+[   18.353942] htt_tx_attach:htt_desc_start:0x84200000 htt_desc_end:0x8421c200
+[   18.363395] HTC Service:0x0100, ULpipe:3 DLpipe:2 id:2 Ready
+[   18.375180] HTC using TX credit flow control
+[   18.379857] __wmi_control_rx: WMI UNIFIED SERVICE READY event
+[   18.386870] __wmi_control_rx:  WMI UNIFIED READY event
+[   18.387165] wlan: [235:E :VOS] error: wiphy->bands is NULL, i = 2
+[   18.387197] wlan: [235:E :VOS] wiphy is not yet registered with the kernel
+[   18.403855] target uses HTT version 3.32; host uses 3.23
+[   18.409180] *** Warning: host/target HTT versions are different, though compatible!
+[   18.418601] session id - 0, AddSta session - 0
+[   18.435200] session id - 1, AddSta session - 0
+[   18.440285] TXRX: ol_txrx_peer_find_add_id: Delete Peer 841e3000
+[   18.459937] Host SW:4.5.20.036.006, FW:0.0.0.110, HW:QCA9377_REV1_1
+[   18.460149] wlan_logging_sock_activate_svc: Initalizing FEConsoleLog = 0 NumBuff = 32
+[   18.460641] wlan_logging_sock_activate_svc: Activated wlan_logging svc
+[   18.462481] wlan: driver loaded
+[   18.788575] wlan: [237:E :VOS] vos_mem_zero called with NULL parameter ptr
+[   18.901986] IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+[   19.598813] wlan: [237:E :VOS] vos_mem_zero called with NULL parameter ptr
+[   19.599218] session id - 2, AddSta session - 0

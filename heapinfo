@@ -1,0 +1,37 @@
+t rtos heap_info
+Free Blk Ptr: 0xa77d5500 Blk Size: 192
+Free Blk Ptr: 0xa77d5680 Blk Size: 64
+Free Blk Ptr: 0xa77dcc00 Blk Size: 64
+Free Blk Ptr: 0xa77e53c0 Blk Size: 384
+Free Blk Ptr: 0xa7802200 Blk Size: 1344
+Free Blk Ptr: 0xa7829a40 Blk Size: 320
+Free Blk Ptr: 0xa7829c40 Blk Size: 64
+Free Blk Ptr: 0xa782a380 Blk Size: 320
+Free Blk Ptr: 0xa782a580 Blk Size: 64
+Free Blk Ptr: 0xa7a58d00 Blk Size: 2240
+Free Blk Ptr: 0xa7a5a200 Blk Size: 64
+Free Blk Ptr: 0xa7a5a700 Blk Size: 64
+Free Blk Ptr: 0xa7a5a880 Blk Size: 1088
+Free Blk Ptr: 0xa7a5ae00 Blk Size: 64
+Free Blk Ptr: 0xa7a5c000 Blk Size: 256
+Free Blk Ptr: 0xa7a6c900 Blk Size: 192
+Free Blk Ptr: 0xa7a6ca80 Blk Size: 192
+Free Blk Ptr: 0xa7a6cc80 Blk Size: 1088
+Free Blk Ptr: 0xa7c47c00 Blk Size: 192
+Free Blk Ptr: 0xa7c48640 Blk Size: 320
+Free Blk Ptr: 0xa7c48900 Blk Size: 64
+Free Blk Ptr: 0xa7c490c0 Blk Size: 640
+Free Blk Ptr: 0xa7c49880 Blk Size: 64
+Free Blk Ptr: 0xa7c49fc0 Blk Size: 768
+Free Blk Ptr: 0xa7c4a800 Blk Size: 64
+Free Blk Ptr: 0xa7c4afc0 Blk Size: 640
+Free Blk Ptr: 0xa7c4b780 Blk Size: 64
+Free Blk Ptr: 0xa7c4bec0 Blk Size: 768
+Free Blk Ptr: 0xa7c4c700 Blk Size: 64
+Free Blk Ptr: 0xa7c4cac0 Blk Size: 192
+Free Blk Ptr: 0xa7c4d140 Blk Size: 2048
+Free Blk Ptr: 0xa7c4dc00 Blk Size: 128
+Free Blk Ptr: 0xa7d0db40 Blk Size: 19412096
+
+  Max free block size:  19412096 bytes  18.51 MB
+Number of free blocks:        33

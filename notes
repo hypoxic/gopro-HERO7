@@ -1,0 +1,7 @@
+To move from cdc debugger to linux usb only
+t frw usb enable-linux-logs 1
+
+Remount nand fs to put hook
+mount -vo remount,rw /
+sync
+mount -vo remount,ro /

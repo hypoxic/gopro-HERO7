@@ -1,0 +1,1670 @@
+/dts-v1/;
+// magic:		0xd00dfeed
+// totalsize:		0x80a9 (32937)
+// off_dt_struct:	0x38
+// off_dt_strings:	0x79c8
+// off_mem_rsvmap:	0x28
+// version:		17
+// last_comp_version:	16
+// boot_cpuid_phys:	0x0
+// size_dt_strings:	0x6e1
+// size_dt_struct:	0x7990
+
+/ {
+    #address-cells = <0x00000001>;
+    #size-cells = <0x00000001>;
+    compatible = "milbeaut,sc2000a", "socionext,milbeaut-evb";
+    interrupt-parent = <0x00000001>;
+    model = "Socionext SC2000A EVB w/ RTOS VBD";
+    chosen {
+        bootargs = "consoleblank=0 loglevel=8 init=/sbin/finit root=/dev/nandblk rootwait ro console=ttyUSI0,115200n8 console=/dev/tty1 ";
+        linux,initrd-start = <0x43000080>;
+        linux,initrd-end = <0x43000080>;
+    };
+    aliases {
+        spi0 = "/sni_spi@1e800000";
+        spi1 = "/sni_spi@1e800100";
+        spi2 = "/sni_spi@1e800200";
+        spi3 = "/usio_spi@1e700000";
+        spi4 = "/usio_spi@0x1e700010";
+        spi5 = "/usio_spi@0x1e700020";
+        spi6 = "/usio_spi@0x1e700030";
+        spi7 = "/usio_spi@0x1e700040";
+        spi8 = "/usio_spi@0x1e700050";
+        spi9 = "/usio_spi@0x1e700060";
+        spi10 = "/usio_spi@0x1e700070";
+    };
+    memory {
+        device_type = "memory";
+        reg = <0x40000000 0x63707573>;
+    };
+    cpus {
+        #address-cells = <0x00000001>;
+        #size-cells = <0x00000000>;
+    };
+    interrupt-controller@1d000000 {
+        compatible = "arm,cortex-a7-gic";
+        interrupt-controller;
+        #interrupt-cells = <0x00000003>;
+        reg = <0x1d001000 0x00000003 0x00000001 0x00000005>;
+        black-list = <0x00000000 0x00000004 0x00000008 0x0000000c 0x00000010 0x00000014 0x0000001b 0x00000022 0x0000002b 0x00000032 0x00000036 0x0000003a 0x0000003e 0x00000042 0x00000046 0x0000004a 0x0000004e 0x00000052 0x00000056 0x0000005a 0x0000005f 0x00000063 0x00000067 0x0000006b 0x0000006f 0x00000073 0x00000077 0x0000007b 0x0000007f 0x00000083 0x00000087 0x0000008b 0x00000091 0x00000097 0x0000009b 0x0000009f 0x000000a3 0x000000a7 0x000000ab 0x000000af 0x000000b3 0x000000b7 0x000000bb 0x000000bf 0x000000c3 0x000000c7 0x000000cb 0x000000cf 0x000000d3 0x000000d7 0x000000db 0x000000df 0x000000e3 0x000000e7 0x000000eb 0x000000ef 0x000000f8 0x000000fc 0x00000100 0x00000104 0x0000010c 0x00000110 0x00000116 0x0000011a 0x0000011e 0x000000e3 0x000000e9 0x6d6c6230 0x00000003 0x6f6e6578 0x72656773 0x000000ae 0x636c6f63 0x00000000 0x0000000f 0x34307869 0x0000001b 0x00000003 0x00000003 0x00000003 0x00000003 0x00000002 0x00000003 0x642d636c 0x000000f1 0x000000fe 0x72746333 0x0000001b 0x00000003 0x00000003 0x00000002 0x00000000 0x66697865 0x00000004 0x00000004 0x00000001 0x00000003 0x642d6661 0x00000003 0x00000003 0x00000003 0x00000003 0x00000002 0x00000000 0x66697865 0x636b0000 0x00000000 0x00000002 0x00000002 0x00000001 0x00000000 0x736f6369 0x706c6c2d 0x00000000 0x00000000 0x00000002 0x00000001 0x00000001 0x00000028 0x00000003 0x00000003 0x00000002 0x00000003 0x6f6e6578 0x66697865 0x00000003 0x00000003 0x00000003 0x00000003 0x00000003 0x00000003 0x00000004 0x00000004 0x00000001 0x00000021 0x742c6d6c 0x642d6661 0x00000004 0x00000004 0x00000004 0x00000004 0x00000004 0x00000000 0x000000e3 0x000000e9 0x706c6c37 0x0000001b 0x6230312d 0x63746f72 0x000000f1 0x0000010e 0x0000012a 0x00000115 0x0000011f 0x00000131 0x00000007 0x00000007 0x00000000 0x66697865 0x636b0000 0x00000000 0x00000002 0x00000001 0x00000021 0x0000000e 0x0000000e 0x30000000 0x736f6369 0x706c6c2d 0x00000000 0x00000000 0x00000002 0x0000000a 0x00000005 0x0000006c 0x00000003 0x00000003 0x00000002 0x00000003 0x6f6e6578 0x66697865 0x00000003 0x00000003 0x00000003 0x00000003 0x00000003 0x00000003 0x00000004 0x00000004 0x00000001 0x00000018 0x742c6d6c 0x00000003 0x00000003 0x00000003 0x00000003 0x00000003 0x00000007 0x00000005 0x00000000 0x000000e3 0x000000e9 0x706c6c31 0x00000003 0x642d6661 0x00000003 0x00000003 0x00000003 0x00000003 0x00000003 0x00000003 0x00000002 0x5f315f32 0x0000001b 0x2d636c6f 0x000000f1 0x0000010e 0x00000115 0x0000011f 0x000000e3 0x000000e9 0x706c6c36 0x00000003 0x642d6661 0x00000003 0x00000003 0x00000003 0x00000003 0x00000003 0x00000003 0x00000002 0x5f315f33 0x0000001b 0x2d636c6f 0x000000f1 0x0000010e 0x00000115 0x0000011f 0x000000e3 0x000000e9 0x706c6c37 0x00000003 0x642d6661 0x00000003 0x00000003 0x00000003 0x00000003 0x00000003 0x00000003 0x00000002 0x5f315f35 0x0000001b 0x2d636c6f 0x000000f1 0x0000010e 0x00000115 0x0000011f 0x000000e3>;
+        linux,phandle = <0x00000001>;
+        phandle = <0x00000001>;
+    };
+    mlb01-clk-tree@ {
+        compatible = "socionext,mlb01-clk-regs";
+        reg = <0x1d021000 0x6b730000>;
+        clocks {
+            #address-cells = <0x00000000>;
+            #size-cells = <0x00000000>;
+            uclk40xi {
+                compatible = "fixed-clock";
+                #clock-cells = <0x00000000>;
+                clock-frequency = <0x02625a00>;
+                linux,phandle = <0x00000002>;
+                phandle = <0x00000002>;
+            };
+            aumclki {
+                compatible = "fixed-clock";
+                #clock-cells = <0x00000000>;
+                clock-frequency = <0x01312d00>;
+            };
+            rtc32k {
+                compatible = "fixed-clock";
+                #clock-cells = <0x00000000>;
+                clock-frequency = <0x00008000>;
+            };
+            pxrefclk {
+                compatible = "fixed-clock";
+                #clock-cells = <0x00000000>;
+                clock-frequency = <0x05f5e100>;
+            };
+            pcisuppclk {
+                compatible = "fixed-factor-clock";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000002>;
+                clock-div = <0x00000014>;
+                clock-mult = <0x00000001>;
+            };
+            usb2_clk {
+                compatible = "fixed-factor-clock";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000002>;
+                clock-div = <0x00000002>;
+                clock-mult = <0x00000001>;
+            };
+            pll1 {
+                compatible = "socionext,mlb01-pll-fixed-factor";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000002>;
+                offset = <0x00000001>;
+                clock-div = <0x00000001>;
+                clock-mult = <0x00000028>;
+                read-only;
+                linux,phandle = <0x00000004>;
+                phandle = <0x00000004>;
+            };
+            pll2 {
+                compatible = "socionext,mlb01-pll-fixed-factor";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000002>;
+                offset = <0x00000002>;
+                clock-div = <0x00000001>;
+                clock-mult = <0x0000001e>;
+                read-only;
+                linux,phandle = <0x00000005>;
+                phandle = <0x00000005>;
+            };
+            pll6 {
+                compatible = "socionext,mlb01-pll-fixed-factor";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000002>;
+                offset = <0x00000007>;
+                clock-div = <0x00000001>;
+                clock-mult = <0x00000023>;
+                read-only;
+                linux,phandle = <0x00000006>;
+                phandle = <0x00000006>;
+            };
+            pll7 {
+                compatible = "socionext,mlb01-pll-fixed-factor";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000002>;
+                offset = <0x00000008>;
+                clock-div = <0x00000001>;
+                clock-mult = <0x00000028>;
+                read-only;
+                linux,phandle = <0x00000007>;
+                phandle = <0x00000007>;
+            };
+            pll9 {
+                compatible = "fixed-factor-clock";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000002>;
+                clock-div = <0x00000001>;
+                clock-mult = <0x00000021>;
+                linux,phandle = <0x0000000e>;
+                phandle = <0x0000000e>;
+            };
+            pll10 {
+                compatible = "socionext,mlb01-pll-fixed-factor";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000002>;
+                offset = <0x0000000a>;
+                clock-div = <0x00000005>;
+                clock-mult = <0x0000006c>;
+                read-only;
+                linux,phandle = <0x00000008>;
+                phandle = <0x00000008>;
+            };
+            pll11 {
+                compatible = "socionext,mlb01-pll-fixed-factor";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000002>;
+                offset = <0x0000000c>;
+                clock-div = <0x00000002>;
+                clock-mult = <0x0000004b>;
+                read-only;
+                linux,phandle = <0x00000003>;
+                phandle = <0x00000003>;
+            };
+            emmcclk {
+                compatible = "socionext,mlb01-clk-div";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000003>;
+                offset = <0x0000001c>;
+                mask = <0x00000003>;
+                ratios = <0x0000000f 0x00000009 0x00000003 0x00000004 0x00000004 0x00000001 0x00000000 0x66697865>;
+                read-only;
+                linux,phandle = <0x00000020>;
+                phandle = <0x00000020>;
+            };
+            pll1_div_1_2 {
+                compatible = "fixed-factor-clock";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000004>;
+                clock-div = <0x00000002>;
+                clock-mult = <0x00000001>;
+                linux,phandle = <0x0000000f>;
+                phandle = <0x0000000f>;
+            };
+            pll2_div_1_2 {
+                compatible = "fixed-factor-clock";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000005>;
+                clock-div = <0x00000002>;
+                clock-mult = <0x00000001>;
+                linux,phandle = <0x0000000d>;
+                phandle = <0x0000000d>;
+            };
+            pll6_div_1_2 {
+                compatible = "fixed-factor-clock";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000006>;
+                clock-div = <0x00000002>;
+                clock-mult = <0x00000001>;
+                linux,phandle = <0x00000010>;
+                phandle = <0x00000010>;
+            };
+            pll6_div_1_3 {
+                compatible = "fixed-factor-clock";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000006>;
+                clock-div = <0x00000003>;
+                clock-mult = <0x00000001>;
+                linux,phandle = <0x00000015>;
+                phandle = <0x00000015>;
+            };
+            pll7_div_1_2 {
+                compatible = "fixed-factor-clock";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000007>;
+                clock-div = <0x00000002>;
+                clock-mult = <0x00000001>;
+                linux,phandle = <0x0000000a>;
+                phandle = <0x0000000a>;
+            };
+            pll7_div_1_5 {
+                compatible = "fixed-factor-clock";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000007>;
+                clock-div = <0x00000005>;
+                clock-mult = <0x00000001>;
+                linux,phandle = <0x00000016>;
+                phandle = <0x00000016>;
+            };
+            pll10_div_1_2 {
+                compatible = "fixed-factor-clock";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000008>;
+                clock-div = <0x00000002>;
+                clock-mult = <0x00000001>;
+                linux,phandle = <0x00000009>;
+                phandle = <0x00000009>;
+            };
+            spiclk_mux_0 {
+                compatible = "socionext,mlb01-clk-div";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000009>;
+                offset = <0x000000e3>;
+                mask = <0x00000003>;
+                ratios = <0x00000004 0x00000003 0x00000004 0x00000004>;
+                read-only;
+                linux,phandle = <0x0000000b>;
+                phandle = <0x0000000b>;
+            };
+            spiclk_mux_1 {
+                compatible = "socionext,mlb01-clk-div";
+                #clock-cells = <0x00000000>;
+                clocks = <0x0000000a>;
+                offset = <0x000000e3>;
+                mask = <0x00000003>;
+                ratios = <0x00000008 0x00000131>;
+                read-only;
+                linux,phandle = <0x0000000c>;
+                phandle = <0x0000000c>;
+            };
+            spiclk {
+                compatible = "socionext,mlb01-clk-mux";
+                #clock-cells = <0x00000000>;
+                clocks = <0x0000000b 0x00000131>;
+                read-only;
+                linux,phandle = <0x00000022>;
+                phandle = <0x00000022>;
+            };
+            ca7wdclk {
+                compatible = "fixed-factor-clock";
+                #clock-cells = <0x00000000>;
+                clocks = <0x0000000d>;
+                clock-div = <0x0000000c>;
+                clock-mult = <0x00000001>;
+            };
+            pll9_div_1_2 {
+                compatible = "fixed-factor-clock";
+                #clock-cells = <0x00000000>;
+                clocks = <0x0000000e>;
+                clock-div = <0x00000002>;
+                clock-mult = <0x00000001>;
+            };
+            mclk400 {
+                compatible = "socionext,mlb01-clk-div";
+                #clock-cells = <0x00000000>;
+                clocks = <0x0000000f>;
+                offset = <0x00000127>;
+                mask = <0x00000003>;
+                ratios = <0x00000004 0x00000003 0x00000001 0x00000018>;
+                read-only;
+            };
+            mclk200 {
+                compatible = "socionext,mlb01-clk-div";
+                #clock-cells = <0x00000000>;
+                clocks = <0x0000000f>;
+                offset = <0x00000123>;
+                mask = <0x00000007>;
+                ratios = <0x00000008 0x00000003 0x00000002 0x00000003>;
+                read-only = <0x00000001>;
+            };
+            aclk400 {
+                compatible = "socionext,mlb01-clk-div";
+                #clock-cells = <0x00000000>;
+                clocks = <0x0000000f>;
+                offset = <0x00000120>;
+                mask = <0x00000003>;
+                ratios = <0x00000004 0x00000003 0x00000001 0x00000018>;
+                read-only;
+            };
+            aclk300 {
+                compatible = "socionext,mlb01-clk-div";
+                #clock-cells = <0x00000000>;
+                clocks = <0x0000000d>;
+                offset = <0x00000160>;
+                mask = <0x00000001>;
+                ratios = <0x00000006 0x00000003 0x00000001 0x00000018>;
+                read-only;
+            };
+            aclk {
+                compatible = "socionext,mlb01-clk-div";
+                #clock-cells = <0x00000000>;
+                clocks = <0x0000000f>;
+                offset = <0x00000114>;
+                mask = <0x00000007>;
+                ratios = <0x00000008 0x00000003 0x00000001 0x00000018>;
+                read-only;
+            };
+            aclkexs {
+                compatible = "socionext,mlb01-clk-div";
+                #clock-cells = <0x00000000>;
+                clocks = <0x0000000f>;
+                offset = <0x00000110>;
+                mask = <0x00000007>;
+                ratios = <0x00000008 0x00000005 0x00000003 0x00000001 0x00000018 0x742c6d6c 0x00000003 0x00000003>;
+                read-only;
+            };
+            hclk {
+                compatible = "socionext,mlb01-clk-div";
+                #clock-cells = <0x00000000>;
+                clocks = <0x0000000f>;
+                offset = <0x00000107>;
+                mask = <0x0000000f>;
+                ratios = <0x00000010 0x00000003 0x00000004 0x00000004>;
+                read-only;
+                linux,phandle = <0x0000001b>;
+                phandle = <0x0000001b>;
+            };
+            hclkbmh {
+                compatible = "socionext,mlb01-clk-div";
+                #clock-cells = <0x00000000>;
+                clocks = <0x0000000f>;
+                offset = <0x0000010c>;
+                mask = <0x00000007>;
+                ratios = <0x00000008 0x00000003 0x00000001 0x00000018>;
+                read-only;
+            };
+            pclk {
+                compatible = "socionext,mlb01-clk-div";
+                #clock-cells = <0x00000000>;
+                clocks = <0x0000000f>;
+                offset = <0x00000100>;
+                mask = <0x0000003f>;
+                ratios = <0x00000020 0x00000003 0x00000004 0x00000004>;
+                read-only;
+                linux,phandle = <0x00000027>;
+                phandle = <0x00000027>;
+            };
+            pclkca7wd {
+                compatible = "fixed-factor-clock";
+                #clock-cells = <0x00000000>;
+                clocks = <0x0000000f>;
+                clock-div = <0x00000010>;
+                clock-mult = <0x00000001>;
+            };
+            rclk {
+                compatible = "socionext,mlb01-clk-div";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000009>;
+                offset = <0x00000000>;
+                mask = <0x00000003>;
+                ratios = <0x00000040 0x00000020 0x00000003 0x00000004 0x00000004 0x00000001 0x00000003 0x6f6e6578>;
+                read-only;
+                linux,phandle = <0x00000019>;
+                phandle = <0x00000019>;
+            };
+            uhs1clk0 {
+                compatible = "socionext,mlb01-clk-div";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000007>;
+                offset = <0x00000003>;
+                mask = <0x0000000f>;
+                ratios = <0x00000010 0x00000004 0x00000002 0x00000131 0x0000001c 0x0000001c 0x636c6b31 0x00000018 0x742c6d6c 0x00000003>;
+                read-only;
+                linux,phandle = <0x0000001c>;
+                phandle = <0x0000001c>;
+            };
+            uhs1clk1_div1 {
+                compatible = "socionext,mlb01-clk-div";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000007>;
+                offset = <0x00000008>;
+                mask = <0x0000000f>;
+                ratios = <0x00000010 0x00000003 0x00000004 0x00000004>;
+                read-only;
+                linux,phandle = <0x00000011>;
+                phandle = <0x00000011>;
+            };
+            uhs1clk1_div2 {
+                compatible = "socionext,mlb01-clk-div";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000010>;
+                offset = <0x00000008>;
+                mask = <0x0000000f>;
+                ratios = <0x00000001 0x00000131>;
+                read-only;
+                linux,phandle = <0x00000012>;
+                phandle = <0x00000012>;
+            };
+            uhs1clk1 {
+                compatible = "socionext,mlb01-clk-mux";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000011 0x00000131>;
+                read-only;
+            };
+            uhs1clk2_div1 {
+                compatible = "socionext,mlb01-clk-div";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000007>;
+                offset = <0x0000000d>;
+                mask = <0x0000000f>;
+                ratios = <0x00000010 0x00000004 0x00000131 0x00000013 0x00000013 0x636c6b32>;
+                read-only;
+                linux,phandle = <0x00000013>;
+                phandle = <0x00000013>;
+            };
+            uhs1clk2_div2 {
+                compatible = "socionext,mlb01-clk-div";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000010>;
+                offset = <0x0000000d>;
+                mask = <0x0000000f>;
+                ratios = <0x00000001 0x00000131>;
+                read-only;
+                linux,phandle = <0x00000014>;
+                phandle = <0x00000014>;
+            };
+            uhs1clk2 {
+                compatible = "socionext,mlb01-clk-mux";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000013 0x00000131>;
+                read-only;
+                linux,phandle = <0x0000001f>;
+                phandle = <0x0000001f>;
+            };
+            uhs2clk {
+                compatible = "socionext,mlb01-clk-div";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000015>;
+                offset = <0x00000012>;
+                mask = <0x00000007>;
+                ratios = <0x00000012 0x0000000e 0x0000000c 0x0000000a 0x00000003 0x00000004 0x00000004 0x00000001 0x00000003 0x6f6e6578 0x64697600 0x00000000 0x0000000a 0x00000016 0x0000001f 0x00000028>;
+                read-only;
+                linux,phandle = <0x0000001d>;
+                phandle = <0x0000001d>;
+            };
+            nfclk_div1 {
+                compatible = "socionext,mlb01-clk-div";
+                #clock-cells = <0x00000000>;
+                clocks = <0x0000000a>;
+                offset = <0x00000016>;
+                mask = <0x0000001f>;
+                ratios = <0x00000028 0x0000000d 0x00000008 0x00000131 0x00000017 0x00000017 0x6b5f6469 0x0000001b 0x6230312d 0x00000004>;
+                read-only;
+                linux,phandle = <0x00000017>;
+                phandle = <0x00000017>;
+            };
+            nfclk_div2 {
+                compatible = "socionext,mlb01-clk-div";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000016>;
+                offset = <0x00000016>;
+                mask = <0x0000001f>;
+                ratios = <0x0000000a 0x00000131>;
+                read-only;
+                linux,phandle = <0x00000018>;
+                phandle = <0x00000018>;
+            };
+            nfclk {
+                compatible = "socionext,mlb01-clk-mux";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000017 0x00000131>;
+                read-only;
+                linux,phandle = <0x00000023>;
+                phandle = <0x00000023>;
+            };
+            clk5 {
+                compatible = "socionext,mlb01-clk-div";
+                #clock-cells = <0x00000000>;
+                clocks = <0x00000009>;
+                offset = <0x000000ef>;
+                mask = <0x00000003>;
+                ratios = <0x00000040 0x00000020 0x00000003 0x00000004 0x00000004 0x00000002 0x2d74696d 0x00000003>;
+                read-only;
+                linux,phandle = <0x00000025>;
+                phandle = <0x00000025>;
+            };
+        };
+    };
+    peri-timer@1e000000 {
+        compatible = "socionext,milbeaut-timer";
+        reg = <0x1e000050 0x00000003 0x0000005b 0x0000010e>;
+        interrupts = <0x00000000 0x00000004 0x00000001>;
+        clocks = <0x00000019>;
+    };
+    timer {
+        compatible = "arm,armv7-timer";
+        interrupts = <0x00000001 0x0000000e 0x00000f04 0x00000003 0x00000003 0x00000000 0x706d7500 0x64697361 0x00000012 0x65782d61 0x00000030 0x00000004>;
+        clock-frequency = <0x02625a00>;
+        always-on;
+        arm,cpu-registers-not-fw-configured;
+    };
+    pmu {
+        status = "disabled";
+        compatible = "arm,cortex-a7-pmu";
+        interrupts = <0x00000000 0x0000000d 0x00000004 0x00000002 0x6b000000 0x66697865 0x00000004 0x00000004 0x00000004 0x00000004 0x00000001 0x31303030>;
+    };
+    dummy_clk {
+        compatible = "fixed-clock";
+        #clock-cells = <0x00000000>;
+        clock-frequency = <0x02faf080>;
+        linux,phandle = <0x0000001a>;
+        phandle = <0x0000001a>;
+    };
+    resetcon@1b110000 {
+        compatible = "socionext,milbeaut-reset";
+        reg = <0x1b110000 0x00000187>;
+        #reset-cells = <0x00000001>;
+        linux,phandle = <0x00000021>;
+        phandle = <0x00000021>;
+    };
+    pinctrl@1d022000 {
+        compatible = "socionext,mlb01-pinctrl";
+        reg = <0x1d022000 0x00000194>;
+        reg-names = "pinctrl";
+        gpio-controller;
+        #gpio-cells = <0x00000002>;
+        interrupt-controller;
+        #interrupt-cells = <0x00000002>;
+        clocks = <0x0000001a>;
+        interrupts;
+        interrupt-names;
+        blacklist = <0x0000ffff 0x0000ff7f 0x0000ffff 0x0000fbff 0x0000001e 0x0000001e 0x6e730000 0x50453400 0x00000006 0x00000002 0x5f756172 0x00000003 0x00000000>;
+        linux,phandle = <0x0000001e>;
+        phandle = <0x0000001e>;
+        usio1_pins {
+            pins = "PE4", "PE5", "P87";
+            function = "usio1";
+        };
+    };
+    usio_uart@1e700000 {
+        status = "okay";
+        compatible = "socionext,m8m-usio-uart";
+        reg = <0x1e700000 0x00000147>;
+        interrupts = <0x00000000 0x00000094 0x000001ba 0x00000004 0x00000004 0x00000004>;
+        interrupt-names = "rx", "tx";
+        clocks = <0x0000001b>;
+        flwen = <0x00000001>;
+        index = <0x00000001>;
+    };
+    usio_uart@1e700010 {
+        index = <0x00000000>;
+        compatible = "socionext,m8m-usio-uart";
+        reg = <0x1e700010 0x00000147>;
+        interrupts = <0x00000000 0x00000095 0x000001ba 0x00000004 0x00000004 0x00000001>;
+        interrupt-names = "rx", "tx";
+        clocks = <0x0000001b>;
+        flwen = <0x00000000>;
+    };
+    usio_uart@1e700020 {
+        status = "disabled";
+        compatible = "socionext,m8m-usio-uart";
+        reg = <0x1e700020 0x00000147>;
+        interrupts = <0x00000000 0x00000096 0x000001ba 0x00000004 0x00000001 0x37303030>;
+        interrupt-names = "rx", "tx";
+        clocks = <0x0000001b>;
+    };
+    usio_uart@1e700030 {
+        status = "disabled";
+        compatible = "socionext,m8m-usio-uart";
+        reg = <0x1e700030 0x00000147>;
+        interrupts = <0x00000000 0x00000097 0x000001ba 0x00000004 0x00000001 0x37303030>;
+        interrupt-names = "rx", "tx";
+        clocks = <0x0000001b>;
+    };
+    usio_uart@1e700040 {
+        status = "disabled";
+        compatible = "socionext,m8m-usio-uart";
+        reg = <0x1e700040 0x00000147>;
+        interrupts = <0x00000000 0x00000098 0x000001ba 0x00000004 0x00000001 0x37303030>;
+        interrupt-names = "rx", "tx";
+        clocks = <0x0000001b>;
+    };
+    usio_uart@1e700050 {
+        status = "disabled";
+        compatible = "socionext,m8m-usio-uart";
+        reg = <0x1e700050 0x00000147>;
+        interrupts = <0x00000000 0x00000099 0x000001ba 0x00000004 0x00000001 0x37303030>;
+        interrupt-names = "rx", "tx";
+        clocks = <0x0000001b>;
+    };
+    usio_uart@1e700060 {
+        status = "disabled";
+        compatible = "socionext,m8m-usio-uart";
+        reg = <0x1e700060 0x00000147>;
+        interrupts = <0x00000000 0x0000009a 0x000001ba 0x00000004 0x00000001 0x37303030>;
+        interrupt-names = "rx", "tx";
+        clocks = <0x0000001b>;
+    };
+    usio_uart@1e700070 {
+        status = "disabled";
+        compatible = "socionext,m8m-usio-uart";
+        reg = <0x1e700070 0x00000147>;
+        interrupts = <0x00000000 0x0000009b 0x000001ba 0x00000004 0x00000001 0x00000000>;
+        interrupt-names = "rx", "tx";
+        clocks = <0x0000001b>;
+    };
+    mmc@1b000000 {
+        compatible = "socionext,mlb01-esdhci-3.0";
+        reg = <0x1b000000 0x00000147>;
+        interrupts = <0x00000000 0x00000004 0x00000004>;
+        bus-width = <0x00000004>;
+        max-frequency = <0x0c65d400>;
+        clocks = <0x0000001c 0x00000206>;
+        clock-names = "core", "iface";
+        keep-power-in-suspend;
+        non-removable;
+        quirk-host-off-card-on;
+    };
+    mmc@19130000 {
+        compatible = "socionext,mlb01-esdhci-4.0";
+        reg = <0x1b020000 0x19130000 0x00000194 0x73325f73 0x00000147 0x00000000>;
+        reg-names = "uhs1", "uhs2", "uhs2_sn";
+        interrupts = <0x00000000 0x0000010f 0x000001ba 0x00000003 0x00000ce4 0x00000004>;
+        interrupt-names = "uhs1", "uhs2";
+        voltage-ranges = <0x00000ce4 0x000001ee>;
+        bus-width = <0x00000004>;
+        clocks = <0x0000001d 0x00000206>;
+        clock-names = "core", "iface";
+        cap-sdio-irq;
+        sd40_enable;
+        uhs2-power-limit = <0x00000004>;
+        sni,mmc-power-gpio = <0x0000001e 0x00000009 0x00000000>;
+        status = "disabled";
+    };
+    mmc@1b010000 {
+        compatible = "socionext,mlb01-esdhci-3.0";
+        reg = <0x1b010000 0x00000147>;
+        interrupts = <0x00000000 0x00000008 0x00000003>;
+        voltage-ranges = <0x00000ce4 0x000001ee>;
+        bus-width = <0x00000004>;
+        clocks = <0x0000001f 0x00000206>;
+        clock-names = "core", "iface";
+        cap-sdio-irq;
+        sni,mmc-power-gpio = <0x0000001e 0x00000009 0x00000000>;
+        status = "disabled";
+    };
+    mmc@19120000 {
+        compatible = "socionext,mlb01-emmc-5.0";
+        reg = <0x19120200 0x00000003 0x68727300 0x00000000>;
+        reg-names = "srs", "hrs";
+        interrupts = <0x00000000 0x00000008 0x00000003>;
+        clocks = <0x00000020 0x00000206>;
+        clock-names = "core", "iface";
+        max-frequency = <0x0bebc200>;
+        bus-width = <0x00000008>;
+        non-removable;
+        disable-wp;
+        cap-mmc-highspeed;
+        mmc-ddr-1_8v;
+        mmc-hs200-1_8v;
+        mmc-hs400-1_8v;
+        resets = <0x00000021 0x00000180>;
+        status = "disabled";
+    };
+    hdmac@1e100000 {
+        status = "disabled";
+        compatible = "socionext,mb86s7x_hdmac";
+        reg = <0x1e100000 0x00000147>;
+        interrupts = <0x00000000 0x0000007d 0x00000004 0x00000000 0x00000081 0x00000004 0x00000003 0x00000003 0x00000004 0x00000001 0x30300000 0x64697361 0x00000018 0x742c6d62 0x00000003 0x00010000 0x00000000 0x00000085 0x00000004 0x00000000 0x00000089 0x00000004 0x00000003 0x00000003>;
+        #dma-cells = <0x00000001>;
+        priority-rotate;
+        clocks = <0x0000001a>;
+    };
+    hdmac@1e110000 {
+        status = "disabled";
+        compatible = "socionext,mb86s7x_hdmac";
+        reg = <0x1e110000 0x00000147>;
+        interrupts = <0x00000000 0x00000085 0x00000004 0x00000000 0x00000089 0x00000004 0x00000003 0x00000003 0x00000004 0x00000004 0x00000004 0x00000001 0x00000003 0x6f6e6578 0x65000000 0x1c251000 0x00000003 0x00000003 0x00000003 0x00000016 0x00000318 0x00000001 0x00000003 0x6f6e6578>;
+        #dma-cells = <0x00000001>;
+        priority-rotate;
+        clocks = <0x0000001a>;
+        linux,phandle = <0x00000026>;
+        phandle = <0x00000026>;
+    };
+    snrtos0@0 {
+        compatible = "socionext,ipcu-device";
+        reg = <0x1c251000 0x00000003 0x00000003 0x00000003>;
+        dst-unit = <0x00000000>;
+        dst-channel = <0x00000000>;
+        interrupts = <0x00000000 0x00000005 0x00000002>;
+        direction = "recv";
+    };
+    snrtos1@0 {
+        compatible = "socionext,ipcu-device";
+        reg = <0x1c252000 0x00000003 0x00000003 0x00000003>;
+        dst-unit = <0x00000001>;
+        dst-channel = <0x00000000>;
+        interrupts = <0x00000000 0x00000005 0x00000002>;
+        direction = "recv";
+    };
+    sni_spi@1e800000 {
+        status = "disabled";
+        compatible = "socionext,sni-spi";
+        clocks = <0x00000022>;
+        #interrupt-cells = <0x00000002>;
+        interrupts = <0x00000000 0x00000008 0x00000003>;
+        reg = <0x1e800000 0x00000000>;
+        #address-cells = <0x00000001>;
+        #size-cells = <0x00000000>;
+        dma-names = "tx", "rx";
+    };
+    sni_spi@1e800100 {
+        status = "disabled";
+        compatible = "socionext,sni-spi";
+        clocks = <0x00000022>;
+        #interrupt-cells = <0x00000002>;
+        interrupts = <0x00000000 0x00000008 0x00000003>;
+        reg = <0x1e800100 0x00000000>;
+        #address-cells = <0x00000001>;
+        #size-cells = <0x00000000>;
+        dma-names = "tx", "rx";
+    };
+    sni_spi@1e800200 {
+        status = "disabled";
+        compatible = "socionext,sni-spi";
+        clocks = <0x00000022>;
+        #interrupt-cells = <0x00000002>;
+        interrupts = <0x00000000 0x00000008 0x00000003>;
+        reg = <0x1e800200 0x00000000>;
+        #address-cells = <0x00000001>;
+        #size-cells = <0x00000000>;
+        dma-names = "tx", "rx";
+    };
+    pwm@1e120000 {
+        status = "disabled";
+        compatible = "socionext,mlb01-pwm";
+        reg = <0x1e001000 0x00000003 0x0000006e 0x00000004>;
+        interrupts = <0x00000000 0x00000072 0x0000010e 0x0000032c 0x00000336 0x70776d40>;
+        clocks = <0x00000019>;
+        base-rate = <0x00cdfe60>;
+        #pwm-cells = <0x00000003>;
+    };
+    pwm@1e130000 {
+        status = "disabled";
+        compatible = "socionext,mlb01-pwm";
+        reg = <0x1e001400 0x00000003 0x0000006f 0x00000004>;
+        interrupts = <0x00000000 0x00000073 0x0000010e 0x00000336 0x70776d40 0x00000003>;
+        clocks = <0x00000019>;
+        #pwm-cells = <0x00000003>;
+    };
+    pwm@1e140000 {
+        status = "disabled";
+        compatible = "socionext,mlb01-pwm";
+        reg = <0x1e001800 0x00000003 0x00000070 0x00000004>;
+        interrupts = <0x00000000 0x00000074 0x0000010e 0x00000336 0x70776d40 0x00000003>;
+        clocks = <0x00000019>;
+        #pwm-cells = <0x00000003>;
+    };
+    pwm@1e150000 {
+        status = "disabled";
+        compatible = "socionext,mlb01-pwm";
+        reg = <0x1e001c00 0x00000003 0x00000071 0x00000004>;
+        interrupts = <0x00000000 0x00000075 0x0000010e 0x00000336 0x6e616e64 0x00000003>;
+        clocks = <0x00000019>;
+        #pwm-cells = <0x00000003>;
+    };
+    nand@19100000 {
+        status = "disabled";
+        #address-cells = <0x00000001>;
+        #size-cells = <0x00000001>;
+        compatible = "cdns,hpnfc-dt";
+        reg = <0x19100000 0x1b110328 0x00000003 0x000000f2 0x00000341 0x0000034a 0x00000357 0x0000010e>;
+        interrupts = <0x00000000 0x00000004 0x00000004>;
+        dma-mask = <0xffffffff>;
+        ecc-sec-size = <0x00000400>;
+        ecc-corr-cap = <0x00000010>;
+        clocks = <0x00000023>;
+        resets = <0x00000021 0x65746865>;
+    };
+    ethernet {
+        status = "disabled";
+        compatible = "socionext,ogma";
+        reg = <0x1b100000 0x00000147>;
+        interrupts = <0x00000000 0x00000118 0x00000364 0x00000004 0x00000004 0x00000006>;
+        phy-mode = "rgmii";
+        max-speed = <0x000003e8>;
+        max-frame-size = <0x00002328>;
+        local-mac-address = [ffffffa4 17 31 ffffff88 00 ffffffed];
+        phy-handle = <0x00000024>;
+        resets = <0x00000021 0x0000010e>;
+        clocks = <0x00000025>;
+        #address-cells = <0x00000001>;
+        #size-cells = <0x00000000>;
+        ethernet-phy@1 {
+            device_type = "ethernet-phy";
+            compatible = "ethernet-phy-ieee802.3-c22";
+            reg = <0x00000001>;
+            linux,phandle = <0x00000024>;
+            phandle = <0x00000024>;
+        };
+    };
+    usb30@19c00000 {
+        compatible = "socionext,usb3mlb01,f_usb30dr_fp";
+        reg = <0x1b110280 0x00000194>;
+        reg-names = "reg-glue";
+        #address-cells = <0x00000001>;
+        #size-cells = <0x00000001>;
+        ranges;
+        dwc3@19c00000 {
+            compatible = "snps,dwc3";
+            reg = <0x19c00000 0x00000147>;
+            interrupts = <0x00000000 0x00000004 0x0000000b>;
+            snps,has-lpm-erratum = <0x00000001>;
+            dr_mode = "peripheral";
+        };
+    };
+    usb@1b070000 {
+        compatible = "generic-ehci";
+        reg = <0x1b070000 0x00000147>;
+        interrupts = <0x00000000 0x00000008 0x00000003>;
+        resets = <0x00000021 0x00000180>;
+        status = "disabled";
+    };
+    usb@1b080000 {
+        status = "disabled";
+        compatible = "generic-ohci";
+        reg = <0x1b080000 0x00000147>;
+        interrupts = <0x00000000 0x00000001 0x62303530>;
+    };
+    usb20dev@0x1b050000 {
+        compatible = "socionext,usb2m9m,f_usb20dc_lfp";
+        reg = <0x1b050000 0x1b110200 0x00000194 0x00000000 0x00000000 0x00000008>;
+        reg-names = "udc", "dma", "glue";
+        interrupts = <0x00000000 0x00000008 0x00000003>;
+        dma_dreq = <0x0e000000 0x000003c9>;
+        hdmac_channel = <0x00000000 0x0000010e>;
+        clocks = <0x0000001a 0x00000003 0x795f636c 0x64756d6d>;
+        clock-names = "dummy_clk", "dummy_clk", "dummy_clk";
+        resets = <0x00000021 0x70636965>;
+    };
+    pcie@19150000 {
+        status = "disabled";
+        compatible = "socionext,mlb01-pcie";
+        reg = <0x19150000 0x1b111000 0x00000194 0x69670065 0x00000004 0x00000004>;
+        reg-names = "ctrlreg", "config", "exsreg";
+        #address-cells = <0x00000003>;
+        #size-cells = <0x00000002>;
+        device_type = "pci";
+        ranges = <0x81000000 0x00000000 0x19400000 0x00000003 0x00000003 0x00000003 0x000000f3 0x00000004 0x5f737069 0x00000003 0x626c6564 0x0000001b>;
+        num-lanes = <0x00000002>;
+        #interrupt-cells = <0x00000001>;
+        interrupts = <0x00000000 0x000000f5 0x7573696f 0x30000000 0x64697361 0x00000017>;
+    };
+    usio_spi@1e700000 {
+        status = "disabled";
+        compatible = "socionext,m8m-usio-spi";
+        clocks = <0x0000001b>;
+        clock-names = "spiclk";
+        reg = <0x1e700000 0x00000147>;
+        interrupts = <0x00000000 0x00000094 0x00000000 0x0000000f 0x000003e1 0x00000000>;
+        #address-cells = <0x00000001>;
+        #size-cells = <0x00000000>;
+        dmas = <0x00000026 0x00000003 0x78000000 0x5f737069>;
+        dma-names = "tx", "rx";
+    };
+    usio_spi@0x1e700010 {
+        status = "disabled";
+        compatible = "socionext,m8m-usio-spi";
+        clocks = <0x0000001b>;
+        clock-names = "spiclk";
+        reg = <0x1e700010 0x00000147>;
+        interrupts = <0x00000000 0x00000095 0x00000000 0x0000000f 0x000003e1 0x00000002>;
+        #address-cells = <0x00000001>;
+        #size-cells = <0x00000000>;
+        dmas = <0x00000026 0x00000003 0x78000000 0x5f737069>;
+        dma-names = "tx", "rx";
+    };
+    usio_spi@0x1e700020 {
+        status = "disabled";
+        compatible = "socionext,m8m-usio-spi";
+        clocks = <0x0000001b>;
+        clock-names = "spiclk";
+        reg = <0x1e700020 0x00000147>;
+        interrupts = <0x00000000 0x00000096 0x00000000 0x0000000f 0x000003e1 0x00000004>;
+        #address-cells = <0x00000001>;
+        #size-cells = <0x00000000>;
+        dmas = <0x00000026 0x00000003 0x78000000 0x5f737069>;
+        dma-names = "tx", "rx";
+    };
+    usio_spi@0x1e700030 {
+        status = "disabled";
+        compatible = "socionext,m8m-usio-spi";
+        clocks = <0x0000001b>;
+        clock-names = "spiclk";
+        reg = <0x1e700030 0x00000147>;
+        interrupts = <0x00000000 0x00000097 0x00000000 0x0000000f 0x000003e1 0x00000006>;
+        #address-cells = <0x00000001>;
+        #size-cells = <0x00000000>;
+        dmas = <0x00000026 0x00000003 0x78000000 0x5f737069>;
+        dma-names = "tx", "rx";
+    };
+    usio_spi@0x1e700040 {
+        status = "disabled";
+        compatible = "socionext,m8m-usio-spi";
+        clocks = <0x0000001b>;
+        clock-names = "spiclk";
+        reg = <0x1e700040 0x00000147>;
+        interrupts = <0x00000000 0x00000098 0x00000000 0x0000000f 0x000003e1 0x00000008>;
+        #address-cells = <0x00000001>;
+        #size-cells = <0x00000000>;
+        dmas = <0x00000026 0x00000003 0x78000000 0x5f737069>;
+        dma-names = "tx", "rx";
+    };
+    usio_spi@0x1e700050 {
+        status = "disabled";
+        compatible = "socionext,m8m-usio-spi";
+        clocks = <0x0000001b>;
+        clock-names = "spiclk";
+        reg = <0x1e700050 0x00000147>;
+        interrupts = <0x00000000 0x00000099 0x00000000 0x0000000f 0x000003e1 0x0000000a>;
+        #address-cells = <0x00000001>;
+        #size-cells = <0x00000000>;
+        dmas = <0x00000026 0x00000003 0x78000000 0x5f737069>;
+        dma-names = "tx", "rx";
+    };
+    usio_spi@0x1e700060 {
+        status = "disabled";
+        compatible = "socionext,m8m-usio-spi";
+        clocks = <0x0000001b>;
+        clock-names = "spiclk";
+        reg = <0x1e700060 0x00000147>;
+        interrupts = <0x00000000 0x0000009a 0x00000000 0x0000000f 0x000003e1 0x0000000b>;
+        #address-cells = <0x00000001>;
+        #size-cells = <0x00000000>;
+        dmas = <0x00000026 0x00000003 0x78000000 0x5f737069>;
+        dma-names = "tx", "rx";
+    };
+    usio_spi@0x1e700070 {
+        status = "disabled";
+        compatible = "socionext,m8m-usio-spi";
+        clocks = <0x0000001b>;
+        clock-names = "spiclk";
+        reg = <0x1e700070 0x00000147>;
+        interrupts = <0x00000000 0x0000009b 0x00000000 0x0000000f 0x000003e1 0x0000000d>;
+        #address-cells = <0x00000001>;
+        #size-cells = <0x00000000>;
+        dmas = <0x00000026 0x00000003 0x78000000 0x31653030>;
+        dma-names = "tx", "rx";
+    };
+    i2c@1e003000 {
+        compatible = "socionext,sni-sc2000a-i2c";
+        reg = <0x1e003000 0x00000147>;
+        interrupts = <0x00000000 0x00000004 0x00000004>;
+        #address-cells = <0x00000001>;
+        #size-cells = <0x00000000>;
+        clocks = <0x00000027>;
+        status = "disabled";
+        clock-frequency = <0x000186a0>;
+        gpios = <0x0000001e 0x00000001 0x00000000>;
+    };
+    i2c@1e003400 {
+        compatible = "socionext,sni-sc2000a-i2c";
+        reg = <0x1e003400 0x00000147>;
+        interrupts = <0x00000000 0x00000004 0x00000004>;
+        #address-cells = <0x00000001>;
+        #size-cells = <0x00000000>;
+        clocks = <0x00000027>;
+        status = "disabled";
+        clock-frequency = <0x000186a0>;
+        gpios = <0x0000001e 0x00000001 0x00000000>;
+    };
+    i2c@1e003800 {
+        compatible = "socionext,sni-sc2000a-i2c";
+        reg = <0x1e003800 0x00000147>;
+        interrupts = <0x00000000 0x00000004 0x00000004>;
+        #address-cells = <0x00000001>;
+        #size-cells = <0x00000000>;
+        clocks = <0x00000027>;
+        status = "disabled";
+        clock-frequency = <0x000186a0>;
+        gpios = <0x0000001e 0x00000001 0x00000003>;
+    };
+    fb@28906000 {
+        status = "disabled";
+        compatible = "socionext,sni-gr";
+        index = <0x00000000>;
+        reg = <0x28906000 0x00000003 0x636f7265 0x000003ec>;
+        reg-names = "gr", "dcore";
+        num-set-pattern = <0x00000001>;
+        pattern-name = "qqvga";
+        block_no = <0x00000001>;
+        device-name = "lcd-gr0";
+        qqvga {
+            dis_size = <0x00000140 0x00000427>;
+            dis_virtual_size = <0x00000140 0x00000438>;
+            dis_expand_horizonal = <0x00000003 0x0000044d>;
+            dis_expand_vertical = <0x00000004 0x00000461>;
+            dis_format = <0x00000000>;
+            dis_position = <0x00000000 0x00000479>;
+            byte_num_line = <0x00000500>;
+            a_data_byte_num_line = <0x00000000>;
+            draw_addrss = <0xa93d4000 0x000004a8>;
+            draw_buffer_num = <0x00000003>;
+            dis_pan_step = <0x00000001 0x000004c5>;
+            dis_triger = <0x00000001>;
+            area00 {
+                positon = <0x00000000 0x00000352>;
+                size = <0x00000140 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area01 {
+                positon = <0x00000000 0x00000352>;
+                size = <0x00000040 0x000004d8>;
+                show_enable = <0x00000000>;
+            };
+            area02 {
+                positon = <0x00000040 0x00000352>;
+                size = <0x00000040 0x000004d8>;
+                show_enable = <0x00000000>;
+            };
+            area03 {
+                positon = <0x00000040 0x00000352>;
+                size = <0x00000040 0x000004d8>;
+                show_enable = <0x00000000>;
+            };
+            area04 {
+                positon = <0x00000080 0x00000352>;
+                size = <0x00000040 0x000004d8>;
+                show_enable = <0x00000000>;
+            };
+            area05 {
+                positon = <0x00000080 0x00000352>;
+                size = <0x00000040 0x000004d8>;
+                show_enable = <0x00000000>;
+            };
+            area06 {
+                positon = <0x000000c0 0x00000352>;
+                size = <0x00000040 0x000004d8>;
+                show_enable = <0x00000000>;
+            };
+            area07 {
+                positon = <0x000000c0 0x00000352>;
+                size = <0x00000040 0x000004d8>;
+                show_enable = <0x00000000>;
+            };
+            area08 {
+                positon = <0x00000100 0x00000352>;
+                size = <0x00000040 0x000004d8>;
+                show_enable = <0x00000000>;
+            };
+            area09 {
+                positon = <0x00000100 0x00000352>;
+                size = <0x00000040 0x000004d8>;
+                show_enable = <0x00000000>;
+            };
+        };
+    };
+    fb@28907000 {
+        status = "disabled";
+        compatible = "socionext,sni-gr";
+        index = <0x00000001>;
+        reg = <0x28907000 0x00000003 0x636f7265 0x00000409>;
+        reg-names = "gr", "dcore";
+        block_no = <0x00000001>;
+        device-name = "lcd-gr1";
+    };
+    fb@28902000 {
+        status = "disabled";
+        compatible = "socionext,sni-gr";
+        reg = <0x28902000 0x00000003 0x00000003 0x636f7265>;
+        index = <0x00000002>;
+        reg-names = "gr", "dcore";
+        block_no = <0x00000000>;
+        device-name = "hdmi-gr0";
+        num-set-pattern = <0x00000006>;
+        pattern-name = "fhd-vga", "fhd", "fhd4444", "hd", "4k", "4k4444";
+        fhd-vga {
+            dis_size = <0x00000280 0x00000427>;
+            dis_virtual_size = <0x00000400 0x00000438>;
+            dis_expand_horizonal = <0x00000009 0x0000044d>;
+            dis_expand_vertical = <0x00000009 0x00000461>;
+            dis_format = <0x00000000>;
+            dis_position = <0x000000f0 0x00000479>;
+            byte_num_line = <0x00001000>;
+            a_data_byte_num_line = <0x00000000>;
+            draw_addrss = <0xa982c000 0x000004a8>;
+            draw_buffer_num = <0x00000001>;
+            dis_pan_step = <0x00000002 0x000004c5>;
+            dis_triger = <0x00000000>;
+            area00 {
+                positon = <0x00000000 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area01 {
+                positon = <0x00000000 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area02 {
+                positon = <0x00000080 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area03 {
+                positon = <0x00000080 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area04 {
+                positon = <0x00000100 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area05 {
+                positon = <0x00000100 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area06 {
+                positon = <0x00000180 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area07 {
+                positon = <0x00000180 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area08 {
+                positon = <0x00000200 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area09 {
+                positon = <0x00000200 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+        };
+        fhd {
+            dis_size = <0x00000280 0x00000427>;
+            dis_virtual_size = <0x00000400 0x00000438>;
+            dis_expand_horizonal = <0x00000003 0x0000044d>;
+            dis_expand_vertical = <0x00000003 0x00000461>;
+            dis_format = <0x00000000>;
+            dis_position = <0x00000000 0x00000479>;
+            byte_num_line = <0x00001000>;
+            a_data_byte_num_line = <0x00000000>;
+            draw_addrss = <0xa982c000 0x000004a8>;
+            draw_buffer_num = <0x00000001>;
+            dis_pan_step = <0x00000002 0x000004c5>;
+            dis_triger = <0x00000000>;
+            area00 {
+                positon = <0x00000000 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area01 {
+                positon = <0x00000000 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area02 {
+                positon = <0x00000080 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area03 {
+                positon = <0x00000080 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area04 {
+                positon = <0x00000100 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area05 {
+                positon = <0x00000100 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area06 {
+                positon = <0x00000180 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area07 {
+                positon = <0x00000180 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area08 {
+                positon = <0x00000200 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area09 {
+                positon = <0x00000200 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+        };
+        fhd4444 {
+            dis_size = <0x00000280 0x00000427>;
+            dis_virtual_size = <0x00000400 0x00000438>;
+            dis_expand_horizonal = <0x00000002 0x0000044d>;
+            dis_expand_vertical = <0x00000002 0x00000461>;
+            dis_format = <0x00000002>;
+            dis_position = <0x00000000 0x00000479>;
+            byte_num_line = <0x00001000>;
+            a_data_byte_num_line = <0x00000000>;
+            draw_addrss = <0xa982c000 0x000004a8>;
+            draw_buffer_num = <0x00000002>;
+            dis_pan_step = <0x00000004 0x000004c5>;
+            dis_triger = <0x00000000>;
+            area00 {
+                positon = <0x00000000 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area01 {
+                positon = <0x00000000 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area02 {
+                positon = <0x00000080 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area03 {
+                positon = <0x00000080 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area04 {
+                positon = <0x00000100 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area05 {
+                positon = <0x00000100 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area06 {
+                positon = <0x00000180 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area07 {
+                positon = <0x00000180 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area08 {
+                positon = <0x00000200 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area09 {
+                positon = <0x00000200 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+        };
+        hd {
+            dis_size = <0x00000280 0x00000427>;
+            dis_virtual_size = <0x00000400 0x00000438>;
+            dis_expand_horizonal = <0x00000002 0x0000044d>;
+            dis_expand_vertical = <0x00000002 0x00000461>;
+            dis_format = <0x00000000>;
+            dis_position = <0x00000000 0x00000479>;
+            byte_num_line = <0x00001000>;
+            a_data_byte_num_line = <0x00000000>;
+            draw_addrss = <0xa982c000 0x000004a8>;
+            draw_buffer_num = <0x00000001>;
+            dis_pan_step = <0x00000002 0x000004c5>;
+            dis_triger = <0x00000000>;
+            area00 {
+                positon = <0x00000000 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area01 {
+                positon = <0x00000000 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area02 {
+                positon = <0x00000080 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area03 {
+                positon = <0x00000080 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area04 {
+                positon = <0x00000100 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area05 {
+                positon = <0x00000100 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area06 {
+                positon = <0x00000180 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area07 {
+                positon = <0x00000180 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area08 {
+                positon = <0x00000200 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area09 {
+                positon = <0x00000200 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+        };
+        4k {
+            dis_size = <0x00000280 0x00000427>;
+            dis_virtual_size = <0x00000400 0x00000438>;
+            dis_expand_horizonal = <0x00000006 0x0000044d>;
+            dis_expand_vertical = <0x00000006 0x00000461>;
+            dis_format = <0x00000000>;
+            dis_position = <0x00000000 0x00000479>;
+            byte_num_line = <0x00001000>;
+            a_data_byte_num_line = <0x00000000>;
+            draw_addrss = <0xa982c000 0x000004a8>;
+            draw_buffer_num = <0x00000001>;
+            dis_pan_step = <0x00000002 0x000004c5>;
+            dis_triger = <0x00000000>;
+            area00 {
+                positon = <0x00000000 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area01 {
+                positon = <0x00000000 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area02 {
+                positon = <0x00000080 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area03 {
+                positon = <0x00000080 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area04 {
+                positon = <0x00000100 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area05 {
+                positon = <0x00000100 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area06 {
+                positon = <0x00000180 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area07 {
+                positon = <0x00000180 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area08 {
+                positon = <0x00000200 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area09 {
+                positon = <0x00000200 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+        };
+        4k4444 {
+            dis_size = <0x00000280 0x00000427>;
+            dis_virtual_size = <0x00000400 0x00000438>;
+            dis_expand_horizonal = <0x00000006 0x0000044d>;
+            dis_expand_vertical = <0x00000006 0x00000461>;
+            dis_format = <0x00000002>;
+            dis_position = <0x00000000 0x00000479>;
+            byte_num_line = <0x00000800>;
+            a_data_byte_num_line = <0x00000000>;
+            draw_addrss = <0xa982c000 0x000004a8>;
+            draw_buffer_num = <0x00000002>;
+            dis_pan_step = <0x00000004 0x000004c5>;
+            dis_triger = <0x00000000>;
+            area00 {
+                positon = <0x00000000 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area01 {
+                positon = <0x00000000 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area02 {
+                positon = <0x00000080 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area03 {
+                positon = <0x00000080 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area04 {
+                positon = <0x00000100 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area05 {
+                positon = <0x00000100 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area06 {
+                positon = <0x00000180 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area07 {
+                positon = <0x00000180 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area08 {
+                positon = <0x00000200 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+            area09 {
+                positon = <0x00000200 0x00000352>;
+                size = <0x00000080 0x000004d8>;
+                show_enable = <0x00000001>;
+            };
+        };
+    };
+    fb@28903000 {
+        status = "disabled";
+        compatible = "socionext,sni-gr";
+        reg = <0x28903000 0x00000003 0x00000003 0x636f7265>;
+        index = <0x00000003>;
+        reg-names = "gr", "dcore";
+        block_no = <0x00000000>;
+        device-name = "hdmi-gr1";
+    };
+    shared_commem {
+        compatible = "socionext, shared-commem";
+        buf-addr = <0x45400004>;
+        buf-size = <0x45400008>;
+        sync-addr = <0x4540000c>;
+        sync-size = <0x45400010>;
+        rd-pointer-addr = <0x45400014>;
+        rd-pointer-size = <0x45400018>;
+        wt-pointer-addr = <0x4540001c>;
+        wt-pointer-size = <0x45400020>;
+        movie-rec-addr = <0x45400024>;
+        movie-rec-size = <0x45400028>;
+        term-io-addr = <0x4540002c>;
+        term-io-size = <0x45400030>;
+        string-addr = <0x45400034>;
+        string-size = <0x45400038>;
+        ribery-addr = <0x4540003c>;
+        ribery-size = <0x45400040>;
+        audio-addr = <0x45400044>;
+        audio-size = <0x45400048>;
+        raw-addr = <0x4540004c>;
+        raw-size = <0x45400050>;
+        yuv-addr = <0x45400054>;
+        yuv-size = <0x45400058>;
+        hevc-addr = <0x4540005c>;
+        hevc-size = <0x45400060>;
+        mjpeg-addr = <0x45400064>;
+        mjpeg-size = <0x45400068>;
+        cap-addr = <0x4540006c>;
+        cap-size = <0x45400070>;
+        osd-addr = <0x45400074>;
+        osd-size = <0x45400078>;
+        audio-out-addr = <0x4540007c>;
+        audio-out-size = <0x45400080>;
+        metadata-addr = <0x45400084>;
+        metadata-size = <0x45400088>;
+        disp-addr = <0x454ffc00>;
+        rtcp-addr = <0x4fffe000>;
+        rtcp-size = <0x00001000>;
+    };
+    snipcufs_rtos@0 {
+        compatible = "socionext,ipcufs-rtos";
+        ipcu_unit = <0x00000000>;
+        ipcu_ch = <0x00000002 0x000000ae>;
+        reg = <0x45400004 0x736e7662>;
+    };
+    snvblk_rtos@0 {
+        status = "okay";
+        compatible = "socionext,vblk-rtos";
+        ipcu_unit = <0x00000001>;
+        ipcu_ch = <0x00000001 0x000000ae>;
+        reg = <0x45400004 0x736e7274>;
+    };
+    snrtos0@1 {
+        compatible = "socionext,ipcu-device";
+        dst-unit = <0x00000000>;
+        dst-channel = <0x00000001>;
+        interrupts = <0x00000000 0x00000005 0x00000002>;
+        direction = "send";
+    };
+    snrtos0@2 {
+        compatible = "socionext,ipcu-device";
+        dst-unit = <0x00000000>;
+        dst-channel = <0x00000002>;
+        interrupts = <0x00000000 0x00000005 0x00000002>;
+        direction = "send";
+    };
+    snrtos0@3 {
+        compatible = "socionext,ipcu-device";
+        dst-unit = <0x00000000>;
+        dst-channel = <0x00000003>;
+        interrupts = <0x00000000 0x00000005 0x00000002>;
+        direction = "recv";
+    };
+    snrtos0@4 {
+        compatible = "socionext,ipcu-device";
+        dst-unit = <0x00000000>;
+        dst-channel = <0x00000004>;
+        interrupts = <0x00000000 0x00000005 0x00000002>;
+        direction = "recv";
+    };
+    snrtos0@5 {
+        compatible = "socionext,ipcu-device";
+        dst-unit = <0x00000000>;
+        dst-channel = <0x00000005>;
+        interrupts = <0x00000000 0x00000005 0x00000002>;
+        direction = "send";
+    };
+    snrtos0@6 {
+        compatible = "socionext,ipcu-device";
+        dst-unit = <0x00000000>;
+        dst-channel = <0x00000006>;
+        interrupts = <0x00000000 0x00000005 0x00000002>;
+        direction = "recv";
+    };
+    snrtos0@7 {
+        compatible = "socionext,ipcu-device";
+        dst-unit = <0x00000000>;
+        dst-channel = <0x00000007>;
+        interrupts = <0x00000000 0x00000005 0x00000002>;
+        direction = "send";
+    };
+    snrtos1@1 {
+        compatible = "socionext,ipcu-device";
+        dst-unit = <0x00000001>;
+        dst-channel = <0x00000001>;
+        interrupts = <0x00000000 0x00000005 0x00000002>;
+        direction = "send";
+    };
+    snrtos1@2 {
+        compatible = "socionext,ipcu-device";
+        dst-unit = <0x00000001>;
+        dst-channel = <0x00000002>;
+        interrupts = <0x00000000 0x00000005 0x00000002>;
+        direction = "recv";
+    };
+    snrtos1@3 {
+        compatible = "socionext,ipcu-device";
+        dst-unit = <0x00000001>;
+        dst-channel = <0x00000003>;
+        interrupts = <0x00000000 0x00000005 0x00000002>;
+        direction = "send";
+    };
+    snrtos1@4 {
+        compatible = "socionext,ipcu-device";
+        dst-unit = <0x00000001>;
+        dst-channel = <0x00000004>;
+        src-int-ch = <0x0000000a>;
+        dst-int-ch = <0x00000004>;
+        interrupts = <0x00000000 0x00000005 0x00000002>;
+        direction = "recv";
+    };
+    snrtos1@5 {
+        compatible = "socionext,ipcu-device";
+        dst-unit = <0x00000001>;
+        dst-channel = <0x00000005>;
+        src-int-ch = <0x0000000b>;
+        dst-int-ch = <0x00000005>;
+        interrupts = <0x00000000 0x00000005 0x00000002>;
+        direction = "send";
+    };
+    gpio-leds {
+        compatible = "gpio-leds";
+        led_dumy1 {
+            label = "led_dumy1";
+            gpios = <0x0000001e 0x00000004 0x00000001>;
+            linux,default-trigger = "off";
+        };
+        led_dumy2 {
+            label = "led_dumy2";
+            gpios = <0x0000001e 0x00000004 0x00000002>;
+            linux,default-trigger = "off";
+        };
+    };
+    gpio_keys {
+        compatible = "gpio-keys";
+        status = "disable";
+        key_dummy {
+            label = "keydummy";
+            gpios = <0x0000001e 0x00000004 0x00000002>;
+            linux,code = <0x0000001e>;
+        };
+    };
+    fb_common {
+        ipcu_unit = <0x00000001>;
+        ipcu_ch = <0x00000004 0x000000ae>;
+        reg = <0x454ffc00 0x00000194>;
+        reg-names = "ipcu-buffer";
+    };
+    trampoline@0x454FFF00 {
+        compatible = "socionext,smp-trampoline";
+        reg = <0x454fff00 0x00000009>;
+    };
+};

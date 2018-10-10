@@ -1,0 +1,122 @@
+cat meminfo
+MemTotal:          76472 kB
+MemFree:           40532 kB
+MemAvailable:      52628 kB
+Buffers:             316 kB
+Cached:            14796 kB
+SwapCached:            0 kB
+Active:            11320 kB
+Inactive:           8868 kB
+Active(anon):       5132 kB
+Inactive(anon):      128 kB
+Active(file):       6188 kB
+Inactive(file):     8740 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+HighTotal:             0 kB
+HighFree:              0 kB
+LowTotal:          76472 kB
+LowFree:           40532 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:          5088 kB
+Mapped:             9008 kB
+Shmem:               184 kB
+Slab:               9560 kB
+SReclaimable:        880 kB
+SUnreclaim:         8680 kB
+KernelStack:         824 kB
+PageTables:          880 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:       38236 kB
+Committed_AS:     183364 kB
+VmallocTotal:    1998848 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+
+cat cmdline
+consoleblank=0 loglevel=8 init=/sbin/finit root=/dev/nandblk rootwait ro console=ttyUSI0,115200n8 console=/dev/tty1
+
+cat cpuinfo
+processor       : 0
+model name      : ARMv7 Processor rev 5 (v7l)
+BogoMIPS        : 79.87
+Features        : half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm
+CPU implementer : 0x41
+CPU architecture: 7
+CPU variant     : 0x0
+CPU part        : 0xc07
+CPU revision    : 5
+
+Hardware        : Socionext Milbeaut
+Revision        : 0000
+Serial          : 0000000000000000
+
+cat modules
+wlan 2811342 0 - Live 0x7f85e000 (O)
+cfg80211 174536 1 wlan, Live 0x7f82a000 (O)
+compat 1134 2 wlan,cfg80211, Live 0x7f826000 (O)
+usb_f_acm 4788 2 - Live 0x7f821000
+u_serial 7705 3 usb_f_acm, Live 0x7f81b000
+libcomposite 35346 10 usb_f_acm, Live 0x7f80b000
+configfs 20508 3 usb_f_acm,libcomposite, Live 0x7f800000
+
+cat version
+Linux version 4.4.15 (jenkins@abfb73072b4e) (gcc version 4.9.2 (GCC) ) #1 SMP PREEMPT Thu Jun 7 13:54:08 PDT 2018
+
+ cat devices
+Character devices:
+  1 mem
+  2 pty
+  3 ttyp
+  4 /dev/vc/0
+  4 tty
+  4 ttyS
+  5 /dev/tty
+  5 /dev/console
+  5 /dev/ptmx
+  7 vcs
+ 10 misc
+ 13 input
+ 29 fb
+ 81 video4linux
+ 90 mtd
+128 ptm
+136 pts
+180 usb
+189 usb_device
+249 ttyGS
+250 uio
+251 ttyUSI
+252 bsg
+253 media
+254 rtc
+
+Block devices:
+  1 ramdisk
+259 blkext
+  7 loop
+  8 sd
+ 31 mtdblock
+ 65 sd
+ 66 sd
+ 67 sd
+ 68 sd
+ 69 sd
+ 70 sd
+ 71 sd
+128 sd
+129 sd
+130 sd
+131 sd
+132 sd
+133 sd
+134 sd
+135 sd
+179 mmc
+
+ 
