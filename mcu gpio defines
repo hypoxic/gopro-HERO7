@@ -1,0 +1,26 @@
+t hal atsaml22 gpio
+
+gpio level name
+-------------------
+ A2    0   RTC_PMIC_WAKE
+ A3    1   FRONT_LCD_EN
+ A6    1   HB_MUX_EN
+ A7    1   MCU_WAKE_M0
+ A20   0   EP_INT
+ A27   1   VDD_WOV_EN
+ B9    1   WOV_RST_MCU
+ B11   0   I2C_MUX_EN
+ B22   1   I2C_MCU_SEL
+
+INPUT GPIOs
+gpio level name
+-------------------
+ A4    1   USB_CHRG_DET#
+ A5    0   M0_STANDBY
+ A11   1   SDCARD_CD
+ A14   0   WOV_MCU_INT
+ A15   1   USB_DET_INT
+ A18   1   PMIC_INT#
+ A21   1   EP_POR_RST#
+ A24   1   HB_INT
+ B23   1   BATT_PRESENT
