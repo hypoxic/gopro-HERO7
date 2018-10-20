@@ -1,0 +1,46 @@
+
+- mode : 3(HS400)
+media em get_partition 0
+0	FJ_EMMC_Get_Partition_Info.  start_sec_num=0x00000600, data_size=0x00000000, total_size=0x04000000  67108864
+1	FJ_EMMC_Get_Partition_Info.  start_sec_num=0x00020600, data_size=0x00000000, total_size=0x00100000	1048576
+2	FJ_EMMC_Get_Partition_Info.  start_sec_num=0x00021000, data_size=0x0000e260, total_size=0x00080000	524288
+3	FJ_EMMC_Get_Partition_Info.  start_sec_num=0x00021200, data_size=0x00000000, total_size=0x00200000	2097152
+4	FJ_EMMC_Get_Partition_Info.  start_sec_num=0x00022200, data_size=0x0329a280, total_size=0x20000000  536870912
+5	FJ_EMMC_Get_Partition_Info.  start_sec_num=0x00122200, data_size=0x00000000, total_size=0x02000000	33554432
+6	FJ_EMMC_Get_Partition_Info.  start_sec_num=0x00132200, data_size=0x00000000, total_size=0x04000000	67108864
+7	FJ_EMMC_Get_Partition_Info.  start_sec_num=0x00152200, data_size=0x0039e400, total_size=0x02000000	33554432
+8	FJ_EMMC_Get_Partition_Info.  start_sec_num=0x00162200, data_size=0x063ca000, total_size=0x10000000	268435456
+9	FJ_EMMC_Get_Partition_Info.  start_sec_num=0x001e2200, data_size=0x00080400, total_size=0x10000000	268435456
+10	FJ_EMMC_Get_Partition_Info.  start_sec_num=0x00262200, data_size=0x00000000, total_size=0x00800000	524288
+11	FJ_EMMC_Get_Partition_Info.  start_sec_num=0x00266200, data_size=0x00020000, total_size=0x00080000	524288
+12	FJ_EMMC_Get_Partition_Info.  start_sec_num=0x00266600, data_size=0x00020000, total_size=0x00080000	524288
+13	FJ_EMMC_Get_Partition_Info.  start_sec_num=0x00266a00, data_size=0x00500000, total_size=0x01400000	20971520
+14	FJ_EMMC_Get_Partition_Info.  start_sec_num=0x00270a00, data_size=0x00500000, total_size=0x01400000	20971520
+15 	FJ_EMMC_Get_Partition_Info.  start_sec_num=0x0027aa00, data_size=0x00000000, total_size=0x00b00000	11534336
+
+media em par_read
+FJ_EMMC_Partition_Read() end(0)
+ - num = 4
+ - partition 0  type=4, LBA=0x280300, size=0x100000
+ - partition 1  type=4, LBA=0x380300, size=0x100000
+ - partition 2  type=4, LBA=0x480300, size=0x200000
+ - partition 3  type=4, LBA=0x680300, size=0x200000
+ - partition 4  type=0, LBA=0x0, size=0x0
+ - partition 5  type=0, LBA=0x0, size=0x0
+ - partition 6  type=0, LBA=0x0, size=0x0
+ - partition 7  type=0, LBA=0x0, size=0x0
+Media Test Complete
+
+[00000092] emmc_nvm_init:Calibration: start_sec_num=0x00000600 data_size=0x00000000 total_size=0x04000000
+[00000092] emmc_nvm_init:Calibration: start_sec_num=0x00020600 data_size=0x00000000 total_size=0x00100000
+[00000092] emmc_nvm_init:User Pref: start_sec_num=0x00262200 data_size=0x00000000 total_size=0x00200000
+[00000092] emmc_nvm_init:System Pref: start_sec_num=0x00263200 data_size=0x00000000 total_size=0x00200000
+[00000093] emmc_nvm_init: FJ_EMMC_Partition_Read, part_num = 4
+[00000093]  - partition 0  type=4, LBA=0x280300, size=0x100000 1
+[00000093]  - partition 1  type=4, LBA=0x380300, size=0x100000 1 
+[00000093]  - partition 2  type=4, LBA=0x480300, size=0x200000 2
+[00000093]  - partition 3  type=4, LBA=0x680300, size=0x200000 2
+[00000093]  - partition 4  type=0, LBA=0x0, size=0x0
+[00000093]  - partition 5  type=0, LBA=0x0, size=0x0
+[00000093]  - partition 6  type=0, LBA=0x0, size=0x0
+[00000093]  - partition 7  type=0, LBA=0x0, size=0x0
