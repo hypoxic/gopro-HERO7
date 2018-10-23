@@ -1,0 +1,10 @@
+gpsend [bp|ca|bt|pl|in]
+gpsend SH
+
+ca camera
+bp bacpac
+bt ble
+pl platform
+in internal
+
+see camera_actions.c/spreedsheet

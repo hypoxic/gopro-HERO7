@@ -1,0 +1,105 @@
+Tavarua PVT (14773)
+AVS value:0x0F, CM0/CA7 frequency at 100MHz/600MHz, DDR memory size:2GB
+Target ID:12, Product ID:2, Board ID:12, Tavarua PVT
+
+vs
+Chopes
+AVS value:0x0E, CM0/CA7 frequency at 100MHz/600MHz, DDR memory size:1GB
+Target ID:6, Product ID:0, Board ID:6, Chopes PVT
+
+HERO6/HERO7 same EMMC partition table
+FJ_GetMem has two checks against 1Gb memory size, code has a 1gb map
+
+HERO6:  busybox devmem 0x28828240   0x00033603  == 6 - 6 = 30 = 0 
+HERO7   busybox devmem 0x28828240		0x00033803  == 8 - 6 = 32 = 2
+
+
+HERO6 BANZAI EaglePeak Release HD7.01.01.00.00 
+HERO7 CHOPES Release  compiled Jul 26 2017, 18:08:27 git-ffbcaa0
+ 
+[00000093]  - partition 7  type=0, LBA=0x0, size=0x0
+
+
+Socionext SC2000A EVB w/ RTOS VBD
+ 76268K/83968K
+ [    0.359290] Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+[    0.362253] 1e700000.usio_uart: ttyUSI1 at MMIO 0x1e700000 (irq = 21, base_baud = 6250000) is a sn-usio-uart
+[    0.362824] 1e700010.usio_uart: ttyUSI0 at MMIO 0x1e700010 (irq = 23, base_baud = 6250000) is a sn-usio-uart
+Atheros AR6003::QCA9377
+
+atsaml22 
+ublox_m8030
+st7796s
+ft6306
+st7570 <- front panel driver
+bmg250
+BHA250
+drv_muxctrl <- not enabled
+act9150
+pcf85063a < RTC
+
+pi3usb9281 <--charger detect?
+pi3usb9281_create_device: i2c_mux:
+
+check on & img sensor & gpdrv show cable
+QCA9377 agin
+imx277
+
+tca7408 - does not seem connected via hal definition. Hardwired to the mcu for the time being. may be used on other devices
+TOPLED
+GPS_RESET
+BT_WAKE_HOST
+WLAN_WAKE_HOST
+RTC_PMIC_WAKE
+
+
+hard code hal_arch_get_target_id
+
+
+
+
+IOS Accessory Authentication Device Information:
+    Device Type            : MFI
+    Device Version         : 0x05
+    Firmware Version       : 0x01
+    Protocol Major Version : 0x02
+    Protocol Minor Version : 0x00
+    Device ID              : 0x0200
+
+GPIO
+        CODEC_RESET
+        LCD_DSI_RST
+        FRONT_LCD_EN_EP
+        I2C_HANDSHAKE
+        CAM_SHDN#
+        TP_RST#
+        FRNT_RED_LED
+        TP_INT
+        POWER_KEY_EP
+        SHUTTER_KEY_EP
+        HB_INT
+        PMIC_INT#
+        GPS_TIME_PULSE
+        SHUB_BSH_INT
+        GPS_RESET#
+        EP_INT
+        SPKR_MODE
+        MFI_RST_N
+        IDC3_SEL
+
+i2c
+        mxm_i2c_0
+        mxm_i2c_1
+        mxm_i2c_2
+
+spi
+        mxm_spi_0
+        mxm_spi_1
+        mxm_spi_2
+
+To load, add cam id to CAMFWV.bin[4] at to 0x1e(30) to ?? It appears to have room for 4 firmwares
+
+h7
+A3F00000
+A4C32AC0
+0xD32AC0 ; bss_size

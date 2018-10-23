@@ -1,0 +1,2055 @@
+Things to send to "t c" tunnel when hooked via usb. Notice perror isn't hooked to usb so you don't get stderr
+
+ --- Power on/off ---
+ --- mode ---
+USAGE>system mode [menu/idle/view/capture/capture_night/capture_seq/capture_aeb/audio/avi/h264/hsview]
+USAGE>system mode [pb/restore/powrdown/calibration]
+USAGE>system mode view [4:3/16:9/3:2/panoramaUSAGE>system mode view movieUSAGE>system mode view movie [fhd/fhd_60]/panorama] [ZW/ZF]
+USAGE>system mode capture [16M/12M/10M/16:9/3:2/2M/VGA] [Z]
+USAGE>system mode capture_aeb
+USAGE>system mode panorama
+USAGE>system mode h264 [a/v]
+USAGE>system mode movie [h264] [audio]
+USAGE>system mode pb [thumbnail]
+USAGE>system mode restore [main/thumb/index/cls1/cls1thumb/cls2/cls2thumb/drawthumb]
+USAGE>system mode restore set [currentimageindex:1-9999] [main/thumb/cls1/cls1thumb/cls2/cls2thumb]
+USAGE>system status
+USAGE>system status2
+ --- interrupt ---
+USAGE>system [block/unblock] [MessageID]
+ --- host ---
+USAGE>system hostproc
+USAGE>system hostpre [Boot Step:1-3]
+USAGE>system getmsg
+USAGE>system postmsg [MessageID] [Pameter]
+ --- Realos---
+USAGE>system tsktrace [on/off]
+USAGE>system tskstat [TID]
+USAGE>system semstat
+USAGE>system flgstat
+USAGE>system mbxstat
+USAGE>system sleep [msec]
+USAGE>system chkstk
+ --- uart debug ---
+USAGE>system uart_dbg start [ch] [dma_ch]
+USAGE>system uart_dbg stop
+USAGE>system uart_dbg set output [0/1]
+USAGE>system uart_dbg set level [0:All-OFF 1:Err-ON 2:Warn-ON 3:Info-ON 4:Debug-ON]
+USAGE>system uart_dbg set head [0/1]
+USAGE>system uart_dbg set time [0/1]
+USAGE>system uart_dbg set level_host [0:All-OFF 1:Err-ON 2:Warn-ON 3:Info-ON 4:Debug-ON]
+USAGE>system uart_dbg config [0/1] [0/1]
+USAGE>system uart_dbg test
+ --- uart debug for CT ---
+USAGE>system uart_dbgct getchar
+USAGE>system uart_dbgct stop [usec] [dma_ch]
+ --- boot ---
+USAGE>system reboot
+ --- MBA ---
+USAGE>system mbalog [start/end/clear/test]
+USAGE>system mbalog out [0:terminal 1:text 2:binary] [filename]
+USAGE>system mbalog out_sel [0:terminal 1:text] [surface_no] [filename]
+USAGE>system mbalog out_all [0:terminal 1:text] [filename]
+USAGE>system mbalog remove [filename]
+USAGE>system mbalog [setkind/getkind] [kind(Hex)]
+ --- debug ---
+USAGE>system takelog
+USAGE>system dellog
+USAGE>system system mode view movie_solu [hd_30_ulaw/vga_30_ulaw/qvga_30_ulaw/hd_15_ulaw/vga_15_ulaw/qvga_15_ulaw] [2ch/1ch]
+USAGE>system bin2term address size filename
+USAGE>system term2bin address
+USAGE>system sdramcp ch src_addr dst_addr size wait_mode
+USAGE>system cache
+USAGE>system dcache clean
+USAGE>system dcache cleanflush
+USAGE>system decerr enable
+USAGE>system ahblock [1:lock 0:unlock]
+USAGE>system cpuusage [measure number] [measure time msec (1000~, 0:1000)]
+USAGE>system buildinfo
+USAGE>system linux state
+--- SIO ---
+USAGE>dd sio open [ch]
+                    # Open SIO channel.
+                    #   [ch] Channel (0~5)
+
+USAGE>dd sio set [ch] [master/slave] [mode] [lsb/msb] [count] [baudrate] [async]
+                    # Set control data.
+                    #   [ch] Channel (0~5)
+                    #   [master/slave] master:Master side
+                    #                  slave :Slave side
+                    #   [mode] normal_h:NORMAL_SC_H
+                    #          normal_l:NORMAL_SC_L
+                    #          spi_h   :SPI_SC_H
+                    #          spi_l   :SPI_SC_L
+                    #   [lsb/msb] lsb:LSB first
+                    #             msb:MSB first
+                    #   [count] 5~9:Transmit bit length
+                    #   [baudrate] Baudrate(bps)
+                    #   [async] operate to sync or async(sync operation is set void)
+
+USAGE>dd sio send [ch] [count] [dma_ch]
+                    # Send data.
+                    #   [ch] Channel (0~5)
+                    #   [count] Number of send data
+                    #   [dma_ch] DMA Channel (-1~7)(-1 = not use dma)
+
+USAGE>dd sio send_sdram [ch] [count] [dma_ch] [addr] [data]
+                    # Send data(tTo SDRAM).
+                    #   [ch] Channel (0~5)
+                    #   [count] Number of send data
+                    #   [dma_ch] DMA Channel (-1~7)(-1 = not use dma)
+                    #   [addr] Send data address(ex. 0x4A000000)
+                    #   [data] Send data(ex. 0xA5)
+
+USAGE>dd sio recv [ch] [count] [dma_ch]
+                    # Receive data.
+                    #   [ch] Channel (0~5)
+                    #   [count] Number of recieve data
+                    #   [dma_ch] DMA Channel (-1~7)(-1 = not use dma)
+
+USAGE>dd sio recv_sdram [ch] [count] [dma_ch] [addr]
+                    # Receive data(To SDRAM).
+                    #   [ch] Channel (0~5)
+                    #   [count] Number of recieve data
+                    #   [dma_ch] DMA Channel (-1~7)(-1 = not use dma)
+                    #   [addr] Receive data address(ex. 0x4B000000)
+
+USAGE>dd sio duplex [ch] [count]
+                    # Send and Recieve data(Full duplex mode).
+                    #   [ch] Channel (0~5)
+                    #   [count] Number of send data
+
+USAGE>dd sio duplex_sdram [ch] [count] [addr] [addr2] [data]
+                    # Send and Recieve data(Full duplex mode)(To SDRAM).
+                    #   [ch] Channel (0~5)
+                    #   [count] Number of send data
+                    #   [addr] Send data address(ex. 0x4A000000)
+                    #   [addr2] Receive data address(ex. 0x4B000000)
+                    #   [data] Send data(ex. 0xA5)
+
+USAGE>dd sio duplex_dma [ch] [count] [send_dma_ch] [recv_dma_ch]
+                    # Send and Recieve data(Full duplex mode).
+                    #   [ch] Channel (0~5)
+                    #   [count] Number of send data
+                    #   [send_dma_ch] DMA Channel (-1~7)(-1 = not use dma)
+                    #   [recv_dma_ch] DMA Channel (-1~7)(-1 = not use dma)
+
+USAGE>dd sio duplex_dma_sdram [ch] [count] [addr] [addr2] [data] [send_dma_ch] [recv_dma_ch]
+                    # Send and Recieve data(Full duplex mode)(To SDRAM).
+                    #   [ch] Channel (0~5)
+                    #   [count] Number of send data
+                    #   [addr] Send data address(ex. 0x4A000000)
+                    #   [addr2] Receive data address(ex. 0x4B000000)
+                    #   [data] Send data(ex. 0xA5)
+                    #   [send_dma_ch] DMA Channel (-1~7)(-1 = not use dma)
+                    #   [recv_dma_ch] DMA Channel (-1~7)(-1 = not use dma)
+
+USAGE>dd sio close [ch]
+                    # Close SIO channel.
+                    #   [ch] Channel (0~5)
+
+USAGE>dd sio stop [ch]
+                    # Stop SIO channel.
+                    #   [ch] Channel (0~5)
+
+--- SPI ---
+USAGE>dd spi open [ch]
+                    # Open SPI channel.
+                    #   [ch] Channel (0~2)
+
+USAGE>dd spi set [ch] [master/slave] [mode] [lsb/msb] [bit length] [baudrate] [wmk_tx] [wmk_rx] [dma_en] [dma_to] [async]
+                    # Set control data.
+                    #   [ch] Channel (0~2)
+                    #   [master/slave] master:Master side
+                    #                  slave :Slave side
+                    #   [mode] mode0:Clock Polarity=0, Clock Phase=0
+                    #          mode1:Clock Polarity=0, Clock Phase=1
+                    #          mode2:Clock Polarity=1, Clock Phase=0
+                    #          mode3:Clock Polarity=1, Clock Phase=1
+                    #   [lsb/msb] lsb:LSB first
+                    #             msb:MSB first
+                    #   [bit length] Transmit bit length (4~16)
+                    #   [baudrate] Baudrate(bps)
+                    #   [wmk_tx] TX FIFO Watermark value
+                    #   [wmk_rx] RX FIFO Watermark value
+                    #   [dma_en] DMA enable
+                    #   [dma_to] DMA Receive Timeout
+                    #   [async] operate to sync or async(sync operation is set void)
+
+USAGE>dd spi set_send [ch] [count] [data1] [data2] [data3] [data4] ...
+                    # Send data.
+                    #   [ch] Channel (0~2)
+                    #   [count] Number of send data
+                    #   [datax] send data
+
+USAGE>dd spi send [ch] [ssout] [sspol] [cont_trans] [count] [dma_ch]
+                    # Send data.
+                    #   [ch] Channel (0~2)
+                    #   [ssout] Slave Select Output selection(0~3)
+                    #   [sspol] Slave Select Polarity(0/1)
+                    #   [cont_trans] 0:ssOut goes inactive between successive transfers
+                    #                1:ssOut become inactive when the TX FIFO is empty
+                    #                2:ssOut remain active even when the TX FIFO is empty
+                    #   [count] Number of send data
+                    #   [dma_ch] DMA Channel (-1~7)(-1 = not use dma)
+
+USAGE>dd spi send_sdram [ch] [ssout] [sspol] [cont_trans] [count] [dma_ch] [addr] [data]
+                    # Send data(tTo SDRAM).
+                    #   [ch] Channel (0~2)
+                    #   [ssout] Slave Select Output selection(0~3)
+                    #   [sspol] Slave Select Polarity(0/1)
+                    #   [cont_trans] 0:ssOut goes inactive between successive transfers
+                    #                1:ssOut become inactive when the TX FIFO is empty
+                    #                2:ssOut remain active even when the TX FIFO is empty
+                    #   [count] Number of send data
+                    #   [dma_ch] DMA Channel (-1~7)(-1 = not use dma)
+                    #   [addr] Send data address(ex. 0x4A000000)
+                    #   [data] Send data(ex. 0xA5)
+
+USAGE>dd spi recv [ch] [ssout] [sspol] [cont_trans] [count] [dma_ch]
+                    # Receive data.
+                    #   [ch] Channel (0~2)
+                    #   [ssout] Slave Select Output selection(0~3)
+                    #   [sspol] Slave Select Polarity(0/1)
+                    #   [cont_trans] 0:ssOut goes inactive between successive transfers
+                    #                1:ssOut become inactive when the TX FIFO is empty
+                    #                2:ssOut remain active even when the TX FIFO is empty
+                    #   [count] Number of recieve data
+                    #   [dma_ch] DMA Channel (-1~7)(-1 = not use dma)
+
+USAGE>dd spi recv_sdram [ch] [ssout] [sspol] [cont_trans] [count] [dma_ch] [addr]
+                    # Receive data(To SDRAM).
+                    #   [ch] Channel (0~2)
+                    #   [ssout] Slave Select Output selection(0~3)
+                    #   [sspol] Slave Select Polarity(0/1)
+                    #   [cont_trans] 0:ssOut goes inactive between successive transfers
+                    #                1:ssOut become inactive when the TX FIFO is empty
+                    #                2:ssOut remain active even when the TX FIFO is empty
+                    #   [count] Number of recieve data
+                    #   [dma_ch] DMA Channel (-1~7)(-1 = not use dma)
+                    #   [addr] Receive data address(ex. 0x4B000000)
+
+USAGE>dd spi duplex [ch] [ssout] [sspol] [cont_trans] [count]
+                    # Send and Recieve data(Full duplex mode).
+                    #   [ch] Channel (0~2)
+                    #   [ssout] Slave Select Output selection(0~3)
+                    #   [sspol] Slave Select Polarity(0/1)
+                    #   [cont_trans] 0:ssOut goes inactive between successive transfers
+                    #                1:ssOut become inactive when the TX FIFO is empty
+                    #                2:ssOut remain active even when the TX FIFO is empty
+                    #   [count] Number of send data
+
+USAGE>dd spi duplex_sdram [ch] [ssout] [sspol] [cont_trans] [count] [addr] [addr2] [data]
+                    # Send and Recieve data(Full duplex mode)(To SDRAM).
+                    #   [ch] Channel (0~2)
+                    #   [ssout] Slave Select Output selection(0~3)
+                    #   [sspol] Slave Select Polarity(0/1)
+                    #   [cont_trans] 0:ssOut goes inactive between successive transfers
+                    #                1:ssOut become inactive when the TX FIFO is empty
+                    #                2:ssOut remain active even when the TX FIFO is empty
+                    #   [count] Number of send data
+                    #   [addr] Send data address(ex. 0x4A000000)
+                    #   [addr2] Receive data address(ex. 0x4B000000)
+                    #   [data] Send data(ex. 0xA5)
+
+USAGE>dd spi duplex_dma [ch] [ssout] [sspol] [cont_trans] [count] [send_dma_ch] [recv_dma_ch]
+                    # Send and Recieve data(Full duplex mode).
+                    #   [ch] Channel (0~2)
+                    #   [ssout] Slave Select Output selection(0~3)
+                    #   [sspol] Slave Select Polarity(0/1)
+                    #   [cont_trans] 0:ssOut goes inactive between successive transfers
+                    #                1:ssOut become inactive when the TX FIFO is empty
+                    #                2:ssOut remain active even when the TX FIFO is empty
+                    #   [count] Number of send data
+                    #   [send_dma_ch] DMA Channel (-1~7)(-1 = not use dma)
+                    #   [recv_dma_ch] DMA Channel (-1~7)(-1 = not use dma)
+
+USAGE>dd spi duplex_dma_sdram [ch] [ssout] [sspol] [cont_trans] [count] [addr] [addr2] [data] [send_dma_ch] [recv_dma_ch]
+                    # Send and Recieve data(Full duplex mode)(To SDRAM).
+                    #   [ch] Channel (0~2)
+                    #   [ssout] Slave Select Output selection(0~3)
+                    #   [sspol] Slave Select Polarity(0/1)
+                    #   [cont_trans] 0:ssOut goes inactive between successive transfers
+                    #                1:ssOut become inactive when the TX FIFO is empty
+                    #                2:ssOut remain active even when the TX FIFO is empty
+                    #   [count] Number of send data
+                    #   [addr] Send data address(ex. 0x4A000000)
+                    #   [addr2] Receive data address(ex. 0x4B000000)
+                    #   [data] Send data(ex. 0xA5)
+                    #   [send_dma_ch] DMA Channel (-1~7)(-1 = not use dma)
+                    #   [recv_dma_ch] DMA Channel (-1~7)(-1 = not use dma)
+
+USAGE>dd spi close [ch]
+                    # Close SPI channel.
+                    #   [ch] Channel (0~2)
+
+USAGE>dd spi stop [ch]
+                    # Stop SPI channel.
+                    #   [ch] Channel (0~2)
+
+--- Gyro IF ---
+USAGE>dd gyroif start [mode] [lsb/msb] [bit length] [baudrate] [wmk_tx] [wmk_rx] [sspol] [cont_trans] [data_count] [total_data_count] [dma_to] [tmr_clk] [read_regi]
+                    # Start Gyro data read.
+                    #   [mode] mode0:Clock Polarity=0, Clock Phase=0
+                    #          mode1:Clock Polarity=0, Clock Phase=1
+                    #          mode2:Clock Polarity=1, Clock Phase=0
+                    #          mode3:Clock Polarity=1, Clock Phase=1
+                    #   [lsb/msb] lsb:LSB first
+                    #             msb:MSB first
+                    #   [bit length] Transmit bit length (4~16)
+                    #   [baudrate] Baudrate(bps)
+                    #   [wmk_tx] TX FIFO Watermark value
+                    #   [wmk_rx] RX FIFO Watermark value
+                    #   [sspol] Slave Select Polarity(0/1)
+                    #   [cont_trans] 0:ssOut goes inactive between successive transfers
+                    #                1:ssOut become inactive when the TX FIFO is empty
+                    #                2:ssOut remain active even when the TX FIFO is empty
+                    #   [data_count] Count of gyro data per Gyro interrupt (1 to 65536)
+                    #   [total_data_count] Total count of read data buffer (1 to 65536)
+                    #   [dma_to] DMA Receive Timeout
+                    #   [tmr_clk] 64bit Timer count clock select(2/8/32)
+                    #   [read_regi] Gyro data read register address
+
+USAGE>dd gyroif stop
+                    # Stop Gyro data read.
+
+USAGE>dd gyroif update_data_addr [addr]
+                    # Update Gyro data receive address.
+                    #   [addr] Gyro data receive address
+
+USAGE>dd gyroif update_count [count]
+                    # Update Gyro data count.
+                    #   [count] Gyro data count
+
+USAGE>dd gyroif update_stmp_addr [addr]
+                    # Update Gyro time stamp buffer address.
+                    #   [addr] Time stamp buffer address
+
+USAGE>dd gyroif read [trigger] [send_addr] [recv_addr] [data_count]
+                    # Start Gyro data read.
+                    #   [trigger] 0:CPU (immediately), 1:External signal
+                    #   [send_addr] Send buffer address
+                    #   [recv_addr] Receive buffer address
+                    #   [data_count] Gyro data count
+
+USAGE>dd gyroif print
+                    # Print Gyro data.
+
+--- PWM ---
+USAGE>dd pwm [ch] set [one/pwm] [pole/pold] [cb0/1/2/3] [rate/time] [hz/time1] [rate/time2] [rste/rstd]
+                    # Set control data.
+                    #   [ch] Channel (0~15)
+                    #   [one/pwm]     one:One shot mode
+                    #                 pwm:Continuous mode
+                    #   [pole/pold]   pole:Polarity reverse
+                    #                 pold:Polarity normal
+                    #   [cb0/1/2/3]   cb0:Both pcallback1 and pcallback2 is NULL
+                    #                 cb1:Set cmd_ct_dd_pwm_callback1 to pcallback1(pcallback2 is NULL)
+                    #                 cb2:Set cmd_ct_dd_pwm_callback2 to pcallback2(pcallback1 is NULL)
+                    #                 cb3:Set both pcallback1 and 2(cmd_ct_dd_pwm_callback1 and 2)
+                    #   [rate/time]   rate:Set pwm by ratio
+                    #                 time:Set pwm by time
+                    #   [hz/time1]    When [rate/time] is rate,please set cycle_hz
+                    #                 When [rate/time] is time,please set time1
+                    #   [rate/time2]  When [rate/time] is rate,please set rate
+                    #                 When [rate/time] is time,please set time2
+                    #   [rste/rstd]   rste:Restart enable
+                    #                 rstd:Restart disable
+
+USAGE>dd pwm [ch] set_e [clk0/4/16/64] [poln/polr] [chasn/chasr] [holde/holdd] [forcee/forced] [step_num] [under_num] [cb0/1]
+                    # Set control data.
+                    #   [ch] Channel (0~15)
+                    #   [clk0/4/16/64]  clk0:not dividing frequency
+                    #                   clk4:4 dividing frequency
+                    #                   clk16:16 dividing frequency
+                    #                   clk64:64 dividing frequency
+                    #   [poln/polr]     pole:Polarity reverse
+                    #                   pold:Polarity normal
+                    #   [chasn/chasr]   chasn:Channel assign normal  : A B C D
+                    #                   chasr:Channel assign reverse : C B A D
+                    #   [holde/holdd]   holde:Hold enable(hold[0]-hold[3]=1)
+                    #                   holdd:Hold enable(hold[0]-hold[3]=0)
+                    #   [forcee/forced] forcee:Force to 0(0000)
+                    #                   forced:Force to 1(0110)
+                    #   [step_num]      Number of step data
+                    #   [under_num]     Number of under run step data
+                    #   [cb0/1]         cb0:Callback enable
+                    #                   cb1:Callback disable
+
+USAGE>dd pwm set_e_dt [step] [cyc_num] [duty_num] [pulse_num] [link]
+                    # Set PWM Timer E Test Data.
+                    #   [step]      number (0~16)
+                    #   [cyc_num]   cycle number (1~65535)
+                    #   [duty_num]  duty number (1~65535)
+                    #   [pulse_num] pulse number (1~1024)
+                    #   [link]      0:last data, 1:not last data
+
+USAGE>dd pwm [ch] open
+                    # Open PWM channel.
+                    #   [ch] Channel (0~15)
+
+USAGE>dd pwm [ch] open_e
+                    # Open PWM channel(E_mode).
+                    #   [ch] Channel (0~15)
+
+USAGE>dd pwm [ch] start
+                    # Start PWM channel.
+                    #   [ch] Channel (0~15)
+
+USAGE>dd pwm [ch] stop
+                    # Stop PWM channel.
+                    #   [ch] Channel (0~15)
+
+USAGE>dd pwm [ch] close
+                    # Close PWM channel.
+                    #   [ch] Channel (0~15)
+
+--- ExtInterrupt ---
+USAGE>dd int set [number] [priority] [trigger_type]
+                    # Set  config.
+                    #   [number] Port number(0~114). Please see FJ_GPIO_PORT.
+                    #   [priority] Priority status(0~15).
+                    #   [trigger_type] low:LOW_LEVEL
+                    #                  high:HIGH_LEVEL
+                    #                  rise:RISING_EDGE
+                    #                  other value:FALLING_EDGE
+
+USAGE>dd int get [number] [uiState]
+                    # Set ExtInterrupt state.
+                    #   [number] Port number(0~114). Please see FJ_GPIO_PORT.
+                    #   [uiState] 0:Interrupt is disable
+                    #             1:Interrupt is enable
+
+--- UDC ---
+USAGE>dd udc init [zin_ctrl]
+                    # Initialize UDC.
+                    #   [zin_ctrl] 0:Z-terminal disable
+                    #              1:Z-terminal enable
+
+USAGE>dd udc open [ch]
+                    # Open UDC channel.
+                    #   [ch] Channel (0~5)
+
+USAGE>dd udc close [ch]
+                    # Close UDC channel.
+                    #   [ch] Channel (0~5)
+
+USAGE>dd udc start [mode] [ch] [UDCR] [RCR] [Compare clear] [Reload] [Function] [Detect edge] [Compare interrupt] [Under/Over-flow interrupt] [Count direction interrupt] [Count clock edge]
+                    # Start UDC channel.
+                    #   [ch] Channel (0~5)
+                    #   [mode] updown:Up down count mode
+                    #          phase2:Phase lag count mode 2 mode
+                    #          phase4:Phase lag count mode 4 mode
+                    #   [UDCR] Up/Down counter value.
+                    #   [RCR]  Reload/Compare value.
+                    #   [Compare clear] 0:Disable
+                    #                   1:Enable
+                    #   [Reload]        0:Disable
+                    #                   1:Enable
+                    #   [Function]      Function of terminal ZIN.
+                    #                   0:Clear
+                    #                   1:Gate
+                    #   [Detect edge]   Detect edge of terminal ZIN.
+                    #                   0:Not
+                    #                   1:Fail/Low
+                    #                   2:Rise/High
+                    #   [Compare interrupt] 0:Disable
+                    #                       1:Enable
+                    #   [Under/Over-flow interrupt] 0:Disable
+                    #                               1:Enable
+                    #   [Count direction interrupt] 0:Disable
+                    #                               1:Enable
+                    #   [Count clock edge] 0:Not
+                    #                      1:Fall
+                    #                      2:Rise
+                    #                      3:Both
+
+USAGE>dd udc start_tim [ch] [time]
+                    # Start UDC channel.
+                    #   [ch] Channel (0~2)
+                    #   [time] Wait time(usec)
+
+USAGE>dd udc stop [ch]
+                    # Stop UDC channel.
+                    #   [ch] Channel (0~2)
+
+USAGE>dd udc cb set [ch] [function]
+                    # Set callback function pointer.
+                    #   [ch] Channel (0~2)
+                    #   [function] 0:Main function
+                    #              1:Sub function
+
+USAGE>dd udc rcr set [ch] [RCR]
+                    # Set RCR register value.
+                    #   [ch] Channel (0~2)
+                    #   [RCR] Reload/Compare value
+
+USAGE>dd udc udcr get [ch]
+                    # Get UDCR register value.
+                    #   [ch] Channel (0~2)
+
+USAGE>dd udc udcr set [ch] [UDCR]
+                    # Set UDCR register value.
+                    #   [ch] Channel (0~2)
+                    #   [UDCR] Up/Down counter value
+
+USAGE>dd udc udcr clear [ch]
+                    # Clear UDCR register value.
+                    #   [ch] Channel (0~2)
+
+USAGE>dd udc port ph_lag start [ch] [AIN interval] [BIN interval] [Gap of start timing]
+                    # Start virtual AIN/BIN input for phase lag count mode.
+                    #   [ch] Channel (0~2)
+                    #   [AIN interval] AIN interval(msec)
+                    #   [BIN interval] BIN interval(msec)
+                    #   [Gap of start timing] The unit is a millisecond
+
+USAGE>dd udc port ph_lag stop
+                    # Stop virtual AIN/BIN input for phase lag count mode.
+
+USAGE>dd udc port ain start [ch] [AIN interval]
+                    # Start virtual AIN input.
+                    #   [ch] Channel (0~2)
+                    #   [AIN interval] AIN interval(msec)
+
+USAGE>dd udc port ain stop
+                    # Stop virtual AIN input.
+
+USAGE>dd udc port bin_start [ch] [BIN interval]
+                    # Start virtual BIN input.
+                    #   [ch] Channel (0~2)
+                    #   [BIN interval] BIN interval(msec)
+
+USAGE>dd udc port bin_stop
+                    # Stop virtual BIN input.
+
+USAGE>dd udc port zin [ch] [h/l]
+                    # Change ZIN level.
+                    #   [ch] Channel (0~2)
+                    #   [h/l] h:HIGH
+                    #         l:LOW
+
+USAGE>dd udc observe start [ch] [cycle time]
+                    # Start cycle handler for observe UDCR register.
+                    #   [ch] Channel (0~2)
+                    #   [cycle time] The unit is a millisecond
+
+USAGE>dd udc observe stop
+                    # Stop cycle handler.
+USAGE>dd udc udf get [ch]
+                    # Get UDF0/1 register value.
+                    #   [ch] Channel (0~2)
+
+USAGE>dd udc err
+                    # Error processing test.
+
+--- Timer32 ---
+USAGE>dd tmr32 open
+                    # Open Timer32 channel.
+                    #   [ch] Channel (0~9)
+
+USAGE>dd tmr32 set [ch] [usec]
+                    # Set Timer32 timer value.
+                    #   [ch] Channel (0~9)
+                    #   [usec] timer value (usec order)
+
+USAGE>dd tmr32 ctrl [ch] [ctrl_status] [reload_counter1] [reload_counter2]
+                    # Set Timer32 control value.
+                    #   [ch]              Channel (0~9)
+                    #   [ctrl_status]     control status (Please set TMCSR  register value.)
+                    #   [reload_counter1] reload count1  (Please set TMRLR1 register value.)
+                    #   [reload_counter2] reload count2  (Please set TMRLR2 register value.)
+
+USAGE>dd tmr32 tout [ch] [enable] [out_level]
+                    # Set to TOUT function.
+                    #   [ch] Channel (0~9)
+                    #   [enable]    TOUT enable. (=TRUE:enable, =FALSE:disable)
+                    #   [out_level] Out level (0/1)
+
+USAGE>dd tmr32 start [ch] [reload]
+                    # Start Timer32.
+                    #   [ch] Channel (0~9)
+                    #   [reload]    Operation mode (=TRUE:Reload mode, =FALSE:One-shot mode)
+
+USAGE>dd tmr32 stop [ch]
+                    # Stop Timer32 channel.
+                    #   [ch] Channel (0~9)
+
+USAGE>dd tmr32 close [ch]
+                    # Close Timer32 channel.
+                    #   [ch] Channel (0~9)
+
+USAGE>dd top display clockstop
+                    # Display Clock-Stop-Status.
+USAGE>dd top display clocksel
+                    # Display Clock-Select-Status.
+USAGE>dd top display pll
+                    # Display PLL-Status.
+USAGE>dd top display reset
+                    # Display Reset-Status.
+
+USAGE>dd top display topother
+                    # Display ChipTop-Other-Status.
+
+USAGE>dd cec start
+                    # Cec process start.
+
+USAGE>dd cec stop
+                    # Cec process stop..
+
+USAGE>dd cec message
+                    # Send cec message.
+                    #   [message] cec message.(Standby, UserControl, OneTouchPlay, Ping, GetDevicePowerStatus,
+                    #                                                GetMenuLanguage, RequestActiveSource, GetCECVersion, MenuRequest,
+                    #                                                GivePhysicalAddress, GiveDeviceVendorID )
+                    #   [operand] cec message operand(UICode:(0~255), MenuRequestType:(Query,Activate,Deactivate)).
+
+--- UART ---
+USAGE>dd uart open [ch]
+                    # Open UART channel.
+                    #   [ch] Channel (0~5)
+
+USAGE>dd uart close [ch]
+                    # Close UART channel.
+                    #   [ch] Channel (0~5)
+
+USAGE>dd uart set [ch] [mode] [baudrate] [length] [parity] [stop] [direction] [format] [flow]
+                    # Set control data.
+                    #   [ch] Channel (0~5)
+                    #   [mode] Operation mode (normal or multi)
+                    #   [baudrate] bps (1200,2400,4800,9600,14400,19200,38400,57600,115200)
+                    #   [length] data length (5~8)
+                    #   [parity] parity select (none,even,odd)
+                    #   [stop] stop bit (1 or 2)
+                    #   [direction] Transferring direction (lsb or msb)
+                    #   [format] Inversion serial data format (nrz or inv_nrz)
+                    #   [flow] Hardware flow control enable (flow_en or flow_dis)
+
+USAGE>dd uart start [ch]
+                    # Start UART channel.
+                    #   [ch] Channel (0~5)
+
+USAGE>dd uart stop [ch]
+                    # Stop UART channel.
+                    #   [ch] Channel (0~5)
+
+USAGE>dd uart send [ch] [data] [dma_ch]
+                    # Send data.
+                    #   [ch] Channel (0~5)
+                    #   [data] Send data (string)
+                    #   [dma_ch] DMA Channel (-1~7)(-1 = not use dma)
+
+
+USAGE>dd uart recv [ch] [data-count] [dma_ch]
+                    # Receive data.
+                    #   [ch] Channel (0~5)
+                    #   [data-count] Receive data count
+                    #   [dma_ch] DMA Channel (-1~7)(-1 = not use dma)
+
+
+USAGE>dd uart sendSlaveAddr [ch] [address]
+                    # Send target slave address.
+                    #   [ch] Channel (0~5)
+                    #   [address] slave address (hex string)
+
+
+USAGE>dd uart setSlaveAddr [ch] [address]
+                    # Set slave address.
+                    #   [ch] Channel (0~5)
+                    #   [address] slave address (1~255)
+USAGE>cap disp [m(=menu)/v(=view)/p(=play)/t(=thumb)] [pos_x] [pos_y] [width] [lines] [t(=ture)/f(=false)]
+USAGE>cap ssen [c(=capture)/v(=view)] [pos_x] [pos_y] [width] [lines]
+USAGE>cap gsen
+USAGE>cap effect [effect_type]
+USAGE>cap size [v/c] [width] [lines]
+USAGE>cap cr [main/vga/hd] [cr enum(0~44)]
+USAGE>cap hold [time(0~10000/65535)]
+USAGE>cap qview [can/rem]
+USAGE>cap sraw c [0:off 1:on] [0(=12bit-pack)/1(=16bit-nonpack)]
+USAGE>cap sraw v [0:off 1:on]
+USAGE>cap scr [vga/hd] [0:off 1:on]
+USAGE>cap file [jpg/tif]
+USAGE>cap cut [percentage(0~100)]
+USAGE>cap store [d(=delete)/s(=store)]
+USAGE>cap setseq [length] [delay]
+USAGE>cap getseq
+USAGE>cap checkmh [t(=ture)/f(=false)]
+USAGE>cap draftraw [0:rawdata output off/ 1:rawdata output on]
+USAGE>cap user_confirm [0:not save 1:save]
+USAGE>cap dzoom [tele/wide/auto/set] [0~15]
+USAGE>cap bayer_type [0:12bit/1:16bit/2:8bit]
+USAGE>cap pause [m/f] [on/off] [vd_cnt]
+USAGE>cap dispstop [on/off]
+USAGE>cap dispcycle [cycle]
+USAGE>cap pgreadout [1:on 0:off]
+USAGE>cap pro_b2y [1:still mode 0:movie mode]
+USAGE>cap shutter [0:global 1:rolling]
+USAGE>cap sdhd [0:sd 1:hd]
+USAGE>cap iip_cache
+USAGE>cap regdump [0:console/1:SD card] [capture mode 0~3 ]
+USAGE>cap apidbg jpg_enc [width] [lines] [0:ycc444 1:ycc422 2:ycc420] [0:plane 1:plane and dot]
+USAGE>cap apidbg b2y [bay_width] [bay_lines] [ycc_width] [ycc_lines]
+USAGE>cap apidbg fj_osdblend [0:BLEND 1:GPC]
+USAGE>cap apidbg fj_blend
+USAGE>cap apidbg fj_imageconv [s_fmt] [s_width] [s_lines] [d_fmt] [d_width] [d_lines] [fill_en]
+USAGE>cap apidbg fj_imagecrop [s_fmt] [s_width] [s_lines] [d_fmt] [d_width] [d_lines] [x] [y] [cropwidth] [croplines]
+USAGE>cap apidbg fj_imagefreerect [s_fmt] [s_width] [s_lines] [d_fmt] [d_width] [d_lines] [fill_en] [0:bilinear 1:bicubic] [timeout]
+USAGE>cap errdbg [error_factor(0~20)] [channel(0~7)]
+USAGE>cap rawsave [1:on 0:off]
+USAGE>cap b2y_hist [0/1]
+USAGE>cap seq
+USAGE>cap mapmode [mode_no]
+USAGE>cap conn print [all]
+USAGE>cap conn create
+USAGE>cap conn winprint [demosaic_id]
+USAGE>cap 3dnr [0:Bypass off 1:Bypass on 2:Bypass on(Still)]
+******************** IQ function ********************
+USAGE> iq senmode [sen_id] [IQ still mode No 0~4] [up]
+USAGE> iq seniso [sen_id] [ISO speed axis index 0.0~N.9] [up]
+USAGE> iq senscene [sen_id] [scene No axis index 0~N] [up]
+USAGE> iq senctemp [sen_id] [color temperature axis index 0.0~N.9] [up]
+USAGE> iq senev [sen_id] [exposure value axis index 0~N] [up]
+USAGE> iq sentv [sen_id] [time value axis index 0~N] [up]
+USAGE> iq senup [sen_id]
+USAGE> iq senstat [sen_id]
+USAGE> iq mode [demosaic_id] [IQ still mode No 0~4] [up]
+USAGE> iq iso [demosaic_id] [ISO speed axis index 0.0~N.9] [up]
+USAGE> iq scene [demosaic_id] [scene No axis index 0~N] [up]
+USAGE> iq ctemp [demosaic_id] [color temperature axis index 0.0~N.9] [up]
+USAGE> iq ev [demosaic_id] [exposure value axis index 0~N] [up]
+USAGE> iq tv [demosaic_id] [time value axis index 0~N] [up]
+USAGE> iq up [demosaic_id]
+USAGE> iq stat [demosaic_id]
+USAGE> iq dpc del [1~3:calibration target] [0~4:tbl index] [delete file path]
+USAGE> iq dpc clr [1~3:calibration target] [0~4:tbl index]
+USAGE> iq dpc load [1~3:calibration target] [0~4:tbl index] [load file path]
+USAGE> iq dpc save [1~3:calibration target] [0~4:tbl index] [save file path]
+USAGE> iq dpc onoff_comp [demosaic_id] [0:off 1:correct]
+USAGE> iq dpc dump [1~3:calibration target] [0~4:tbl index]
+USAGE> iq dpc mpipe_dump [demosaic_id]
+USAGE> iq dpc stat [demosaic_id]
+USAGE> iq ccratio [0:0%% 1:25%% 2:50%% 3:75%% 4:100%%] [4-8:image_type]
+USAGE> iq drvi
+USAGE> iq fnamec [IQ common parameter filename]
+USAGE> iq fnameb [0:capture 1:view SD 2:view:HD] [IQ By mode parameter filename]
+USAGE> iq load [0:capture 1:view SD 2:view HD]
+USAGE> iq fshd onoff [0:off 1:on]
+USAGE> iq fshd load [calib_tgt:0~6] [tbl_file_path]
+USAGE> iq fshd save [dmosaic_id] [tbl_file_path]
+USAGE> iq fshd link [to ozoom] [to fnum] [from ozoom] [from fnum]
+USAGE> iq fshd stat
+USAGE> iq fshd sel [demosaic_id] [calib_tgt:0~6] [ozoom idx 0-65534] [f number 0-65535]
+USAGE> iq fshd dbgsave [demosaic_id] [side idx 0-1] [file path low] [file path high]
+USAGE> iq fshd mpipe_stat
+USAGE> iq fshd vflip [0:off 1:on]
+USAGE> iq fshd stat
+USAGE> iq fshdl0 test [src_file] [src_width] [src_lines] [src_g_width] [dst_file] [dst_width] [dst_lines] [dst_g_width]
+USAGE> iq fshdl0 stat
+USAGE> iq frect onoff [0:off 1:on]
+USAGE> iq frect dump [tbl idx 0~2]
+USAGE> iq frect stat
+USAGE> iq frect load [0:capture 1:view 5:movie] [file path]
+USAGE> iq frect calc [0:capture 1:view 5:movie] [file path] [s_width] [s_lines] [d_width] [d_lines]
+USAGE> iq frect save [tbl_mng_idx] [tbl_sub_idx] [file path]
+USAGE> iq frect dumpfile [tbl_idx] [plot_pos]
+USAGE> iq cnr onoff [0:off 1:otf on 2:ofl 1/1 3:ofl 1/2 4:ofl 4/1 5:ofl 1/8 6:iqbin]
+USAGE> iq cnr stat
+USAGE> iq cnr lpf [1:disable 2:1/2 3:1/4 4:1/8]
+USAGE> iq cnr mode [1:Y path 2:C path 3:C&Y path]
+USAGE> iq ela onoff [0:off 1~5:process count 6:iqbin]
+USAGE> iq ela stat
+USAGE> iq dbg onoff obmacro [0:off 1:on]
+USAGE> iq dbg onoff dpcmacro [0:off 1:on 2:IQ.bin]
+USAGE> iq dbg onoff cagmacro [0:off 1:on 2:IQ.bin]
+USAGE> iq dbg onoff_chg_log [0:off 1:on]
+USAGE> iq dbg regdump [addr or name] [1:1byte 2:2byte 4:4byte] [bit_right_shfit] [bit_width]
+USAGE> iq dbg regdump list
+USAGE> iq dbg dump photo
+USAGE> iq dbg dump video [on|off]
+USAGE> iq dbg dump save [dst_file]
+USAGE> iq regwbuf stat
+USAGE> iq cag stat [demosaic_id]
+USAGE> iq cag stat_tbl
+USAGE> iq cag mpipe_stat
+USAGE> iq cag dump [still_mode] [tbl_idx]
+USAGE> iq cag load [still_mode] [tbl_idx] [file_path]
+USAGE> iq cag free [still_mode] [tbl_idx]
+USAGE> iq cag mpipedump [demosaic_id] [x_idx] [y_idx]
+USAGE> iq cag tblidx [tbl_idx -1:IQ.bin] [demosaic_id]
+USAGE> iq cag tblfix [0:off 1:on] [x0] [y0] [x1] [y1]
+USAGE> iq cag tblfix stat
+USAGE> iq cag conv [src IQ still mode No 0~4] [dst IQ still mode No 0~4] [src_sta_x] [src_sta_y] [src_width] [src_lines] [dst_width] [dst_lines]
+USAGE> iq cag vflip [0:off 1:on]
+---MEDIA Command---
+USAGE>fs mount [media ID] [drive name]
+     # mount media
+USAGE>fs set_media [sd0/sd1]
+     # set ch0 or ch1 of the SD-Card slot.
+        sd0/0 : ch0 of the SD-Card slot.
+        sd1/1 : ch1 of the SD-Card slot.
+USAGE>fs format [A/B/C/D/E/F/G/SD/SD_progress]
+     # format media (quick format)
+        A           : resident memory A drive
+        B           : resident memory B drive
+        C           : resident memory C drive
+        D           : resident memory D drive
+        E           : resident memory E drive
+        F           : resident memory F drive
+        G           : resident memory G drive
+        SD          : extended memory I drive
+        SD_progress : extended memory I drive(with progress)
+USAGE>fs full_format [A/B/C/D/E/F/G/SD]
+     # format media (full format)
+        A  : resident memory A drive
+        B  : resident memory B drive
+        C  : resident memory C drive
+        D  : resident memory D drive
+        E  : resident memory E drive
+        F  : resident memory F drive
+        G  : resident memory G drive
+        SD : extended memory I drive
+USAGE>fs status
+     # get storege media status
+USAGE>fs status_ex
+     # get storege media status (EX)
+USAGE>fs geometry_ex
+     # get media information
+USAGE>fs get_media_format
+     # get media format type
+USAGE>fs set_vollabel [VolLabel]
+     # set media volume label
+USAGE>fs nf first
+     # NF first format
+USAGE>fs nf check_mbr
+     # NF MBR check
+USAGE>fs nf make_mbr
+     # NF MBR make
+USAGE>fs nf copy_drive [SrcDrv] [DstDrv]
+     # copy NF drive data
+        [SrcDrv] : copy source drive name
+         I : I drive
+         A : A drive
+         B : B drive
+         C : C drive
+         D : D drive
+         E : E drive
+         F : F drive
+         G : F drive
+        [DstDrv] : copy destination drive name (A drive cannot copy(read only))
+         I : I drive
+         B : B drive
+         C : C drive
+         D : D drive
+         E : E drive
+         F : F drive
+         G : G drive
+USAGE>fs wp_status
+     # get Media WriteProtect status
+USAGE>fs hold [holdval]
+     # Set hold clock of the SD
+        [holdval] :
+         0  : hold 1/4 of SD_BCLK_I
+         12 : hold 2/4 of SD_BCLK_I
+         15 : hold 3/4 of SD_BCLK_I
+USAGE>fs statvfs [DrvName]
+     # gets drive information (total capacity, number of free clusters, etc).
+      I : SD0/SD1 drive
+      J : NF      drive
+      A : A       drive
+      B : B       drive
+      C : C       drive
+      D : D       drive
+      E : E       drive
+      F : F       drive
+USAGE>fs getfree [DrvName]
+     # gets drive information (free space, cluster size, total number of clusters).
+      I : SD0/SD1 drive
+      A : A       drive
+      B : B       drive
+      C : C       drive
+      D : D       drive
+      E : E       drive
+      F : F       drive
+      G : G       drive
+---FILE Command---
+USAGE>fs open [Name] [Mode]
+     # open the file
+        [Name] : File name with path.
+        [Mode] : File Open Mode.
+         create  : create the file.
+         open    : open the file read & write.
+         rd_only : open the file in read only.
+         over_wr : open the file in over write.
+USAGE>fs close [fileID]
+     # close the file
+USAGE>fs save [Name] [Address] [save_size]
+     # save the file
+        [Address] : The top address of data to save.
+USAGE>fs read [fileID] [Address] [read_size]
+     # read the file
+        [Address] : The top address of data to read.
+USAGE>fs write [fileID] [Address] [write_size]
+     # write the file
+        [Address] : The top address of data to write.
+USAGE>fs seek [fileID] [offset]
+     # seek the file
+USAGE>fs relseek [fileID] [offset] [1/0]
+     # relseek the file
+        1 : opposite direction
+        0 : order direction
+USAGE>fs seekex [fileID] [offset] [whence]
+     # seek the file
+        [whence] : Reference position.
+        0 : seek from file top
+        1 : seek from current
+        2 : seek from file end
+USAGE>fs delete [path]
+     # delete the file/directory
+USAGE>fs mkdir [path]
+     # create the directory
+USAGE>fs chdir [path]
+     # change the current directory
+USAGE>fs pwd
+     # print current working directory
+USAGE>fs rename [src_path] [dst_path]
+     # rename the file/directory
+USAGE>fs entry [1/0]
+     # get entry of current directory
+        1 : first entry
+        0 : next entry
+USAGE>fs dir
+     # get all directory entry of current Drive
+USAGE>fs root
+     # get root directory entry count
+USAGE>fs attri_read [name]
+     # get attribute of file or directory
+USAGE>fs attri_set [name] [0/1]
+     # set attribute to file or directory
+        1      : read only
+        0      : Normal
+USAGE>fs check_dir_exist
+     # "DCIM" directory existence check of the external memory
+USAGE>fs stat [FileName]
+     # get file/directory information
+USAGE>fs statex [FileName]
+     # get file/directory information
+USAGE>fs set_time [FileName] [timestamp type] [date] [time]
+     # set timestamp
+        [timestamp type] : Type of set TimeStamp.
+         1:modify time
+         2:create time
+         4:access time
+        [date] : yyyy/mm/dd
+        [time] : hh:mm:ss
+USAGE>fs fsync [fileID]
+     # Execute reflecting the directory entry with fileid
+USAGE>fs sync [DriveName]
+     # Execute reflecting the directory entry with drive name
+---DCF Command---
+USAGE>fs dcf_db_create
+     # DCF-DB create
+USAGE>fs dcf_db_create_all
+     # DCF-DB create & set current last dir
+USAGE>fs dcf_db_renew
+     # DCF-DB renewal
+USAGE>fs dcf_dir_num
+     # get number of total directry in 'DCIM'
+USAGE>fs set_cur_dir [dirIndex]
+     # set current directory on DB
+USAGE>fs latest
+     # get latest index number
+USAGE>fs create_cur_dir [dirNum] [dirNameIndex]
+     # create current directory
+        [dirNum]       : DCF directory No (100 - 999)
+        [dirNameIndex] : DCF directory name No
+         0 : directory name "SOCIO"
+USAGE>fs dcfdb_attr [dirIndex]
+     # get the attribute of directory
+USAGE>fs dcfdb_attr_ex [dirIndex]
+     # get the attribute of directory
+USAGE>fs get_info [dirIndex] [objIndex]
+     # get file info
+USAGE>fs dir_name [dirIndex]
+     # get information of the directory on DB
+USAGE>fs allow_num [objIndex]
+     # get count of allowed files in current directory
+USAGE>fs last_file_num [dirIndex]
+     # get last file number
+USAGE>fs dir_duplicate [dirIndex]
+     # get duplicate status of the directory on DB
+USAGE>fs max_fileno_as_dirno
+     # get max file number as directory number
+USAGE>fs get_dir_date_time [dirIndex]
+     # get date and time of the directory on DB
+USAGE>fs setch [1/0] [name] [Operation]
+     # set free charctor of file/directory
+        0 : set file name
+          [name] : set name (string)
+          [Operation]
+           set   : set file name (4char)
+           allow : set allowed extension table
+        1 : set directory name (5char)
+          [name] : set name (string)
+          [Operation]
+           set      : set directory name
+USAGE>fs setno [dirno] [fileno]
+     # set DCF number of file/directry
+        [dirno]  : set DCF directory No (100 - 999)
+        [fileno] : set DCF file No (0001 - 9999)
+USAGE>fs getch [Operation]
+     # get free charctor of file/directory
+        [Operation]
+         lastdir  : get Last Dir Name
+         lastfile : get Last File Name
+         curdir   : get Current Dir Name
+         curfile  : get Current File Name
+USAGE>fs getno [Operation]
+     # get DCF number of file/directory
+        [Operation]
+         last  : get Last Dir/File No
+USAGE>fs get_nextno
+     # get next Number of dir and file
+USAGE>fs get_firstno
+     # get first free file number
+USAGE>fs get_obj_attr [dirIndex] [objIndex]
+     # get attribute of the object on DB
+USAGE>fs attri_set_obj [dirIndex] [objIndex] [0/1]
+     # Attributes parameter in object
+        1 : read only
+        0 : Normal
+USAGE>fs set_dcf_long attr   [dirIndex] [objIndex] [attr]
+USAGE>fs set_dcf_long curdir [dirIndex]
+     # set DCF parameter long
+         attr    : set attribute
+         curdir  : set current directory
+        [attr]
+         1       : read only
+         0       : Normal
+USAGE>fs get_dcf_long dir_total
+USAGE>fs get_dcf_long [dir/obj_cnt] [DirIndex]
+     # get DCF parameter long
+         dir_total  : get Total Dir Num
+         dir        : get Dir Index
+         obj_cnt    : get Object Num
+USAGE>fs get_dcf_str [Operation] [dirIndex] [objIndex]
+USAGE>fs get_dcf_str ext_name [FileType]
+     # get DCF parameter string
+        [Operation]
+         dir_name     : get Dir Name
+         obj_name     : get Obj Name
+         dir_obj_name : get Dir_Obj Name
+         ext_name     : get extension Name
+USAGE>fs get_dcf_long_by_str [Operation] [NameString]
+     # get DCF parameter long by string
+        [Operation]
+         dir     : get Dir Index by Dir Name
+         dir_obj : get Dir_Obj Index by Dir_Obj Name
+         ext     : get FileType by Ext Name
+USAGE>fs is_dcf_file_type [ExtName] [FileType]
+     # check Ext name in FileType
+        [ExtName]  : Ext Name
+        [FileType] : DCF file type
+USAGE>fs dir_file_exist [dirIndex]
+     # get file exist in the directory
+USAGE>fs dcf_dir_del_single [dirIndex]
+     #  DCF directory is deleted
+USAGE>fs dcf_dir_del_all
+     # All DCF directory is deleted
+USAGE>fs dcf_save_jpeg [size]
+     # save jpeg file with DCF.(using dummy image data)
+        [size]:main image size.
+          16 :16M
+           2 : 2M
+           v :VGA
+USAGE>fs dcf_save_raw [size]
+     # save raw file by dcf
+        [size]:file size
+USAGE>fs dcf_get_exif_info [dirIndex] [objIndex]
+     # get exif information
+---EXIF Command---
+USAGE>fs get_exif [dirIndex] [objIndex]
+     # Exif information get
+---SD Command---
+USAGE>
+media sd set_detect [ch] [time] [num]
+media sd get_detect [ch]media sd init [ch]
+media sd config [ch] [drive] [mode] [clock]
+media sd set_cb [ch] [type]
+media sd card_init [ch]
+media sd get_info [ch]
+media sd hold [ch] [hold]
+media sd password [ch] [password] [size]
+media sd lock [ch] [operation]
+media sd power [ch] [enable]
+---NF Command---
+USAGE>
+media nf init
+media nf config [ce] [max_bad_block] [device_block] [search] [dbcnt1] [dbcnt2] [acc_cyc]
+media nf nf_init
+media nf middid
+media nf get_info
+media nf erase
+media nf write_phy [blk] [buf]
+media nf read_phy [blk] [buf]
+media nf write_logi [param_blk] [start_sec] [sec_num] [buf]
+media nf read_logi [param_blk] [start_sec] [sec_num] [buf]
+media nf write_direct [param_blk] [start_sec] [sec_num] [buf]
+media nf partition
+media nf get_partition [name]
+media nf get_bb [limit] [mode] [num] [buf]
+media nf get_param
+media nf get_ema
+media nf set_rtycnt [read] [write]
+media nf get_rtycnt
+media nf set_time [type] [time]
+media nf get_time
+---eMMC Command---
+USAGE>
+media em init
+media em config [mode]
+media em em_init
+media em get_info
+media em write [start_sec] [sec_num] [buf]
+media em read [start_sec] [sec_num] [buf]
+media em partition
+media em par_read
+media em get_partition [name]
+media em get_param
+media em get_ema
+USAGE>memory log2phy [logical address]
+USAGE>memory phy2log [physical address]
+USAGE>memory set_map_mode [map mode]
+USAGE>memory fj_getmem [location] [size]
+USAGE>memory fj_relmem [location] [address]
+USAGE>memory fj_clrmem [location]
+USAGE>memory fj_heap
+USAGE>memory fj_mpf [id]
+USAGE>memory malloc [byte size]
+USAGE>memory free [memory address]
+USAGE>memory mem dump [w:32bit h:16bit b:8bit] [start address] [size]
+USAGE>mov open [0/1/2/10/11]
+USAGE>mov close [enc_id]
+USAGE>mov config [enc_id]
+USAGE>mov setup [enc_id]
+USAGE>mov start [enc_id]
+USAGE>mov stop [enc_id]
+USAGE>mov free [enc_id] [index] [0(off)/1(on) :last free flg]
+USAGE>mov get_264_addr [enc_id]
+USAGE>mov enable [enc_id] [0(off)/1(on)]
+USAGE>mov size [enc_id] [0(4096x2304)/1(4096x2160)/2(4096x2048)/3(3840x2160)/4(2704x2028)/5(2704x1520)/6(1920x1440)/7(1920x1080)/8(1440x1080)/9(1280x960)/10(1280x720)/11(848x480)/12(720x480)/13(640x480)/14(640x360)/15(432x240)/16(320x240)]
+USAGE>mov format [enc_id] [0(ES)/1(TS)]
+USAGE>mov balgo [enc_id] [0(CBR)/1(VBR)]
+USAGE>mov brate [enc_id] [~1000000000(bps)]
+USAGE>mov avebrate [enc_id] [~1000000000(bps)]
+USAGE>mov fr [enc_id] [(ex:30fps=3000/29.97fps=2997)]
+USAGE>mov struct [enc_id] [0(IPPP/1(IBBP)/2(IIII)]
+USAGE>mov gop_num [enc_id] [1/2/3/5/7/8/10/12/13/15/16/24/25/30/36/38/40/45/50/60]
+USAGE>mov cl_gop [enc_id] [0(closed)/1(open)]
+USAGE>mov idr_dist [enc_id] [(gop)]
+USAGE>mov profile [enc_id] [0(high)/1(main)/2(baseline)]
+USAGE>mov level [enc_id] [13(LV1.3)/20(LV2)/21(LV2.1)/22(LV2.2)/30(LV3)/31(LV3.1)/32(LV3.2)/40(LV4)/41(LV4.1)/42(LV4.2)/52(LV5.2)]
+USAGE>mov entropy [enc_id] [0(cabac)/1(cavlc)]
+USAGE>mov scan [enc_id] [0(Progressive/1(Interlace)]
+USAGE>mov buf_ctrl [enc_id] [0(off)/1(on)]
+USAGE>mov pic_struct [enc_id] [0(off)/1(on)]
+USAGE>mov rcv_point [enc_id] [0(off)/1(on)]
+USAGE>mov end_of_strm [enc_id] [0(off)/1(on)]
+USAGE>mov end_of_seq [enc_id] [0(off)/1(on)]
+USAGE>mov filler [enc_id] [0(off)/1(on)]
+USAGE>mov vector [enc_id] [0(off)/1(on)]
+USAGE>mov tlapse [enc_id] [0(off)/1(on)]
+USAGE>mov vui [enc_id] [0(off)/1(on) :vstp_flg] [0~255 :video_format] [0(off)/1(on) :vfr_flg] [0(off)/1(on) :cdp_flg] [0~255 :colour_primaries] [0~255 :transfer_characteristics] [0~255 :matrix_coefficients]
+USAGE>mov scalinglist [enc_id] [0(all 0)/1(all 0xF)]
+USAGE>mov seq [seq num(ex. 0)]USAGE>audio cap open [audio cap] # Open AudioCaptureInstance
+USAGE>audio cap close [audio cap id] # Close AudioCaptureInstance
+USAGE>audio cap connect out [audio cap id][audio out id] # Connect AudioCaptureInstance with AudioOutInstance
+USAGE>audio cap connect enc [audio cap id][audio enc id] # Connect AudioCaptureInstance with AudioEncoderInstance
+USAGE>audio cap disconnect out [audio cap id][audio out id] # Disconnect AudioCaptureInstance from AudioOutInstance
+USAGE>audio cap disconnect enc [audio cap id][audio enc id] # Disconnect AudioCaptureInstance from AudioEncoderInstance
+USAGE>audio cap cfg [audio cap id][I2s channel][I2s master/slave][freqency of LR Clock][I2s data cycle][I2s format][valid bit] # Configuration of AudioCaptureInstance
+USAGE>audio cap smpl [audio cap id][Input sampling rate][Input channel][Output sampling rate][Input channel] # Sample configuration of AudioCaptureInstance
+USAGE>audio cap plugin [audio cap id][enable]# Enable AudioCapturePlugIn1
+USAGE>audio cap start [audio cap id] # Start AudioCapture
+USAGE>audio cap stop [audio cap id] # Stop AudioCapture
+USAGE>audio cap complete [audio cap id][free index] # Free Buffer Area of AudioCapturePlugin1
+USAGE>audio cap test [test mode] # Debug function of AudioCapture
+USAGE>audio out open [audio out] # Open AudioOutInstance
+USAGE>audio out close [audio out id] # Close AudioOutInstance
+USAGE>audio out cfg [audio out id][I2s channel][I2s master/slave][freqency of LR Clock][I2s data cycle][I2s format][valid bit] # Configuration of AudioOutInstance
+USAGE>audio out stop [audio out id] # Stop AudioOut
+USAGE>audio out test [test mode] # Debug function of AudioOut
+USAGE>audio enc open [audio enc] # Open AudioEncoderInstance
+USAGE>audio enc close [audio enc id] # Close AudioEncoderInstance
+USAGE>audio enc cfg [audio enc id][sampling rate][bit rate][channel] # Configuration of AudioEncoderInstance
+USAGE>audio enc setup [audio enc id] # Setup AudioEncoderInstance
+USAGE>audio enc start [audio enc id] # Start AudioEncoder
+USAGE>audio enc stop [audio enc id] # Stop AudioEncoder
+USAGE>audio enc free [audio enc id][free index][end flag] # Free Buffer Area of AudioStreamData
+USAGE>audio enc mute on [audio enc id] # Mute On
+USAGE>audio enc mute off [audio enc id] # Mute Off
+USAGE>audio dec open [audio dec] # Open AudioDecoderInstance
+USAGE>audio dec close [audio dec id] # Close AudioDecoderInstance
+USAGE>audio dec cfg [audio dec id][sampling rate][channel] # Configuration of AudioDecoderInstance
+USAGE>audio dec connec [audio dec id][audio out id]# Connect AudioDecoderInstance with AudioOutInstance
+USAGE>audio dec disconnect [audio dec id][audio out id] # Disconnect AudioDecoderInstance from AudioOutInstance
+USAGE>audio dec init # Initialize AudioDecoderInstance
+USAGE>audio dec start [audio dec id] # Start AudioDecoder
+USAGE>audio dec stop [audio dec id] # Stop AudioDecoder
+USAGE>audio dec start_out # Start AudioDecoder
+USAGE>audio dec stop_out # Stop AudioDecoder
+USAGE>audio dec pts [pts] # Set Start PTS
+USAGE>audio loadwav # Load Wave data from SDRAM_SIZ_HOST_WAV_READ_MEM_LOCATION_AREA
+USAGE>audio unloadwav [wav id] # Unload Wave data
+USAGE>audio playwav [wav id] # Start playback wav data
+USAGE>audio stopwav [wav id] # Stop playback wav data
+USAGE>audio ctrlwav [audio out id][control] # Set Mix setting
+USAGE>audio src open [audio source] # Open AudioSourceInstance
+USAGE>audio src close [audio src id] # Close AudioSourceInstance
+  USAGE> osd <function> [...]
+    # OSD test command.
+    #   <function>
+    #     attr   : Set OSD display attribute.
+    #     mem    : A character string is set to a memory.
+    #     icon   : Draw an icon string.
+    #     file   : Display image file.
+    #     ascii  : Display a given string at a specific location.
+    #     init   : Initialize OSD layer.
+    #     clear  : Clear draw buffer.
+    #     lclip  : Gain, clip, offset value setting at DISP macro.
+    #     matrix : Set matrix.
+    #     back   : Back ground color.
+    #     cbar   : Set color bar parameter.
+    #     show   : Set enable/disable each display layer.
+    #     rcver  : Set automatic restoration.
+    #     shape  : Draw a shape on osd by display id and type.
+    #     line   : Draw a line to specified layer.
+    #     gda    : Configures the image display attributes.
+    #     drawshape: Draw a shape on image by shape type.
+    #     image  : Draw specified image.
+    #     dspbuf : Draw specified image to OSD.
+    #     dspex  : Draw specified image to OSD.
+    #     hist   : Display histogram.
+    #     main   : Set the MAIN's input size.
+    #     lcd    : LCD connection control.
+    #     hdmi   : HDMI connection control.
+    #     blink  : Set blink method of the OSD data.
+    #     print  : The text for debugging is displayed on OSD.
+    #     clrpart: Clear a part of display buffer.
+    #     area   : Draw area control.
+    #     tc     : Tone correction data.
+    #     tctbl  : Tone correction table.
+    #     igamma : Inverse gamma table.
+    #     gamma  : Gamma table.
+    #     comtbl : Enable Gamma or anti-Gamma or Tone adjustment.
+    #     order  : Order of the layer.
+    #     grid   : Grid line.
+    #     face   : Face frame.
+    #     bwarn  : Brightness warning.
+    #     flush  : Flush drawing buffer.
+    #     font   : The kind of the target object is selected.
+    #     load   : Load a icon/string/palette data from file.
+    #     addr   : Display buffer address.
+    #     rgba   : Change RGBA format.
+    #     vsync  : Set callback for vsync.
+    # Please input 'osd <function> help' command for more information.
+
+  USAGE> disp <function> [...]
+    # Disp test command.
+    #   <function>
+    #     open   : Open display instance.
+    #     close  : Close display instance.
+    #     lcd    : LCD connection control.
+    #     hdmi   : HDMI connection control.
+    #     video  : Image Layer control.
+    #     osd    : OSD Layer control.
+    # Please input 'disp <function> help' command for more information.
+
+USAGE>setparam cmd_ct_setparam_help wParamID wValue
+USAGE>3a draw ae ¥¥¥¥¥ AE info output
+              adap ¥¥¥ AdaptiveAE info output
+              awb ¥¥¥¥ AWB info output
+              aeawb ¥¥ AE & AWB info output
+              all ¥¥¥¥ All info output
+              file ¥¥¥ output to file
+              off ¥¥¥¥ output off
+USAGE>ae set3a [sen_id] [0:'d' 1:'ce' 2:'ce+f' 3:'cde+fw' 4:'cw' 5:'eeefeef' 6:'cf' 7:'cewfl' 8:'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee' 9:'ceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee']
+USAGE>ae string [sen_id] [PatternData]
+USAGE>ae setwin [sen_id] [start_posX start_posY sizeX sizeY blockX blockY leftX rightX topY bottomY aesizeX aesizeY aeleftX aerightX aetopY aebottomY awbsizeX awbsizeY awbleftX awbrightX awbtopY awbbottomY]
+USAGE>ae setrate [sen_id]
+USAGE>ae setobmode [0:obd 1:obt
+USAGE>ae getobmode
+USAGE>ae setwdwinmode [sen_id] [0:v/h same 1:v/h separate]
+USAGE>ae tsk [sta | end | exe]
+USAGE>ae target [set] [target value: 1-]
+USAGE>ae evp
+USAGE>ae [auto | lock | draw]
+USAGE>ae flc [0:auto 1:50Hz 2:60Hz 3:50/60Hz 4:off]
+USAGE>ae adap [auto | lock | disable | draw]
+USAGE>ae sensor reg
+USAGE>ae iso [auto | lock]
+USAGE>ae tv [auto | lock]
+USAGE>ae err
+USAGE>awb setwb [demosaic_id] [0:draft 1:still] Rgain, Grgain, Gbgain, Bgain( Input value 256 = 1.0 )
+USAGE>awb setgate [sen_id] [ Upper_Y, Upper_R, Upper_G, Upper_B, Lower_Y, Lower_R, Lower_G, Lower_B ]
+USAGE>awb setlvgate [sen_id]
+USAGE>awb setcliplevel [demosaic_id] [0:draft 1:still] Rgain, Grgain, Gbgain, Bgain( Input value 256 = 1.0 )
+USAGE>awb setpgain [sen_id] blk_num, Rgain, Grgain, Gbgain, Bgain( Input value 256 = 1.0 ), Roffset, Groffset, Gboffset, Boffset
+USAGE>awb setdataformat [sen_id] [0:R/G/B/AWBCnt 1:R/Gr/Gb/B]
+USAGE>awb [auto | lock | draw 0 or 1]
+USAGE>af test
+USAGE>flck setwin [sro_id] [start_posX, start_posY, width, lines, effectiveLines blockNum]
+USAGE>flck setformat [sro_id] [0:detecting RGB and count 1:detecting Y/Gr/Gb and count]
+USAGE>flck setwdmode [sro_id] [0:Normal detection 1:Even/Odd line distinction detection]
+USAGE>flck setgate [sro_id] [Upper_Y, Upper_R, Upper_G, Upper_B, Lower_Y, Lower_R, Lower_G, Lower_B]
+USAGE>flck setlvgate [sro_id]
+USAGE>flck setrate [sro_id]
+USAGE>flck err
+ --- set ---
+USAGE>play setcurrent [DirIndex(1 - 65535)] [ObjIndex(1 - 65535)] # For CurrentImageIndex setting
+USAGE>play setfile [1:JPEG 2:TIFF 4:WAV 8:AVI 32:MPEG 64:MP4 128:ASF 256:WMV 512:WMA 1024:MOV 2048:TXT] # For FileType setting
+ --- get ---
+USAGE>play getcurrent # For CurrentImageIndex getting
+USAGE>play getfile
+USAGE>play getimage
+USAGE>play gethistsize
+ --- auto display ---
+USAGE>play autodisp [on/off] # Set auto display status
+USAGE>play autodisp          # Get auto display status
+ --- set window ---
+USAGE>play setwin disp [vld/hd] [pos_X] [pos_Y] [width_size] [height_size] [ar_flag]
+USAGE>play setwin image [main/thumb/cls1/cls2/can] [pos_X] [pos_Y] [width_size] [height_size]
+USAGE>play setwin image can
+ --- thumb index ---
+USAGE>play th conf [num_h: holizontal number of thumbnail] [num_v: vartical number of thumbnail]
+                   [vde holizontal 1st gap] [vde holizontal gap] [vde vartical 1st gap] [vde vartical gap]
+                   [hd  holizontal 1st gap] [hd  holizontal gap] [hd  vartical 1st gap] [hd  vartical gap]
+USAGE>play th disp [dir] [obj]        # thumbnail index dispay
+ --- jpeg file draw ---
+USAGE>play draw_img [FileName] [x] [y] [width] [lines] [BackColor_enable]
+ --- parameter set ---
+USAGE>play setpara thumb_w_vld xx # FJ_PARA_THUMB_DRAW_WIDTH_VLD
+USAGE>play setpara thumb_w_hd xx  # FJ_PARA_THUMB_DRAW_WIDTH_HD
+USAGE>play setpara thumb_l_vld xx # FJ_PARA_THUMB_DRAW_LINES_VLD
+USAGE>play setpara thumb_l_hd xx  # FJ_PARA_THUMB_DRAW_LINES_HD
+ --- single display ---
+USAGE>play single [dir] [obj] [main/thumb/cls1/cls2]        # single dispay
+USAGE>play show_pb_img [P0]             # P0: 0=VLD, 1=HD
+ --- movie display ---
+USAGE>play movie [dir] [obj]        # movie dispay
+ --- load file ---
+USAGE>play loadfile [filepath] [address(Hex)]        # load file
+
+ --- commands for regession test ---
+USAGE>play test dcfdb [dir]           # set dcfdb
+USAGE>play test disp [dir] [obj]      # single disp
+USAGE>play test format [MS/NF]        # quick format
+USAGE>play test full_format [MS/NF]   # full format
+ --- get memory information ---
+USAGE>play2 getmem
+ --- jpeg decode ---
+USAGE>play2 dec [main/thm] [jpeg_size] [width] [lines] [img_fmt(0: YCC422)]
+ --- convert image ---
+USAGE>play2 cnv [main/thm] [src_g_width] [src_width] [src_lines] [img_fmt(0:YCC422, 1:YCC420)] [dst_g_width] [dst_width] [dst_lines] [img_fmt(0:YCC422, 1:YCC420, 5:RGBA8888)] [resize_mode(0:bi-linear, 1:bi-cubic)] [rotate_degree(0:0, 1:90, 2:180, 2:270)]
+USAGE>play2 disp [0:Image Layer, 1:OSD Layer] [0:LCD, 1:HDMI] [main/thm] [JPEG filename]
+                ### [chnlId] range is 0~3
+USAGE>devcfg sgpio [sel] [param1] [param2] # Set GPIO configuration
+                ### [sel] 'func': Select, 'dir': Config, 'state': Set, 'puden': PUD_enable, 'pudcr': PUD_Ctrl
+                ### [param1] Pin number  : 0~239
+                ### [param2] set value   : 0~1
+USAGE>devcfg ggpio [param1] [param2] # Get GPIO state
+                ### [param2] Pin number  : 0~239
+USAGE>devcfg sirqcfg [param1] [param2] [param3] [param4] # Set configuration of External Interrupt
+                ### [param1] Pin number  : 0~239
+                ### [param2] Irq level   : 17~31
+                ### [param3] Irq edge    : 0~3
+                ### [param4] Target CPU  : 1~15
+USAGE>devcfg sirqsta [param1] [param2] [param3] # Set state of External Interrupt
+                ### [param1] Pin number      : 0~239
+                ### [param2] Interrupt state : 0~1
+I:0:T01000007: Usage: lcd wr [address] [data]
+I:0:T01000007: - write LCD register, address and data are hex only
+I:0:T01000007: Usage: lcd rr [address]
+I:0:T01000007: - read LCD register, address is hex only
+I:0:T01000007: Usage: lcd bl [on/off]
+I:0:T01000007: - turn on/off LCD backlight
+I:0:T01000007: Usage: lcd cg [aspect_ratio]
+I:0:T01000007: - config LCD display aspect ratio
+I:0:T01000007: - aspect_ratio:0 - LCD_DISPLAY_NORMAL
+I:0:T01000007: - aspect_ratio:1 - LCD_DISPLAY_NARROW
+I:0:T01000007: Usage: lcd ct [contrast]
+I:0:T01000007: - set contrast gain(hex))
+I:0:T01000007: Usage: lcd bt [brightness]
+I:0:T01000007: - set brightness(hex))
+I:0:T01000007: Usage: lcd sc [contrast]
+I:0:T01000007: - set red/blue sub pixel contrast gain(hex))
+I:0:T01000007: Usage: lcd sb [brightness]
+I:0:T01000007: - set red/blue sub pixel brightness gain(hex))
+I:0:T01000007: Usage: lcd ps [on/off]
+I:0:T01000007: - turn on/off LCD power saving mode, on:normal, off:standby
+I:0:T01000007: Usage: lcd ar [aspect_ratio]
+I:0:T01000007: - set LCD display normal/narrow
+I:0:T01000007: - aspect_ratio:0 - LCD_DISPLAY_NORMAL
+I:0:T01000007: - aspect_ratio:1 - LCD_DISPLAY_NARROW
+I:0:T01000007: Usage: lcd sat [saturation]
+I:0:T01000007: - set saturation(hex))
+I:0:T01000007: Usage: lcd hue [hue]
+I:0:T01000007: - set hue(hex))
+USAGE>wdog init                 # Watchdog timer initialize
+USAGE>wdog open                 # Watchdog timer open
+USAGE>wdog check                # parameter check
+USAGE>wdog set [mode] [msec]    # Watchdog timer set
+                                # - mode = 0:Timer mode (Interrupt only) / 1:Watchdog mode (Assert reset)
+                                # - msec  = timer is started from this value (unit is milli seconds)
+USAGE>wdog get_reset            # Watchdog interrupt status get
+USAGE>wdog refresh              # Watchdog timer refresh
+USAGE>wdog get_cur              # watchdog timer current value get
+USAGE>wdog get_load             # watchdog timer load value get
+USAGE>wdog close                # Watchdog timer close
+USAGE>ipcu open [type]
+USAGE>ipcu close [id]
+USAGE>ipcu send [id] [data address] [length]
+USAGE>ipcu setCB [id]
+USAGE>
+  update -f [file path]
+  ex. update -f I:\DATA.bin
+  update -m [area(0-15)] [addr] [size]
+  ex. update -m 2 0x50400000  18022028
+ --- monitor ---
+USAGE>sdramc monitor start [0:ch0 / 1:ch1] [0:Data size / 1:Access count] [0:Write&Read / 1:Write / 2:Read] [0:Keep mode / 1:Clear mode(in the case of store by timer)]
+USAGE>sdramc monitor get
+USAGE>sdramc monitor stop
+USAGE>sdramc monitor timer start [usec:Cycle time]
+USAGE>sdramc monitor timer stop
+USAGE>sdramc monitor out [0:Terminal / 1:File] [file name]
+USAGE>sdramc monitor time [monitor time]
+USAGE>
+sd0 init           : Initialize test
+sd0 card_chk       : Card detect check
+sd0 chk_wp         : Card Write Protection check
+sd0 chk_wp_state   : Card Write Protection status check
+sd0 read P1 P2 P3  : Read sector (P1:start sector P2:sector num P3:addr)
+sd0 write P1 P2 P3 : Write sector(P1:start sector P2:sector num P3:addr)
+sd0 test P1 P2     : Read/Write Verify check
+                   :      P1:write address offset
+                   :      P2:read address offset
+sd0 test2 P1 P2    : Read/Write Verify check(continuous)
+                   :      P1:write address offset
+                   :      P2:read address offset
+sd0 dma P1         : DMA transfer set (P1:0=OFF 1=ON)
+sd0 set_mode P1 P2 : Speed Class & Clock set
+                   :      P1:mode 0(Defalut Speed)
+                   :              1(High Speed)
+                   :              2(UHS-I SDR12)
+                   :              3(UHS-I SDR25)
+                   :              4(UHS-I SDR50)
+                   :              5(UHS-I SDR104)
+                   :      P2:clock(KHz)
+sd0 get_mode       : Speed Class & Clock get
+sd0 password P1 P2 : Card lock password set(P1:password(max 16byte) P2:size)
+sd0 lock P1        : Card lock operation
+                   :      P1:operation 0(Unlock)
+                   :                   1(Set password)
+                   :                   2(Clear password)
+                   :                   4(Lock)
+                   :                   8(Erase)
+USAGE>
+sd1 init           : Initialize test
+sd1 card_chk       : Card detect check
+sd1 chk_wp         : Card Write Protection check
+sd1 chk_wp_state   : Card Write Protection status check
+sd1 read P1 P2 P3  : Read sector (P1:start sector P2:sector num P3:addr)
+sd1 write P1 P2 P3 : Write sector(P1:start sector P2:sector num P3:addr)
+sd1 test P1 P2     : Read/Write Verify check
+                   :      P1:write address offset
+                   :      P2:read address offset
+sd1 test2 P1 P2    : Read/Write Verify check(continuous)
+                   :      P1:write address offset
+                   :      P2:read address offset
+sd1 dma P1         : DMA transfer set (P1:0=OFF 1=ON)
+sd1 set_mode P1 P2 : Speed Class & Clock set
+                   :      P1:mode  0(Defalut Speed)
+                   :               1(High Speed)
+                   :               2(UHS-I SDR12)
+                   :               3(UHS-I SDR25)
+                   :               4(UHS-I SDR50)
+                   :               5(UHS-I SDR104)
+                   :               6(UHS-II)
+                   :      P2:clock(KHz)
+sd1 set_mode2 P1 P2 P3: UHS-II mode, Speed range and Power limit set
+                   :      P1:mode  0(HD)
+                   :               1(2L-HD)
+                   :      P2:range 0(Range A)
+                   :               1(Range B)
+                   :      P3:power 0(0.72W)
+                   :               1(1.44W)
+                   :               2(2.16W)
+                   :               3(2.88W)
+                   :               4(1.80W)
+sd1 get_mode       : Speed Class & Clock get
+sd1 get_mode2      : UHS-II mode, Speed range and Power limit get
+sd1 password P1 P2 : Card lock password set(P1:password(max 16byte) P2:size)
+sd1 lock P1        : Card lock operation
+                   :      P1:operation 0(Unlock)
+                   :                   1(Set password)
+                   :                   2(Clear password)
+                   :                   4(Lock)
+                   :                   8(Erase)
+sd1 slave P1       : Slave Mode for PHY compliance test(P1:0=nomal mode 1=slave mode)
+sd1 dormant P1     : Dormant state(P1:0=nomal state 1=dormant state)
+sd1 hiber P1       : Hibernate state(P1:0=nomal state 1=hibernate state)
+USAGE>nf no.
+0  : nf_test0() for MWNF_BasicInit().
+1  : nf_test1() for mwnf_eraseblk()
+2  : nf_test2() mwnf_Data_DMA()
+3  : nf_test3() MWNF_BWrite()
+4  : nf_test4() MWNF_BRead()
+5  : nf_test5() mwnf_copy_back()
+99  :erase all phy block 0-2048
+USAGE>
+emmc init           : Initialize eMMC driver
+emmc set_mode P1    : Access mode set
+                    :      P1:mode 0(Legacy MMC)
+                    :              1(High Speed SDR)
+                    :              2(HS200)
+                    :              3(HS422)
+emmc get_mode       : Access mode get
+emmc bread P1 P2 P3 : Read sector (offset PBR)
+                    :      P1:start sector
+                    :      P2:sector count
+                    :      P3:address
+emmc read P1 P2 P3  : Read sector (direct)
+                    :      P1:start sector
+                    :      P2:sector count
+                    :      P3:address
+emmc bwrite P1 P2 P3: Write sector (offset PBR)
+                    :      P1:start sector
+                    :      P2:sector count
+                    :      P3:address
+emmc write P1 P2 P3 : Write sector (direct)
+                    :      P1:start sector
+                    :      P2:sector count
+                    :      P3:address
+emmc end            : finalize eMMC driver
+emmc test P1 P2     : Read/Write Verify check
+                    :      P1:write address offset
+                    :      P2:read address offset
+emmc test2 P1 P2    : Read/Write Verify check(continuous)
+                    :      P1:write address offset
+                    :      P2:read address offset
+emmc testfs P1 P2   : Read/Write Verify check(via Filesystem)
+                    :      P1:write address
+                    :      P2:read address
+                    :      P3:size
+USAGE>pmu init
+USAGE>pmu cycle [0:disable / 1:enable]
+USAGE>pmu cfg [0:counter#0 / 1:counter#1 / 2:counter#2 / 3:counter#3] [x:event number]
+USAGE>pmu start [0:Store by command / 1:Store by timer (default:0)]
+USAGE>pmu stop
+USAGE>pmu timer start [usec:Cycle time]
+USAGE>pmu timer stop
+USAGE>pmu get
+USAGE>pmu get cycle
+USAGE>pmu get event [0:counter#0 / 1:counter#1 / 2:counter#2 / 3:counter#3]
+USAGE>pmu get cfg [0:counter#0 / 1:counter#1 / 2:counter#2 / 3:counter#3]
+USAGE>pmu out [0:Terminal / 1:File] [file name]
+USAGE>pmu disp
+USAGE>pmu clear
+USAGE>pmu start2 [usec:Cycle time]
+USAGE>pmu stop2
+--- I2C Master/Slave ---
+USAGE>dd i2c ini
+                    # Initialize I2C test environment.
+USAGE>dd i2c open [ch(0~2)]
+                    # Open I2C Channel
+USAGE>dd i2c close [ch(0~2)]
+                    # Close I2C Channel
+USAGE>dd i2c aclock [ch(0~2)] [KHz] [0:Over, 1:Under]
+                    # Set I2C serial clock frequency
+USAGE>dd i2c set_slave [ch(0~2)] [7:7bit, other:10bit] [0:100KHz, 1:400KHz]
+                    # Set I2C Slave (Open-Ctrl)
+USAGE>dd i2c test [w/r/w-r/r-w] [ch(0~2)] [Data length]
+                    # Start Master Test (Open-Ctrl-Transfer-Close)
+
+USAGE>iipres alloc [oned,flt,afn0,afn1,afn2,afn,frect,mon,csc,lut,gpc,blend,cfl,mft,sl] [sl_0_2,sl_3_8,sl_master_if_0,sl_master_if_1,sl_master_if_2,sl0,sl1,sl2,sl3,sl4,sl5,sl6,sl7,sl8,sl_mon] [pixid] [other]
+USAGE>iipres lock
+USAGE>iipres free
+USAGE>iipres print
+USAGE>hdmi init [iscallback]
+                                        # Hdmi initialize.
+                    #   [iscallback]
+                    #           1: register a callback function.
+                    #           else: register no callback function.
+
+USAGE>hdmi detect
+                    # Hdmi detect.
+
+USAGE>hdmi connect [fomat][frequence]
+                    # Hdmi connect.
+                    #   [fomat] 1080i/720p/480p
+                    #   [frequence] 60/50
+
+USAGE>hdmi disconnect
+                    # Hdmi disconnect.
+USAGE>hdmi start [option]
+                    # Hdmi start.
+                    #   [option] sync/async
+
+USAGE>hdmi stop [option]
+                    # Hdmi stop.
+                    #   [option] sync/async
+
+USAGE>hdmi set [cmd] ([value])
+                    # Hdmi stop.
+                    #   [cmd] outformat(value:not-force/ycc422/ycc444)/common/video/audio/i2s
+
+USAGE>hdmi get [cmd]
+                    # Hdmi Get edid/status.
+                    #   [cmd] edid/status/dtd_no/dtd_addr/common/video/audio/i2s
+
+USAGE>hdmi audio [cmd][param]
+                    # Hdmi audio setting.
+                    #   [cmd] set/start/stop/mute/set_start
+                    #   [param]
+                    #           0: set audio frequence 32000hz.
+                    #           1: set audio frequence 44100hz.
+                    #           2: set audio frequence 48000hz.
+                    #           true: set audio mute on.
+                    #           false: set audio mute off.
+
+USAGE>hdmi mpeg [cmd][3d_type]
+                    # Hdmi mpeg setting.
+                    #   [cmd] enable/disable/setinfo
+                    #   [3d_type] frame/depth/full/half/top
+
+USAGE>hdmi errdbg [error_factor(0~2)]
+USAGE>top clk start [clock name] [counter]
+USAGE>top clk stop [clock name] [counter]
+USAGE>top clk get [clock name]
+USAGE>top imgclk [ap] [jpg] [ela0] [ela1] [spr] [rib] [b2y] [iip] [pro.sro] [pro.pro]
+USAGE>top clksel set peri [periclk]
+USAGE>top clksel set sen [senclk]
+USAGE>top clksel set sd1u2 [sd1u2clk]
+USAGE>top clksel set sd1u1 [sd1u1clk]
+USAGE>top clksel set sd0 [sd0clk]
+USAGE>top clksel set nf [nfclk]
+USAGE>top clksel set ap [apclk]
+USAGE>top clksel set apclk [apclk]
+USAGE>top clksel set jpg [jpgclk]
+USAGE>top clksel set ela0 [elaclk]
+USAGE>top clksel set ela1 [elaclk]
+USAGE>top clksel set spr [sprclk]
+USAGE>top clksel set wdr [wdrclk]
+USAGE>top clksel set apl [aplclk]
+USAGE>top clksel set jhdr [jhdrclk]
+USAGE>top clksel set hif [hifclk]
+USAGE>top clksel set lcd [clksel]
+USAGE>top clksel set rib [ribclk]
+USAGE>top clksel set b2y [b2yclk]
+USAGE>top clksel set iip [iipclk]
+USAGE>top clksel set pro [clksel]
+USAGE>top clksel set sro [sroclk]
+USAGE>top clksel set srosel [sroselclk]
+USAGE>top clksel set ahfd [ahfdclk]
+USAGE>top clksel set ahip [ahipclk]
+USAGE>top clksel set cpu [cpuclk]
+USAGE>top clksel set l2c [l2cclk]
+USAGE>top clksel set cpuperi [cpupericlk]
+USAGE>top clksel set eaxi [eaxiclk]
+USAGE>top clksel set axi [axiclk]
+USAGE>top clksel set ahb [ahbclk]
+USAGE>top clksel set apb [apbclk]
+USAGE>top clksel set x [xclk]
+USAGE>top clksel set dsp [dspclk]
+USAGE>top clksel set dpp [dppclk]
+USAGE>top clksel set srr [srrclk]
+USAGE>top clksel set au0 [auclk]
+USAGE>top clksel set au1 [auclk]
+USAGE>top clksel set au2 [auclk]
+USAGE>top clksel set netau [auclk]
+USAGE>top clksel set dchreq
+USAGE>top clksel get dsp
+USAGE>top reset assert dsp
+USAGE>top reset negate dsp
+USAGE>top reset get dsp
+USAGE>top asv get
+USAGE>top clk start [clock name] [counter]
+USAGE>top clk stop [clock name] [counter]
+USAGE>top clk get [clock name]
+USAGE>top imgclk [ap] [jpg] [ela0] [ela1] [spr] [rib] [b2y] [iip] [pro.sro] [pro.pro]
+USAGE>top clksel set peri [periclk]
+USAGE>top clksel set sen [senclk]
+USAGE>top clksel set sd1u2 [sd1u2clk]
+USAGE>top clksel set sd1u1 [sd1u1clk]
+USAGE>top clksel set sd0 [sd0clk]
+USAGE>top clksel set nf [nfclk]
+USAGE>top clksel set ap [apclk]
+USAGE>top clksel set apclk [apclk]
+USAGE>top clksel set jpg [jpgclk]
+USAGE>top clksel set ela0 [elaclk]
+USAGE>top clksel set ela1 [elaclk]
+USAGE>top clksel set spr [sprclk]
+USAGE>top clksel set wdr [wdrclk]
+USAGE>top clksel set apl [aplclk]
+USAGE>top clksel set jhdr [jhdrclk]
+USAGE>top clksel set hif [hifclk]
+USAGE>top clksel set lcd [clksel]
+USAGE>top clksel set rib [ribclk]
+USAGE>top clksel set b2y [b2yclk]
+USAGE>top clksel set iip [iipclk]
+USAGE>top clksel set pro [clksel]
+USAGE>top clksel set sro [sroclk]
+USAGE>top clksel set srosel [sroselclk]
+USAGE>top clksel set ahfd [ahfdclk]
+USAGE>top clksel set ahip [ahipclk]
+USAGE>top clksel set cpu [cpuclk]
+USAGE>top clksel set l2c [l2cclk]
+USAGE>top clksel set cpuperi [cpupericlk]
+USAGE>top clksel set eaxi [eaxiclk]
+USAGE>top clksel set axi [axiclk]
+USAGE>top clksel set ahb [ahbclk]
+USAGE>top clksel set apb [apbclk]
+USAGE>top clksel set x [xclk]
+USAGE>top clksel set dsp [dspclk]
+USAGE>top clksel set dpp [dppclk]
+USAGE>top clksel set srr [srrclk]
+USAGE>top clksel set au0 [auclk]
+USAGE>top clksel set au1 [auclk]
+USAGE>top clksel set au2 [auclk]
+USAGE>top clksel set netau [auclk]
+USAGE>top clksel set dchreq
+USAGE>top clksel get dsp
+USAGE>top reset assert dsp
+USAGE>top reset negate dsp
+USAGE>top reset get dsp
+USAGE>top asv get
+I:0:T01000007: raw info: display dump related parameters
+I:0:T01000007: raw view [1:PRO 2:B2Y 4:SPR 8:JPEG_B2Y 16:JPEG_SPR]: Raw capture of current view mode
+I:0:T01000007: raw pch sel [n'th] [raw_bit] [posit]: change pch input position
+I:0:T01000007:   { n'th:1/2 raw_bit:1/2, posit:1~6 }
+
+This is command netsec help.
+---------------------------------------------------
+  Argument[1]
+    net start ts_lpbk  - test for ts_loopback
+  Argument[2] (Only set when use this option)
+---------------------------------------------------
+
+USAGE>pcierc sam1_1
+                # RC Sample Start 1_1. (Bifurcation Disable, Link Up, Configration, GEN2)
+
+USAGE>pcierc sam1_2
+                # RC Sample Start 1_2. (ASPM ON, MSI)
+
+USAGE>pcierc sam2_1
+                # RC Sample Start 2_1. (Bifurcation Enable, Link Up, Configration, GEN2)
+
+USAGE>pcierc sam2_2
+                # RC Sample Start 2_2. (ASPM ON, MSI)
+
+USAGE>pcierc same
+                # RC Sample End.
+
+USAGE>pcierc sam1
+                # RC Sample 1
+
+USAGE>pcierc sam2
+                # RC Sample 2
+
+USAGE>pcierc samend
+                # RC Sample 1 and 2 End
+
+USAGE>pcierc init [bifurcation]
+                # Init RC.
+                #   [bifurcation] bifurcation mode (0(disable),1(enable))
+
+USAGE>pcierc deinit
+                # Deinit RC.
+
+USAGE>pcierc open
+                # Open RC.
+
+USAGE>pcierc close
+                # Close RC.
+
+USAGE>pcierc cfgctrl [ch]
+                # Configuration transfer set.
+                #   [ch] Channel (0,1)
+
+USAGE>pcierc cfgrd [ch] [offset]
+                # Configuration read.
+                #   [ch] Channel (0,1)
+                #   [offset] Configuration register address offset
+
+USAGE>pcierc cfgwt [ch] [offset] [data]
+                # Configuration write.
+                #   [ch] Channel (0,1)
+                #   [offset] Configuration register address offset
+                #   [data] write data (4byte Hex string)
+
+USAGE>pcierc mdmatra [ch] [src_addr] [dst_addr] [trans_size] [direction] [cb]
+                # Demand DMA transfer.
+                #   [ch] Channel (0,1)
+                #   [src_addr] source address (4byte Hex string)
+                #   [dst_addr] destination lower address (4byte Hex string)
+                #   [trans_size] transfer total size (4byte Hex string)
+                #   [direction] transfer direction (0(destination to source), 1(source to destination))
+                #   [cb] callback (0(Invalidity), 1(Effective))
+
+USAGE>pcierc dmastop [ch]
+                # DMA stop.
+                #   [ch] Channel (0,1)
+
+USAGE>pcierc memctrl [ch] [bar] [limit_addr] [target_low_addr]
+                # Memory transfer settings.
+                #   [ch] Channel (0,1)
+                #   [bar] memory base address (4byte Hex string)
+                #   [limit_addr] memory limit address
+                #   [target_low_addr] memory target lower address (4byte Hex string)
+
+USAGE>pcierc msictrl [ch] [int_en] [comp_addr] [cb]
+                # MSI settings.
+                #   [ch] Channel (0,1)
+                #   [int_en] Interrupt enable (4byte Hex string)
+                #   [comp_addr] Compare address (4byte Hex string)
+                #   [cb] callback (0(Invalidity), 1(Effective))
+
+USAGE>pcierc intxctrl [ch]
+                # Setting of INTx detection.
+                #   [ch] Channel (0,1)
+
+USAGE>pcierc aspmon [ch]
+                # ASPM ON
+                #   [ch] Channel (0,1)
+
+USAGE>pcierc aspmoff [ch]
+                # ASPM OFF
+                #   [ch] Channel (0,1)
+
+USAGE>pcierc spdchg [ch] [speed]
+                # Transfer speed change.
+                #   [ch] Channel (0,1)
+                #   [speed] 0(GEN1),1(GEN2)
+
+USAGE>pcierc get st_dlup [ch]
+                # Get STate of Data communication Link Up.
+                #   [ch] Channel (0,1)
+
+USAGE>pcierc get st_ltssm [ch]
+                # Get STate of Link Training and Status State Machine.
+                #   [ch] Channel (0,1)
+
+USAGE>pcierc get pmst [ch]
+                # Get Power Management Status State.
+                #   [ch] Channel (0,1)
+
+USAGE>pcierc get spdst [ch]
+                # Get the transfer speed status.
+                #   [ch] Channel (0,1)
+
+USAGE>pcierc get aspmst [ch]
+                # Get ASPM status.
+                #   [ch] Channel (0,1)
+USAGE>pcieep sam1_1
+                # EP Sample Start 1_1.
+
+USAGE>pcieep sam1_2
+                # EP Sample Start 1_2.
+
+USAGE>pcieep same
+                # EP Sample End.
+
+USAGE>pcieep sam1
+                # EP Sample 1.
+
+USAGE>pcieep samend
+                # EP Sample 1 End.
+
+USAGE>pcieep init
+                # Init EP.
+
+USAGE>pcieep deinit
+                # Deinit EP.
+
+USAGE>pcieep open
+                # Open EP.
+
+USAGE>pcieep close
+                # Close EP.
+
+USAGE>pcieep dmatra [src_addr] [dst_addr] [trans_size] [direction] [cb]
+                # Demand DMA transfer.
+                #   [src_addr] source address (4byte Hex string)
+                #   [dst_addr_low] destination lower address (4byte Hex string)
+                #   [trans_size] transfer total size (4byte Hex string)
+                #   [direction] transfer direction (0(destination to source), 1(source to destination))
+                #   [cb] callback (0(Invalidity), 1(Effective))
+
+USAGE>pcieep lldma [direction] [cb]
+                # Linked List DMA transfer.
+                #   [direction] transfer direction (0(destination to source), 1(source to destination))
+                #   [cb] callback (0(Invalidity), 1(Effective))
+
+USAGE>pcieep dmastop
+                # DMA stop.
+
+USAGE>pcieep memctrl [bar] [limit_addr] [target_low_addr]
+                # Memory transfer settings.
+                #   [bar] memory base address (4byte Hex string)
+                #   [limit_addr] memory limit address
+                #   [target_low_addr] memory target lower address (4byte Hex string)
+
+USAGE>pcieep rintep
+                # Request INT_EP
+
+USAGE>pcieep msitra [msi_num]
+                # MSI Transfer Instruction.
+                #   [msi_num] MSI Number (0-31)
+
+USAGE>pcieep aspmon
+                # ASPM ON
+
+USAGE>pcieep aspmoff
+                # ASPM OFF
+
+USAGE>pcieep spdchg [speed]
+                # Transfer speed change.
+                #   [speed] 0(GEN1),1(GEN2)
+
+USAGE>pcieep get st_dlup
+                # Get STate of Data communication Link Up.
+
+USAGE>pcieep get st_ltssm
+                # Get STate of Link Training and Status State Machine.
+
+USAGE>pcieep get pmst
+                # Get Power Management Status State.
+
+USAGE>pcieep get spdst
+                # Get the transfer speed status.
+
+USAGE>pcieep get aspmst
+                # Get ASPM status.
+USAGE>slimbus task start
+                # Start task.
+
+USAGE>slimbus task stop
+                # Stop task.
+
+USAGE>slimbus task status
+                # Get task status.
+
+USAGE>slimbus open [ch]
+                # Open.
+                #   [ch] Channel (0,3)
+
+USAGE>slimbus close [ch]
+                # Close.
+                #   [ch] Channel (0,3)
+
+USAGE>slimbus ctrl [ch] [mng_mode] [fr_en] [mng cb] [dataport cb]
+                # Clsoe.
+                #   [ch] Channel (0,3)
+                #   [mng_mode] manager mode (0: off, 1:on)
+                #   [mng cb] manager callback (0: off, 1:on)
+                #   [dataport cb] dataport callback (0: off, 1:on)
+
+USAGE>slimbus start [ch]
+                # Start.
+                #   [ch] Channel (0,3)
+
+USAGE>slimbus stop [ch]
+                # Stop.
+                #   [ch] Channel (0,3)
+
+USAGE>slimbus enu_sta [ch]
+                # Start enumeration.
+                #   [ch] Channel (0,3)
+
+USAGE>slimbus disc [ch]
+                # Disconnect.
+                #   [ch] Channel (0,3)
+
+USAGE>slimbus r_msg [ch] [idx]
+                # Read message.
+                #   [ch] Channel (0,3)
+                #   [idx] Data Index (0,19)
+
+USAGE>slimbus w_msg [ch] [idx] [size]
+                # Write message.
+                #   [ch] Channel (0,3)
+                #   [idx] Data Index (0,19)
+
+USAGE>slimbus r_dat [ch] [dma_ch] [size]
+                # Read data port.
+                #   [ch] Channel (0,3)
+                #   [dma_ch] DMA Channel
+                #   [size] Size
+
+USAGE>slimbus w_dat [ch] [dma_ch] [size]
+                # Write data port.
+                #   [ch] Channel (0,3)
+                #   [dma_ch] DMA Channel
+                #   [size] Size
+
+USAGE>slimbus set reg [ch] [offset] [data]
+                # Set register.
+                #   [ch] Channel (0,3)
+                #   [offset] Data offset
+                #   [data] Set Data
+
+USAGE>slimbus get ctrl [ch]
+                # Get control.
+                #   [ch] Channel (0,3)
+
+USAGE>slimbus get reg [ch] [offset]
+                # Get register.
+                #   [ch] Channel (0,3)
+                #   [offset] Data offset
+
+USAGE>slimbus err
+                # Check error.
+
+USAGE>imfpt [test number]
+USAGE>imb2r [test number]
+USAGE>imb2r load [filepath]
+USAGE>imb2r save [filepath] [area_no] [bytes]
+USAGE>imbmh [test number]
+USAGE>imcnr [test number]
+USAGE>imltm rbk [test number]
+USAGE>imltm map [test number]
+USAGE>imltm ltm [test number]
+USAGE>imiip [test number]
+USAGE>imiip load [filepath] [area_no]
+USAGE>imiip save [filepath] [area_no] [bytes]
+USAGE>imiip dumpon [unit name]
+USAGE>imiip dumpoff
+USAGE>imiip pixdump [pixid]
+USAGE>imiip pclk [on off]
+USAGE>imiip hclk [on off]
+USAGE>imjpeg [test number]
+USAGE>imjpeg load [filepath] [area_no]
+USAGE>imjpeg save [filepath] [area_no] [bytes]
+USAGE>imjpeg dumpon [unit name]
+USAGE>imjpeg dumpoff
+USAGE>imjpeg pixdump [pixid]
+USAGE>imjpeg pclk [on off]
+USAGE>imjpeg hclk [on off]
+USAGE>imr2y [test number]
+USAGE>imxch [test number]
+
+temps_sensor_update: sensor_temp = 31
+temps_ext_dsp_update: ext_dsp_temp = 33
+
+BF_Debug_Save_Mem_To_File 
+
+h mode 
+host memsave [addr] [size] [filename]
+
+host memsave 0x00000000 0x1000 testout.bin
+
+t c host memsave 0xA0000000 0x1000 c:\testout.bin
+t c host memsave 0xA0000000 0x1000 testout.bin
+t c media nf get_info
+
+t camdata bt_mac 0
+t camdata bt_mac crc
