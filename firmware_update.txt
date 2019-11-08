@@ -1,0 +1,1038 @@
+.\..\framework\imgcap\3a\gpcc\core.cpp:1766:aeSetFlickeringMode  AFK mode set to                                                            60hz
+00:00:32.952197|16777375|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core                                                           .cpp:1782:aeSetMetering ______ AE metering set to uniform
+00:00:32.952485|16777375|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core                                                           .cpp:2116:awbSetSceneType ____ Set AWB with scene type = AUTO (0)
+[00033082] [0/0/0/0-2-3]imgcap_3a_resume EXIT: SUCCESS
+[00033082] [0/0/0]imgcap_3a_set_handles  imgcap_handle=2783012216 imgsrc_handle=                                                           2784245680
+[00033082] frw_imgcap: frw_imgcap_resume EXIT:
+[00033082] av_resume_module
+[00033082] Resuming Module : Record
+[00033088] av_resume_module
+[00033089] Resuming Module : Liveplay
+[00033089] Liveplay: Resume
+[00033089] Liveplay: Start
+[00033089] av_resume_module
+[00033089] Resuming Module : Stream_out
+[00033089] av_resume_module
+[00033089] Resuming Module : Streamer_in_gp_ipc
+[00033089] av_resume_module
+[00033089] Resuming Module : DataCapture
+[00033089] av_resume_module: module already resumed
+[00033089] av_encode_mode_display_start: disp_hdl: 8, switch_display: 0
+[00033089] frw_disp_set_output: LCD output
+[00033089] av_attach_modules
+[00033089] Attaching Module(4)-[Liveplay] with Module(8)-[Lcd]
+[00033090] Ready to attach calling handle_1->attach (0xa0e54180):
+handle_1->frw_mod_handle 0xa4a39808
+handle_2->frw_mod_handle 0xa5e158b8
+handle_2->frw_mod_type 10
+[00033090] Liveplay: attach
+[00033090] frw_liveplay_attach ENTER: REQ to attach Liveplay Instance a4a39808 t                                                           o cam_module instance a5e158b8
+[00033090] Attached Count = 1
+[00033090] Attached Module[8] at index[0] = a5b28f18
+[00033090] frw_imgcap: frw_imgcap_get_control_ex ENTER: REQ to resume imgcap ins                                                           tance a5e16578
+[00033090] frw_imgcap: frw_imgcap_get_control_ex Exit with ret_val=0
+[00033090] 87381- aspect ratio
+
+[00033090] frw_imgcap: frw_imgcap_set_control_ex Enter ex_ctrl=ex_ctrl_none_foun                                                           d(7), data=0xa93f66a8
+[00033091] frw_imgcap: frw_imgcap_set_control_ex Exit with ret_val=0
+[00033091] FRW Render info passed = a5b2800c
+
+[00033091] FRW render info to display
+
+[00033091] Display Render info passed = a5b2800c
+
+[00033091] Render Info  input.x = 0
+input.y = 0
+input.height = 480
+input.width = 640
+input.pitch = 640
+output.x = 0
+output.y = 0
+output.height = 320
+output.width = 480
+output.pitch = 480
+output.rotation = 0
+
+[00033091] av_resume_module
+[00033091] Resuming Module : Lcd
+[00033091] av_resume_module: module already resumed
+[00033092] av_start_module
+[00033092] Starting Module : Lcd
+[00033092] frw_disp_start: REQ to start LCD display
+[00033092] disp_lcd_start: Entered with handle:2762000236
+[00033092] disp_lcd_start Disp Window Config Success
+          in_x=0  in_y=0  in_width=480  in_height=640
+         out_x=0 out_y=0 out_width=320 out_height=480
+I:2:T0100009F: fj_disp_video_enable() ::Wait enable until update address.
+[00033092] disp_lcd_start: FJ_Disp_Video_Enable Success
+[00033092] av_start_module
+[00033092] Starting Module : Liveplay
+[00033092] Liveplay: Start
+[00033092] Liveplay: Start Sink
+[00033092] av_encode_mode_display_start: Returning
+[00033093] av_start_module
+[00033093] Starting Module : DataCapture
+[00033093] hal_datasrc_9axis_enable
+[00033093] drv_bha250_datasrc_enable:svc_state:0x2, *enabled_prev 0
+[00033093] drv_bha250_any_sensor_enabled: 5 is enabled
+[00033094] drv_bha250_enable_sensors: sensor: 1, enabled:1
+[00033094] drv_bha250_any_sensor_enabled: 1 is enabled
+[00033095] drv_bha250_enable_sensors: sensor: 2, enabled:1
+[00033095] av_graph_create_audio
+[00033095] av_attach_modules
+[00033095] Attaching Module(2)-[Audio_src] with Module(3)-[Audio_capture]
+[00033095] Ready to attach calling handle_1->attach (0xa0dce6cc):
+handle_1->frw_mod_handle 0xa4a0ac28
+handle_2->frw_mod_handle 0xa49cab00
+handle_2->frw_mod_type 3
+[00033095] Attached Count = 1
+[00033096] Attached Module[3] at index[0] = a5b28de8
+[00033096] av_attach_modules
+[00033096] Attaching Module(3)-[Audio_capture] with Module(13)-[Audio_process]
+[00033096] Ready to attach calling handle_1->attach (0xa0dc4bc4):
+handle_1->frw_mod_handle 0xa49cab00
+handle_2->frw_mod_handle 0xa49e4710
+handle_2->frw_mod_type 4
+[00033096] Attached Count = 1
+[00033096] Attached Module[13] at index[0] = a5b289bc
+[00033096] av_attach_modules
+[00033096] Attaching Module(13)-[Audio_process] with Module(5)-[Record]
+[00033096] Ready to attach calling handle_1->attach (0xa0dc63c0):
+handle_1->frw_mod_handle 0xa49e4710
+handle_2->frw_mod_handle 0xa4a3ac18
+handle_2->frw_mod_type 6
+[00033097] audcap attach success! sink type 6
+[00033097] Attached Count = 1
+[00033097] Attached Module[5] at index[0] = a5b2888c
+[00033097] av_resume_module
+[00033097] Resuming Module : Audio_src
+[00033097] audio select_route start! instance 0
+[00033097] current src :1, sink :1
+[00033097] src :1, sink :1
+[00033097] av_resume_module
+[00033097] Resuming Module : Audio_capture
+[00033097] av_resume_module
+[00033097] Resuming Module : Audio_process
+[00033097] av_run_current_mode
+[00033097] Run MODE = 17
+[00033098] av_start_module
+[00033098] Starting Module : Image_src
+[00033098] frw_imgsrc_start: Entered with SrcHndl:a5f437b0
+[00033098] frw_imgsrc_start: Exit
+[00033098] av_start_module
+[00033098] Starting Module : Image_capture
+[00033098] frw_imgcap: frw_imgcap_start ENTER: REQ to start imgcap a5e16578
+[00033098] frw_imgcap: frw_imgcap_start: capture mode = 1, config = 322, piv = 0
+[00033098] tuning = STILL, preview = true, capture_fps = 0.000
+[00033098] frw_imgcap: imgcap_update_active_video_settings: ----------- active_v                                                           ideo_isp_settings -----------------------------
+[00033098] frw_imgcap: imgcap_update_active_video_settings: |           AHIP                                                                           : 1                        |
+[00033099] frw_imgcap: imgcap_update_active_video_settings: |           EIS                                                                            : 0                        |
+[00033099] frw_imgcap: imgcap_update_active_video_settings: |           DZOOM                                                                          : 1                        |
+[00033099] frw_imgcap: imgcap_update_active_video_settings: |           DZOOM VA                                                           LUE         : 0                        |
+[00033099] frw_imgcap: imgcap_update_active_video_settings: |           FD                                                                             : 30 fps                    |
+[00033099] frw_imgcap: imgcap_update_active_video_settings: |           3DNR                                                                           : 0                        |
+[00033100] frw_imgcap: imgcap_update_active_video_settings: |           LTM                                                                            : 0                        |
+[00033100] frw_imgcap: imgcap_update_active_video_settings: --------------------                                                           -----------------------------------------
+[00033100] frw_imgcap: imgcap_update_active_video_settings: |           LINEAR |                                                            SUPERVIEW                   : 0       |
+[00033100] frw_imgcap: imgcap_update_active_video_settings: |           sgde yuv                                                            scaler on                   : 1       |
+[00033100] frw_imgcap: imgcap_update_active_video_settings: |           LINEAR |                                                            SUPERVIEW | SGDE YUV SCALER : 1       |
+[00033100] frw_imgcap: imgcap_update_active_video_settings: |           sgde on                                                                                         : 1       |
+[00033101] frw_imgcap: imgcap_update_active_video_settings: |           use libgpeis                         : 0       |
+[00033101] frw_imgcap: imgcap_update_active_video_settings: |           use delayed stream                   : 0       |
+[00033101] frw_imgcap: imgcap_update_active_video_settings: ----------- active_video_isp_settings -----------------------------
+[00033101] [0/0/0]imgcap_3a_set_handles  imgcap_handle=2783012216 imgsrc_handle=2784245680
+[00033101] [0]imgcap_3a_start ENTER: REQ to Start 3A
+[00033101] GP_3A_Set_Demosaic_Id(): Image Mode E_AFE_IMAGE_MODE_QVGA_240_12BIT_W(27)  ACTIVE demosaic_id=0
+[00033102] imgcap_3a_start: iq bin sel = 2
+
+[00033102] imgcap_iq_table_load_single()  File C:\IQ\COMMON.bin already loaded
+[00033102] imgcap_iq_table_load_single()  File C:\IQ\IQ_2.bin already loaded
+[00033102] [-/-/0/0]imgcap_iq_change_iqbin():  Initial IQ Table Selection = 2
+[00033102] imgcap_CAG_Change_SensorMode CAG Conversion image_mode(27) from Photo(1) HxW=3044x4056 (x=0 y=0) to Video(2) HxW=1014x1352
+[00033102] imgcap_CAG_Change_SensorMode CAG Conversion image_mode(27) from Photo(1) HxW=3044x4056 (x=0 y=0) to Video(2) HxW=1014x1352 Success
+[00033103] [0]imgcap_3a_start EXIT: SUCCESS
+[00033103] frw_imgcap: imgcap_setup_image_pipeline ENTER
+[00033103] frw_imgcap: imgcap_setup_image_pipeline: QVGA_30_W_LP, Sdram map mode = 20, Image macro mode = 4
+[00033103] frw_imgcap: imgcap_setup_image_pipeline EXIT with GP_SUCCESS
+[00033103] frw_imgcap:video: imgcap_video_start: ENTER REQ to start video
+[00033103] frw_disp_get_display_id: Returning Display Id as 0
+[00033103] frw_imgcap:video: imgcap_video_start: cap_config=322, piv_enable=0
+[00033103] frw_mft_video_encoder_get: success mft_handle(A4A3AC18) primary_encoder_id(0) secondary_encoder_id(1)
+[00033104] frw_mft_still_encoder_get: success handle A4A3AC18 has id 5
+[00033104] frw_disp_get_display_id: Returning Display Id as 0
+[00033104] imgsrc_set_sensor_window: Entered with SrcHndl:a5f437b0
+[00033104] imgsrc_set_sensor_window: Sensor Window 4m Pipeline
+        G_W:1368         G_H:1027
+        Ob_x:22          Ob_y:7
+        Ob_in_W:1340     Ob_in_H:2
+[00033104] imgsrc_set_sensor_window: Exit
+[00033104] frw_disp_get_display_id: Returning Display Id as 0
+[00033104] frw_imgcap:video: imgcap_video_set_windows: dzoom_enabled=1
+[00033104] frw_disp_get_display_id: Returning Display Id as 0
+[00033104] frw_imgcap:video: imgcap_print_windows: Begin
+[00033105] frw_imgcap:video: ================= Sen Window ==================
+[00033105] frw_imgcap:video: x_pos = 16, y_pos = 13, in_width = 1352, in_lines = 1012, out_width = 1352, out_lines = 1012
+[00033105] frw_imgcap:video: ===============================================
+[00033105] frw_imgcap:video: =============== Demosaic Window ===============
+[00033105] frw_imgcap:video: x_pos = 10, y_pos = 6, in_width = 1332, in_lines = 1000
+[00033105] frw_imgcap:video: scaler_in.width=1328, scaler_in.lines=996
+[00033105] frw_imgcap:video: scaler_out.width=800, scaler_out.lines=600
+[00033105] frw_imgcap:video: output_window[PRIMARY_VIDEO  ] out_width =  800, out_lines =  600
+[00033106] frw_imgcap:video: output_window[SECONDARY_VIDEO] out_width =  640, out_lines =  480
+[00033106] frw_imgcap:video: output_window[VIDEO_THM      ] out_width =  160, out_lines =  120
+[00033106] frw_imgcap:video: output_window[DISPLAY        ] out_width =  640, out_lines =  480
+[00033106] frw_imgcap:video: output_window[DISP_HDMI      ] out_width =    0, out_lines =    0
+[00033106] frw_imgcap:video: ===============================================
+[00033106] frw_imgcap:video: =================Encode Window ===============
+[00033106] frw_imgcap:video: main  : x_pos=   0, y_pos=   0, in_width=   0, in_lines=   0, out_width=   0, out_lines=   0
+[00033107] frw_imgcap:video: screen: x_pos=   0, y_pos=   0, in_width=   0, in_lines=   0, out_width=   0, out_lines=   0
+[00033107] frw_imgcap:video: thm   : x_pos=   0, y_pos=   0, in_width= 160, in_lines= 120, out_width= 160, out_lines= 120
+[00033107] frw_imgcap:video: ===============================================
+[00033107] frw_imgcap:video: imgcap_print_windows: End
+[00033107] SH: ************ 3dnr bypass mode 1 ***************
+[00033107] frw_imgcap:roi_mng : imgcap_roi_mng_dzoom_update Enter
+[00033108]  frw_imgcap:roi_mng : imgcap_roi_mng_dzoom_update in rect [ 0 x 0 800 x 600] out_rect [16 x 12 x 3993 x 2997]
+[00033108] frw_imgcap:roi_mng : imgcap_roi_mng_dzoom_update Exit
+[00033108] OVERRIDE Raw Scale Mode from FJ_STILL_RAW_SCALER_SEL_SNI to FJ_STILL_RAW_SCALER_SEL_EXTERNAL
+[00033108] imgcap_video_start() raw_scale=2
+[00033108] imgcap_video_start() Demosaic input 1332 x 1000  output 1328 x 996
+[00033108] mft_still_setup_bit_rate_control: capture_mode 1, still_type 6 w = 640 h = 480 compression_ratio = 0.292969
+[00033108] imgsrc_set_sen_config: Entered with SrcHndl:a5f437b0 & sen_id:0
+[00033109] imgsrc_set_sen_config: Sensor Mode read from pipeline 27
+[00033109] Optical Black Mode: capture_mode=STILL iq_settings->tuning=STILL Preview=true Opt Black Mode=OB_MODE_IQ
+[00033109] imgsrc_set_sen_config: Exit
+I:2:T0100009F: ### fj_setmode(): prev=VIDEO(0x00040000), curr=IDLE(0x00020000), next=STOP(0x00008000), req=INITIALIZER(0x000000ff).
+I:2:T0100009F: ### fj_startmode(): prev=VIDEO(0x00040000), curr=IDLE(0x00020000), next=STOP(0x00008000), req=VIDEO(0x00040000) .
+[00033109] mft_audio_config: audio enc[1] is already initialized or not opened
+[00033110] imgcap_video_start: FJ_WaitModeComp Start
+D:0:T0100002E: bf_still_connect_mng_set_raw_scaling_config_wa(): W.A. for LP. Input window1328
+D:0:T0100002E: bf_still_connect_mng_set_raw_scaling_config_wa(): W.A. for LP. Input window1328
+[00033111] FJ_HostRawScalerConfigCB First Bayer Pixel is R
+[00033111] GoProIP_GetIpRegister  Initialized BUZZARD Left Config Addr = 0x2840c400                              Right Config Addr = 0x2850c400
+[00033111] GoProIP_GetIpRegister  BayerScalerSelect (0=SNI, 1=GoPro) Left = 0x1  Right = 0x1
+[00033111] FJ_HostRawScalerConfigCB  Return 0 cfgGoProBayerscaler(Left)
+[00033111] FJ_HostRawScalerConfigCB  Return 0 cfgGoProBayerscaler(Right)
+[00033112] IMGCAP_WINDOW [imgcap_windows_update_infos:200] - Updating windows information ...
+[00033112] IMGCAP_WINDOW [imgcap_windows_update_infos:514] - Update windows done !
+I:2:T0100000C: ** BF_Still_View_Seq_Task_Main() start
+I:1:T01000094: >>>>> IQ CAG Task Start TID=0x1000094 CPUID=1.
+I:2:T0100006A: >>>>> Still IQ regwrite Task Start TID=0x100006a CPUID=2.
+I:2:T0100006B: >>>>> Still IQ regwrite Task Start TID=0x100006b CPUID=2.
+[00033142] FJ_HostSensorStartCB: Exit
+[00033142] FJ_HostSensorModeChangeCB: Entered with sensor_id:0
+[00033142] imgsrc_sensor_mode_change: Entered with sensor:0
+[00033142] imgsrc_get_sen_id: Entered with sensor_id:0
+[00033142] imgsrc_sensor_stop_sync_gen: Entered with sen_id:0 & stop mode:1
+[00033142] imgsrc_sensor_configure_sync_gen: Entered with sen_id:0
+[00033142] imgsrc_sensor_configure_sync_gen: Sensor timing 4m pipeline
+        vdocyc:1155     hdocyc:260
+[00033142] imgsrc_sensor_configure_sync_gen: Exit
+[00033142] imgsrc_sensor_start_sync_gen: Entered with sen_id:0
+[00033143] imgsrc_sensor_start_sync_gen: Exit
+[00033143] imgsrc_sensor_set_mode: Enter
+[00033143] imgsrc_sensor_set_mode: Sensor Mode read from pipeline 27
+[00033143]  imgsrc_sensor_set_mode: Exit
+[00033143] imgsrc_sensor_mode_change: sensor:0, Photo mode = 262144
+[00033143] imgsrc_sensor_mode_change: Exit
+[00033143] FJ_HostSensorModeChangeCB: Exit
+[000331
+s:> 44] [0/0/0]FJ_Host3AWindowConfigCB  ENTERED at time 32339
+[00033144] frw_imgcap: frw_imgcap_get_control_ex ENTER: REQ to resume imgcap instance a5e16578
+[00033144] frw_imgcap: frw_imgcap_get_control_ex Exit with ret_val=0
+00:00:33.015277|16777262|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:669:setFrameRate ________ Frame rate = 29.97 (30)
+00:00:33.015603|16777262|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:311:setConfig ___________ Stats band count : 2 - Stats disabled : false
+00:00:33.015979|16777262|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:283:printConfig _________ GPCC Config :
+00:00:33.016244|16777262|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:290:printConfig _________   - Sdk mode : 262144 (VIDEO)
+00:00:33.016528|16777262|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:291:printConfig _________   - ImageBitDepth : 10
+00:00:33.016804|16777262|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:292:printConfig _________   - Mirror : 1 - Flip : 0
+00:00:33.017092|16777262|I Gpcc::AeHistMgt   ..\..\framework\imgcap\3a\gpcc\ae_history_mgt.cpp:192:reset _____ New sensor latencies : mEtLatency = 1, mAgLatency = 0, mDgLatency = 0, mIspgLatency = 0, mAeLatency = 1
+00:00:33.017501|16777262|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:3627:freeAllSaveRawPacks  Entering
+[00033147]  imgcap_badpix_table_load():  Bad Pixel - file=EMMC - BADPIX_0.BIN  size=17928  CalibTgt=1 Load Complete!!!
+[00033147] gp_badpix_change_tbl_imx277(): Using E_IQ_CALIB_TGT_2 (1/2.3 inch Mode4) E_AFE_IMAGE_MODE_QVGA_240_12BIT_W(27) flip=0
+[00033147] imgcap_badpix_change_table(): src.y_pos=10 dst.y_pos=16 - flip 0 (0 0)
+[00033152] [-/-/-/0]imgcap_badpix_change_tabl
+e(): Converted Bad Pixel table from CalTgt 1 to CalTgt 3 for E_AFE_IMAGE_MODE_QVGA_240_12BIT_W(27):> 0m
+[00033153] [-/-/-/0]imgcap_badpix_change_table(): Selected Bad Pixel Table with CalTgt 3 Index 0 for E_AFE_IMAGE_MODE_QVGA_240_12BIT_W(27)
+[00033153] [-/-/-/0]imgcap_badpix_change_table: Bad Pixel Table is on for CalTgt 3 Index 0 Flip 0 (0,0)
+[00033154] GP_3A_GTM_Configure() streaming=29.970030fps capture=0.000000fps fps_sampling=1 tc_resol=1024 set_to_identity=0
+[00033154] frw_imgcap:roi_mng : imgcap_roi_mng_dzoom_update Enter
+[00033154]  frw_imgcap:roi_mng : imgcap_roi_mng_dzoom_update in rect [ 0 x 0 800 x 600] out_rect [16 x 12 x 3993 x 2997]
+[00033154] frw_imgcap:roi_mng : imgcap_roi_mng_dzoom_update Exit
+[00033154] imgcap_fshd_change_table(): AFE image mode E_AFE_IMAGE_MODE_QVGA_240_12BIT_W(27)  PIV=0
+
+[00033155] [-/-/-/0]imgcap_fshd_change_table: Tgt=3 SrcTblStX=0 SrcTblStY=0 SrcTblWid=4056 SrcTblLin=3044
+[00033155] [-/-/-/0]imgcap_fshd_change_table: DstTblWid=1352 DstTblLin=1012
+[00033155] GoProGetRawScalerFactor DEMOSAIC  Raw Width In/Out = 1332/1328   Height In/Out = 1000/996
+[00033155] GoProGetRawScalerFactor GP Scaler=1  Config=66  Raw Scale Width In/Out = 1332/1328                        Height In/Out = 1000/996
+[00033155] imgcap_fshd_change_table   Raw Width In/Out = 1332/1328   Height In/Out = 1000/996
+[00033155] [-/-/-/0]imgcap_fshd_change_table: DstTblWid=1347 DstTblLin=1007
+[00033156] [-/-/-/0]imgcap_fshd_change_table: enable=1 flip=0 image_mode=E_AFE_IMAGE_MODE_QVGA_240_12BIT_W(27)
+[00033156] [-/-/-/0]imgcap_fshd_change_table: Swidth/lines=4056/3044 Dwidth/lines=1347/1007 StartX/Y=0/0
+[00033156] [0/0/0]FJ_Host3AWindowConfigCB -> Exit at time 32351
+W:0:T0100002E: BF_Still_PRO_Ctrl_Calc_CalibTbl(): BF_IQ_CAG_Calc_SplitTbl(): FFC talbe not ready. 0x40c
+I:0:T0100002E: BadPix enable. demosaic_id=0 (table=3-0)
+I:0:T0100002E: BadPix enable. demosaic_id=0 (table=3-0)
+[00033173] [0/0/0]FJ_Host3AInitCB -> Entered  at time 32368
+[00033173] [0/0/0]F
+s:> J_Host3AInitCB() VIDEO image_mode=E_AFE_IMAGE_MODE_QVGA_240_12BIT_W(27)  camera_mode=E_GP_3A_CAM_DRAFT_4K2K(9)
+[00033174] AUTO LOW LIGHT  Enable=1 Available=0 Max_Slow_Shutter=1
+[00033174] AUTO LOW LIGHT is ENABLED NominalFPS=29.97  MinFPS=30.5  MaxExpTime=0.032787
+W:[00033174] [-/-/0/-] VIDEO PROTUNE Enable = 0
+1:T01000094: [00033174] IQ_SETTINGS: for FRW_CAPTURE_MODE_STILL(1) capture type=5
+BF_Still_PRO_Ctrl_Calc_CalibTbl(): BF_IQ_CAG_Calc_SplitTbl(): FFC talbe not ready. 0x40c
+[00033174] frw_imgcap: frw_imgcap_get_control_ex ENTER: REQ to resume imgcap instance a5e16578
+[00033174] frw_imgcap: frw_imgcap_get_control_ex Exit with ret_val=0
+[00033174] IQ_SETTINGS:  meter_mode=0  color_mode=0  min_iso=100  max_iso=3200  sharpness=2
+[00033175] IQ_SETTINGS:  wb_mode=0  exposure_comp=0x0  shutter_limit=0.500000
+[00033175] IQ_SETTINGS:  manual_shutter=0.000000  manual_iso=0  iso_mode=0  shutter_mode=0  ae_lock=0
+[00033175] frw_imgcap_get_control: FRW_IMGCAP_EIS_MODE is FRW_IMGCAP_EIS_DISABLE
+[00033175] DEFAULT  AUTO SHUTTER EXPOSURE
+00:00:33.046384|16777262|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:1553:clearAeExpoTimeLimit  AE set in safe mode
+00:00:33.046674|16777262|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:1426:setAeMaxExpoTime ___ AE set max exposure time to 33.37 ms for AE mode 0
+00:00:33.047020|16777262|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:1426:setAeMaxExpoTime ___ AE set max exposure time to 125.00 ms for AE mode 4
+[00033176] AUTO-EXPOSURE IS UNLOCKED !!!
+[00033176] MFG_LOG: Exposure set
+[00033176] DEFAULT  EV COMPENSATION = 0x0 (16.16 format)
+00:00:33.047627|16777262|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:1376:setAeEVBias ________ AE force EV bias to 0.000000
+[00033177] DEFAULT  ISO - Range 100 - 3200
+00:00:33.048042|16777262|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:1491:setAeIsoLimitMin ___ AE set ISO limit min to 100: gain min = 1.41 for mode (0)
+[00033177] ISO MIN - DEFAULT: 100 for primary mode (0)
+00:00:33.048476|16777262|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:1491:setAeIsoLimitMin ___ AE set ISO limit min to 100: gain min = 1.41 for mode (2)
+[00033178] ISO MIN - MANUAL: 100 for secondary mode (4)
+00:00:33.048915|16777262|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:1476:setAeIsoLimitMax ___ AE set ISO limit max to 6400: gain max = 90.40 for mode (0)
+[00033178] ISO MAX - DEFAULT: 6400 for primary mode (0)
+00:00:33.049349|16777262|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:1476:setAeIsoLimitMax ___ AE set ISO limit max to 3200: gain max = 45.20 for mode (2)
+[00033178] ISO MAX - DEFAULT: 3200 for secondary mode (4)
+[00033179] DEFAULT  WHITE BALANCE mode = 0
+[00033179] White Balance Auto
+00:00:33.049929|16777262|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:2081:awbSetMode _________ Set AWB with wb_mode=0 cm_identity=0
+[00033179] DEFAULT  COLOR     mode = 0
+[00033179] Color Mode - GoPro
+[00033179] [-/-/0/0]imgcap_iq_set_video_color_mode() scene=0 (0+0) GTM=on return=0
+00:00:33.050516|16777262|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:2862:gtmSetMode _________ mode 1
+[00033180] DEFAULT  SHARPNESS      = 2
+[00033180] Sharpness HIGH
+[00033180] [-/-/0/0]imgcap_iq_set_video_sharpness() scene=0 (0+0)  GTM=on return=0
+00:00:33.051081|16777262|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:2862:gtmSetMode _________ mode 1
+00:00:33.051342|16777262|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:715:setConvergenceSpeed _ Convergence speed = MEDIUM (2)
+00:00:33.051966|16777262|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:632
+:getTiming ___________ set AWB div to 1 x 1 = 1
+00:00:33.052256|16777262|I :> ;33mGpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:636:getTiming ___________ set ACLS div to 2 x 1 = 2
+00:00:33.052537|16777262|I Gpcc
+s:>      ..\..\framework\imgcap\3a\gpcc\core.cpp:654:getTiming ___________ AeCallRate=9.99 - AEdiv=0 - AWBdiv=3 - AFdiv=0 - FLCKdiv=0
+[00033182] [0/-/0]GP_3A_Init()  Done
+[00033182] [0/0/0]FJ_Host3AInitCB -> Exit at time 32377
+[00033182] FJ_H
+s:> ostAhipInitCB: AHIP_OpenPreview: demosaic_id=0, input_width=1328, input_lines=996
+[00033182]  Aspect raio is 4:3
+
+[00033182] imgcap_fd_start: preview=1 fd=A5F35C18 demosaic_id=0 input
+s:> _width=1328 input_height=996 aspec_ratio=87381 work_width=512 work_height=384
+I:0:T0100002E: AhipPre  w 512 h 384
+I:0:T0100002E: AhipPreGetFrameNo -1
+[00033188] imgcap_iq_set_sgde_scaler_setting():  demosaic_id=0  scaler_setting=2 (0=Weakest...4=Strongest)
+[00033188] imgcap_iq_get_sgde_scaler_kernel():  demosaic_id=0  scaler_setting=2 (0=Weakest...4=Strongest)
+I:0:T0100002E: ____SEN_INIT_WA_VD_wait(0)
+I:0:T0100002E: FSHD activated. demosaic_id=0 img_pipe
+s:> =0
+I:0:T0100002E: BadPix Compensation activated. demosaic_id=0 img_pipe=0
+I:0:T0100002E: FSHDL0 activated. demosaic_id=0 img_pipe=0
+W:0:T0100002E: FFC table not loaded. demosai
+s:> c_id=0.
+I:0:T0100002E: FSHD activated. demosaic_id=0 img_pipe=1
+I:0:T0100002E: BadPix Compensation activated. demosaic_id=0 img_pipe=1
+I:0:T0100002E: FSHDL0 activated. demosaic_id=0 img_pi
+s:> pe=1
+W:0:T0100002E: FFC table not loaded. demosaic_id=0.
+[00033220] imgcap_video_start: FJ_WaitModeComp End 110
+[00033220] frw_imgcap:video: imgcap_video_start: EXIT
+[00033220] frw_disp_get_display_id: Returning Display Id as 0
+00:00:33.091071|16777375|
+:> ;7;33mW ~~~~~~            ../src/isg/ispw/libgpsc/src/gpsc.cpp:126:gp_sc_open _____________ Param height is unsupported: 848
+[00033220] frw_imgcap: Scene Classification is enabled
+[00033220] frw_imgcap: frw_imgcap_start EXIT:
+s:>
+[00033220] av_run_current_mode: Start streaming
+[00033220] av_start_module
+[00033220] Starting Module : Stream_out
+[00033221] Streaming STATE: STARTED
+[00033221] av_start_module
+[00033221] Starting Module : Streamer_in_gp_ipc
+[00033221] frw_ipc_start --------- starting framework ipc --------
+[00033224] frw_mft_get_remaining_still_co
+s:> unt: enc_height 3000, enc_width 4000
+[00033224] frw_mft_get_remaining_still_count: sd_size 30230 MB, img_size 2621440, count 12092
+[00033224] Photos Remaining: 12092
+[00033224]
+s:>  mft_get_overall_bitrate: primary bitrate 60000000
+[00033224] mft_get_overall_bitrate: primary bitrate with margin 67200000
+[00033225] mft_get_overall_bitrate: primary bitrate with audio and etc. 67450000
+[00033225] mft_get_overall_bitrate: total bitrate 67450000
+[000
+s:> 33226] frw_mft_get_remaining_movie_time: sd_size 31696322560, remaining movie time in seconds 3759
+[00033226] Video time Remaining (sec): 3759
+[00033226] Photos Count: total 0, group 0
+[00033227] Video Count: total 4, group 4
+[00033228] av_flat_mode_switch_sync_sen
+s:> d: Sending sync event to UI flat_mode 17 (app_mode 1, sub_mode 1)
+[00033228]
+        event.id.group 3
+        event.id.source 8
+        event.id.type 6
+        event.param[0] 1
+        event.param[1] 1
+        event.param[2] 0
+[00033228] MFG_LOG: Mode Switch SUCCESS, Mode:17
+[00033228]
+         local_voice_co
+s:> ntrol_enabled is 0
+[00033229]
+         remote_voice_control_enabled is 0
+[00033229] [VC] Not a "button record change" event. Just throw it away.
+00:00:33.122423|16777295|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:669:setFrameRate ________ Frame rate = 29.97 (30)
+00:00:33.122779|16777295|I Gpcc::AeHistMgt   ..\..\framework\imgcap\3a\gpcc\ae_history_mgt.cpp:335:getLatency  get sensor latencies : mEtLatency = 1, mAgLatency = 0, mDgLatency = 0, mIspgLatency = 0, mAeLatency = 1
+[00033252] imgcap_set_low_light_status Active=0 low_light_factor=1
+[00033252] low_light_active_callback() low_light: 0 eis: 1
+[00033253] GP_3A_GTM_ConfigureStats() updated r2y_win=1328x996 gtm_estim_win=1328x996(0,0)
+00:00:33.124566|16777296|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:632:getTiming ___________ set AWB div to 1 x 1 = 1
+00:00:33.124864|16777296|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:636:getTiming ___________ set ACLS div to 2 x 1 = 2
+00:00:33.125156|16777296|I Gpcc              ..\..\framework\imgcap\3a\gpcc\core.cpp:654:getTiming ___________ AeCallRate=9.99 - AEdiv=0 - AWBdiv=3 - AFdiv=0 - FLCKdiv=0
+E:2:T0100000E: Sdram_Map_Movie_Record_Get_H264_Vin_Dummy: dummy area overlap error.
+I:2:T0100000E: BF_Disp_Set_Main_Addr() ::released enable waiting.
+[00033270] csc_utils_video_aspect_ratio_get
+[00033270] ---------Setting filter for AR 4:3
+[00033270] ---------Setting filter for AR 4:3
+[00033270] csc_utils_video_capability_res_list_get
+[00033270] settings_prd_cfg_video_capability_resolution_list_get
+
+[00033270] Filter = 0x1000
+[00033270] Filter MASK = 0x3e7e
+[00033270] app_filter in 0x1000
+[00033270] cam_config_filter out 0x400
+[00033270] tara_update_video_res_capability Valid video Resolution, filter: 4096, total num: 4
+[00033271] 124
+[00033271] 125
+[00033271] 128
+[00033271] 732
+[00033271] csc_utils_video_capability_fps_list_get
+[00033271] app_filter in 0x1000
+[00033271] cam_config_filter out 0x400
+[00033271] csc_utils_video_capability_fps_list_get
+[00033271] app_filter in 0x1000
+[00033271] cam_config_filter out 0x400
+[00033271] csc_utils_video_capability_fov_list_get
+[00033271] app_filter in 0x1000
+[00033271] cam_config_filter out 0x400
+[00033272] tara_system_display_hdmi_status_get, isHdmiPresent:0, isHdmiOn:0
+[00033273] UI<tara_system_display_hdmi_status_get> isHdmiPresent[0], isHdmiOn[0]
+[00034169] ENTRY csc_utils_is_digital_zoom_supported: res/fps/fov (20/15/5) camera mode (17)
+[00034169] ENTRY csc_utils_is_digital_zoom_supported: res/fps/fov (20/15/5) camera mode (17)
+[00034170] ENTRY csc_utils_is_digital_zoom_supported: res/fps/fov (20/15/5) camera mode (17)
+[00034170] ENTRY csc_utils_is_digital_zoom_supported: res/fps/fov (20/15/5) camera mode (17)
+[00034174] ENTRY csc_utils_is_digital_zoom_supported: res/fps/fov (20/15/5) camera mode (17)
+[00034174] ENTRY csc_utils_is_digital_zoom_supported: res/fps/fov (20/15/5) camera mode (17)
+[00034175] ENTRY csc_utils_is_digital_zoom_supported: res/fps/fov (20/15/5) camera mode (17)
+[00034175] ENTRY csc_utils_is_digital_zoom_supported: res/fps/fov (20/15/5) camera mode (17)
+[00034216] ENTRY csc_utils_is_digital_zoom_supported: res/fps/fov (20/15/5) camera mode (17)
+[00034216] ENTRY csc_utils_is_digital_zoom_supported: res/fps/fov (20/15/5) camera mode (17)
+[00034216] ENTRY csc_utils_is_digital_zoom_supported: res/fps/fov (20/15/5) camera mode (17)
+[00034216] ENTRY csc_utils_is_digital_zoom_supported: res/fps/fov (20/15/5) camera mode (17)
+[00037209] temps_pmic_die_update: die temperature 52 C
+[00038222] ibat_update_mv: instant voltage:4329mV, averaged:4328mV
+[00038246] ibat_update_temp: instant temp 29C, state temp:29C, range=2
+[00042331] temps_pmic_die_update: die temperature 47 C
+[00058616] ibat_update_mv: instant voltage:4328mV, averaged:4328mV
+[00058640] ibat_update_temp: instant temp 29C, state temp:29C, range=2
+[00079014] ibat_update_mv: instant voltage:4328mV, averaged:4328mV
+[00079038] ibat_update_temp: instant temp 29C, state temp:29C, range=2
+[00091057] frw_disp_off: REQ to turn off LCD display. Turning off LCD display
+[00091057] mipi_st7796s_disable ENTER
+[00091057] ======== LCD_DEBUG: cmd_num = 2 =======
+
+[00091085] act9150_lcd_backlight_enable: enter
+[00091174] mipi_st7796s_disable EXIT
+[00093388] temps_pmic_die_update: die temperature 48 C
+[00098467] temps_pmic_die_update: die temperature 47 C
+[00099480] ibat_update_mv: instant voltage:4340mV, averaged:4339mV
+[00099504] ibat_update_temp: instant temp 30C, state temp:30C, range=2
+:> 0m
+[00119870] ibat_update_mv: instant voltage:4342mV, averaged:4341mV
+[00119894] ibat_update_temp: instant temp 30C, state temp:30C, range=2
+[00126059] wait_ipc_done - event 4 took 2 msec
+[00140269] ibat_update_mv: instant voltage:4342mV, averaged:4342mV
+[00140294] ibat_update_temp: instant temp 30C, state temp:30C, range=2
+[00154579] temps_pmic_die_update: die temperature 48 C
+[00160669] ibat_update_mv: instant voltage:4342mV, averaged:4342mV
+[00160696] ibat_update_temp: instant temp 31C, state temp:31C, range=2
+[00181064] ibat_update_mv: instant voltage:4342mV, averaged:4342mV
+[00181088] ibat_update_temp: instant temp 31C, state temp:31C, range=2
+[00184128] act9150_set_core_voltage - core raw value 0x18
+[00184130] platform_run_avs: avs:0xF, dsp_temp:41, core voltage set to 0.825V
+[00195374] temps_pmic_die_update: die temperature 49 C
+[00201468] ibat_update_mv: instant voltage:4343mV, averaged:4343mV
+[00201493] ibat_update_temp: instant temp 31C, state temp:31C, range=2
+[00221935] ibat_update_mv: instant voltage:4343mV, averaged:4343mV
+[00221960] ibat_update_temp: instant temp 31C, state temp:31C, range=2
+[00242332] ibat_update_mv: instant voltage:4343mV, averaged:4343mV
+[00242356] ibat_update_temp: instant temp 31C, state temp:31C, range=2
+[00247059] wait_ipc_done - event 4 took 2 msec
+[00262728] ibat_update_mv: instant voltage:4342mV, averaged:4342mV
+[00262752] ibat_update_temp: instant temp 32C, state temp:32C, range=2
+[00271914] temps_pmic_die_update: die temperature 50 C
+[00283124] ibat_update_mv: instant voltage:4343mV, averaged:4343mV
+[00283148] ibat_update_temp: instant temp 32C, state temp:32C, range=2
+[00303516] ibat_update_mv: instant voltage:4343mV, averaged:4342mV
+[00303545] ibat_update_temp: instant temp 32C, state temp:32C, range=2
+[00323911] ibat_update_mv: instant voltage:4342mV, averaged:4342mV
+[00323935] ibat_update_temp: instant temp 32C, state temp:32C, range=2
+[00344390] ibat_update_mv: instant voltage:4342mV, averaged:4342mV
+[00344414] ibat_update_temp: instant temp 32C, state temp:32C, range=2
+[00353580] temps_pmic_die_update: die temperature 51 C
+[00364788] ibat_update_mv: instant voltage:4342mV, averaged:4342mV
+[00364812] ibat_update_temp: instant temp 33C, state temp:33C, range=2
+[00368058] wait_ipc_done - event 4 took 1 msec
+[00385183] ibat_update_mv: instant voltage:4342mV, averaged:4342mV
+[00385212] ibat_update_temp: instant temp 33C, state temp:33C, range=2
+[00405587] ibat_update_mv: instant voltage:4341mV, averaged:4341mV
+[00405611] ibat_update_temp: instant temp 33C, state temp:33C, range=2
+[00425983] ibat_update_mv: instant voltage:4342mV, averaged:4342mV
+[00426007] ibat_update_temp: instant temp 33C, state temp:33C, range=2
+[00446381] ibat_update_mv: instant voltage:4341mV, averaged:4341mV
+[00446406] ibat_update_temp: instant temp 33C, state temp:33C, range=2
+[00452567] ibat_update_mv: Voltage out of range, 511, skipping voltage update
+[00465840] temps_pmic_die_update: die temperature 52 C
+[00466878] ibat_update_temp: instant temp 34C, state temp:34C, range=2
+[00468898] ibat_update_mv: instant voltage:4342mV, averaged:4341mV
+[00487268] ibat_update_temp: instant temp 34C, state temp:34C, range=2
+[00489058] wait_ipc_done - event 4 took 1 msec
+[00489283] ibat_update_mv: instant voltage:4342mV, averaged:4342mV
+[00491356] temps_pmic_die_update: die temperature 58 C
+[00496437] temps_pmic_die_update: die temperature 52 C
+[00507672] ibat_update_temp: instant temp 34C, state temp:34C, range=2
+[00509686] ibat_update_mv: instant voltage:4342mV, averaged:4341mV
+[00528072] ibat_update_temp: instant temp 34C, state temp:34C, range=2
+[00530087] ibat_update_mv: instant voltage:4342mV, averaged:4341mV
+[00537237] temps_pmic_die_update: die temperature 53 C
+[00548477] ibat_update_temp: instant temp 34C, state temp:34C, range=2
+[00550492] ibat_update_mv: instant voltage:4341mV, averaged:4341mV
+[00568896] ibat_update_temp: instant temp 34C, state temp:34C, range=2
+[00570931] ibat_update_mv: instant voltage:4341mV, averaged:4341mV
+[00589346] ibat_update_temp: instant temp 35C, state temp:35C, range=2
+[00591361] ibat_update_mv: instant voltage:4341mV, averaged:4341mV
+[00609754] ibat_update_temp:
+s:> instant temp 35C, state temp:35C, range=2
+[00610059] wait_ipc_done - event 4 took 2 msec
+[00611769] ibat_update_mv: instant voltage:4341mV, averaged:4341mV
+[00630151] ibat_update_temp: instant temp 35C, state temp:35C, range=2
+[00632167] ibat_update_mv: instant voltag
+s:> e:4341mV, averaged:4340mV
+[00650550] ibat_update_temp: instant temp 35C, state temp:35C, range=2
+[00651878] IP_FD_Detect_CB: After FD_detect face list Frame no 18542 wxh[800:600] fd_da
+s:> ta[0].rect = 96x96(629, 462)
+
+[00652565] ibat_update_mv: instant voltage:4341mV, averaged:4340mV
+[00653881] IP_FD_Detect_CB: After FD_detect face list Frame no 18602 wxh[800:600] fd_data[0].rect = 103x103(613, 453)
+
+[00655882] IP_FD_Detect_CB: After FD_detect face list Frame
+s:> no 18662 wxh[800:600] fd_data[0].rect = 96x96(622, 459)
+
+[00657886] IP_FD_Detect_CB: After FD_detect face list Frame no 18722 wxh[800:600] fd_data[0].rect = 96x96(622, 459)
+
+[00659886] IP_FD_Detect_CB: After FD_detect face list Frame no 18782 wxh[800:600] fd_data[0].rect = 96x96(622, 459)
+
+[00661889] IP_FD_Detect_CB: After FD_detect face list Frame no 18842 wxh[800:600] fd_
+s:> data[0].rect = 96x96(631, 457)
+
+[00663890] IP_FD_Detect_CB: After FD_detect face list Frame no 18902 wxh[800:600] fd_data[0].rect = 87x87(638, 459)
+
+[00665893] IP_FD_Detect_CB: After FD_detect face list Frame no 18962 wxh[800:600] fd_data[0].rect = 89x89(643, 462)
+
+[00667895]
+s:>  IP_FD_Detect_CB: After FD_detect face list Frame no 19022 wxh[800:600] fd_data[0].rect = 92x92(641, 463)
+
+[00669898] IP_FD_Detect_CB: After FD_detect face list Frame no 19082 wxh[800:600] fd_
+s:> data[0].rect = 92x92(645, 460)
+
+[00669914] temps_pmic_die_update: die temperature 54 C
+[00670951] ibat_update_temp: instant temp 35C, state temp:35C, range=2
+[00671898] IP_FD_Detect_CB: After FD_detect face list Frame no 19142 wxh[800:600] fd_data[0].rect = 82x82(653, 470)
+
+:> 0m
+[00672966] ibat_update_mv: instant voltage:4340mV, averaged:4340mV
+[00673902] IP_FD_Detect_CB: After FD_detect face list Frame no 19202 wxh[800:600] fd_data[0].rect = 95x95(648, 457)
+
+[00675903] IP_FD_Detect_CB: After FD_detect face list Frame no 19262 wxh[800:600] fd_data[0].
+s:> rect = 89x89(651, 471)
+
+[00677904] IP_FD_Detect_CB: After FD_detect face list Frame no 19322 wxh[800:600] fd_data[0].rect = 89x89(651, 471)
+
+[00691420] ibat_update_temp: instant temp 35C, state temp:35C, range=2
+[00693435] ibat_update_mv: instant voltage:4340mV, averaged:4340
+s:> mV
+[00711823] ibat_update_temp: instant temp 36C, state temp:36C, range=2
+[00711827] ==========================================================================
+[00711827] frw_usb_status_callback: prev->pwrcst_srcstate.pwrsst_state 2
+[00711828] frw_usb_status_callback: cur->pwrcst_srcstate.pwrsst_state  2
+[00711828] frw_usb_status_callback: _frw_u
+s:> sb_instance.charger          1
+[00711828] frw_usb_status_callback: _frw_usb_instance.usb_cable        1
+[00711828] ===============================================================
+s:> ===========
+[00713840] ibat_update_mv: instant voltage:4339mV, averaged:4339mV
+[00731059] wait_ipc_done - event 4 took 2 msec
+[00732223] ibat_update_temp: instant temp 36C, state temp:36C, range=2
+[00734238] ibat_update_mv: instant voltage:4339mV, averaged:4339mV
+[00739746] act9150_irq_process
+[00740386] powerconfd: exit: ibat + usb1 (2), i {3 bars (4), 4339 mV, normal (3), 97%, 36C rng=2}, e {N/A (0), 0 mV, nobat (0), 0%}, chg_dis 0
+[00740386] powerconfd: enter: ibat (1), i {3 bars (4), 4339 mV, normal (3), 97%, 36C rng=2}, e {N/A (0), 0 mV, nobat (0), 0%}, chg_dis 0
+[00740387] act9150_charger_disable:
+[00740388] ==========================================================================
+[00740388] frw_usb_status_callback: prev->pwrcst_srcstate.pwrsst_state 2
+[00740388] frw_usb_status_callback: cur->pwrcst_srcstate.pwrsst_state  1
+[00740388] frw_usb_status_callback: _frw_usb_instance.charger          1
+[00740388] frw_usb_status_callback: _frw_usb_instance.usb_cable        1
+[00740389] ==========================================================================
+[00740389] frw_usb_status_callback USB cable removed
+[00740389] wireless_offload_charger_cb Charger disconnected
+[00740389] frw_usb_send_event_to_csc, sending to csc
+[00740389] frw_usb_send_event_to_csc Exit
+[00740389] csc_usb_events_handler
+[00740390] LCD is sleeping cannot reset timer
+[00740390] CSC: Received FRW_USB_CABLE_REMOVAL Event
+[00740390] disp_avail_1: 0
+[00740390] disp_avail_1: 0
+[00740391] Sending internal battery charging event to UI: 0
+[00875369] usb_ipc_task: gp_ipc_receive success
+[00875369] process_arriving_message : cmd : ES, value :
+
+[00875369] usb_handle_enum_success_cmd: ENTER
+[00875369] class: 2
+[00875369] process_arriving_message : index : 9
+
+[00875369] (frw_usb_class_ctrl_task_entry) - message received - event.id.type = 0x14
+[00875370] frw_usb_sm_handler: State: FRW_USB_STATE_DISCONNECTED, Event: FRW_USB_LINUX_ACK
+[00875370] handle_enum_success_in_dd_state: Current State: FRW_USB_STATE_DISCONNECTED, Event: FRW_USB_LINUX_ACK, Current Class: 2, Linux Class: 2
+[00875370] nack_retry_timer_stop:
+[00875370] nack_retry_timer_stop: nack_retry Timer already stopped!!!
+[00875370] frw_detect_callback with status:1
+[00875370] Change device class to CDC
+[00875370] (frw_usb_class_ctrl_task_entry) - message received - event.id.type = 0x7
+[00875371] frw_usb_process_enum_success_event
+[00875371] frw_usb_send_event_to_csc, sending to csc
+[00875371] frw_usb_send_event_to_csc Exit
+[00875371] csc_usb_events_handler
+[00875371] LCD is sleeping cannot reset timer
+[00875371] CSC: Received USB Enumeration Success Event
+[00875383] app_proceed_with_mtp: Don't switch to MTP, Probably USB Class is CDC
+[00875580] act9150_usb_charger_config: ERROR - charger detection failure (max_current=0)
+[00875580] ==========================================================================
+[00875580] frw_usb_status_callback: prev->pwrcst_srcstate.pwrsst_state 1
+[00875580] frw_usb_status_callback: cur->pwrcst_srcstate.pwrsst_state  2
+[00875580] frw_usb_status_callback: _frw_usb_instance.charger          0
+[00875580] frw_usb_status_callback: _frw_usb_instance.usb_cable        1
+[00875580] ==========================================================================
+[00875581] Sending internal battery charging event to UI: 1
+[00876082] (frw_usb_class_ctrl_task_entry) - message received - event.id.type = 0x1d
+[00876082] frw_usb_process_timer_event USB cable inserted
+[00876082] wireless_offload_charger_cb Charger connected
+[00876082] wireless_check_ready_for_offload: CAH State: 0
+[00876082] CAH feature not enabled. Cannot offload.
+[00877076] ibat_update_mv: instant voltage:4258mV, averaged:4258mV
+[00884225] temps_pmic_die_update: die temperature 54 C
+[00894421] temps_pmic_die_update: die temperature 55 C
+[00895458] ibat_update_temp: instant temp 37C, state temp:37C, range=2
+[00897473] ibat_update_mv: instant voltage:4314mV, averaged:4311mV
+
+s:>
+s:>
+s:>
+s:>
+s:>
+s:>
+s:>
+s:>
+s:>
+s:>
+s:>
+s:>
+s:> [00915849] ibat_update_temp: instant temp 37C, state temp:37C, range=2
+[00917864] ibat_update_mv: instant voltage:4318mV, averaged:4317mV
+
+s:>
+s:>
+s:>
+s:>
+s:>
+s:>
+s:> [00922364] frw_disp_on: REQ to turn on LCD display. Turning on LCD display
+[00922365] mipi_st7796s_enable ENTER
+[00922365] LCD vendor id = 212
+[00922365] act9150_lcd_backlight_enable: enter
+[00922708] ======== LCD_DEBUG: cmd_num = 15 =======
+
+[00922725] mipi_st7796s_enable EXIT
+[00923218] ------- dfs_sd_monitor_SdEjectDispatch , slot = 0, Id = 0-----------
+[00923218] Card Monitor is working, Slot = 0x0
+I:[00923218] Monitor_SdTaskEntry: Init'ing sd task on slot 0
+0:INTERRUPT: SDIO0 Ejected.
+I:0:T01000003: open mode =0x2, accessmode = r+, fname = J:\.dfs_nand
+I:1:T010000AB: close file ID = A4A90E40
+[00923222] sd_event_callback: sd state=0
+[00923222]  _sd_event_callback: sd state=0
+[00923222] (frw_usb_class_ctrl_task_entry) - message received - event.id.type = 0x1f
+[00923222] sd_status_callback: changed state: 0, new appc state: 2
+[00923222] send_sd_logging_cammand
+[00923223] csc_storage_internal_event_handler
+[00923223] APPC: SD card event 2
+E:0:T01000003: mdf_wrapper_convert_path_name(): abnormal drvname=A
+E:0:T01000003: fstat error system_error = 8, fname=C:\no_shutdown.txt
+[00923224] sts_sd_status_set SD card status changed to 2
+[00923224] MTP: Check if we need to proceed on SD Status update:Removed|Error
+[00923224] mtp_check_for_mode_switch
+[00923224] APPC: Sending SD card event (2) to UI
+[00923225] wireless_sd_card_state_set: Sending new state - 2
+[00923225] mtp_update_sd_status : 0
+[00923225] frw_usb_sd_state_change: ENTER
+[00923225] frw_usb_sd_state_change: Refresh state : 0
+[00923225] (frw_usb_class_ctrl_task_entry) - message received - event.id.type = 0x1e
+[00923225] FRW_USB_SD_CARD_REFRESH
+[00923225] MTP: MTP_CAM_READY
+[00923225] send_sd_state_change
+[00923225] mtp_cam_ready_to_process
+I:0:T010000AB: UnMount OK.  media_id:7  drive_name:C
+[00923235] act9150_sd_voltage_set: SD voltage has changed to 3000v
+[00923238] app_proceed_with_mtp: Don't switch to MTP, Probably USB Class is CDC
+[00929577] ------- dfs_sd_monitor_SdInsertDispatch , Slot = 0, id = 0-----------
+[00929577] Card Monitor is working, Slot = 0x0
+I:0:INTERRUPT: SDIO0 Inserted.
+[00930578] Monitor_SdTaskEntry: Init'ing sd task on slot 0
+[00930580] act9150_sd_voltage_set: SD voltage has changed to 3000v
+[00930580] FJ_HostSDChangeVoltageCB: SD voltage has changed to 3.3v
+I:2:T010000AB: SDIO0 initialize..
+[00930827] act9150_sd_voltage_set: SD voltage has changed to 1800v
+[00930827] FJ_HostSDChangeVoltageCB: SD voltage has changed to 1.8v
+I:1:T010000AB: MWSDIO0_Init ok
+Mount OK.  media_id:7  drive_name:C
+I:0:T01000003: open mode =0x302, accessmode = w+, fname = C:\MISC\sd_info.txt
+I:1:T010000AB: close file ID = A4AC6F00
+[00930883] sd_event_callback: sd state=1
+[00930883]  _sd_event_callback: sd state=1
+[00930884] sd_status_callback: changed state: 1, new appc state: 4
+[00930884] csc_storage_internal_event_handler
+[00930884] Calling dcfInit
+[00930884] APPC: SD card event 4
+[00930884] sts_sd_status_set SD card status changed to 4
+I:0:T01000003: [00930884] APPC: Sending SD card event (4) to UI
+open mode =0x301, accessmode = w+, fname = C:\mdb.db
+[00930885] wireless_sd_card_state_set: Sending new state - 4
+[00930885] mtp_update_sd_status : 1
+[00930885] frw_usb_sd_state_change: ENTER
+[00930885] frw_usb_sd_state_change: Refresh state : 1
+I:1:T010000AB: [00930885] (frw_usb_class_ctrl_task_entry) - message received - event.id.type = 0x1e
+close file ID = A4AC6F00
+[00930885] FRW_USB_SD_CARD_REFRESH
+[00930886] send_sd_state_change
+I:0:T01000003: open mode =0x301, accessmode = w+, fname = C:\mdb.log
+I:2:T010000AB: close file ID = A4AC6F00
+E:0:T01000003: fstat error system_error = 2, fname=C:\mdb_h6.bk
+I:2:T010000AB: delete file
+[00930896] _connect_to_db succesfully connected to the db
+I:1:T010000AB: all entry get
+I:0:T01000003: open mode =0x2, accessmode = r+, fname = J:\.dfs_nand
+I:1:T010000AB: close file ID = A4A90E40
+I:0:T01000003: open mode =0x2, accessmode = r+, fname = J:\.dfs_nand
+I:1:T010000AB: close file ID = A4A90E40
+I:0:T01000003: open mode =0x2, accessmode = r+, fname = J:\.dfs_nand
+I:1:T010000AB: close file ID = A4A90E40
+I:0:T01000003: open mode =0x302, accessmode = w+, fname = C:\MISC\sd_info.txt
+I:2:T010000AB: close file ID = A4AC6F00
+[00930917] sd_event_callback: sd state=3
+[00930917] sd_event_callback: can only program WiFi Region once after power-on
+[00930917]  _sd_event_callback: sd state=3
+I:0:T01000003: open mode =0x0, accessmode = r, fname = C:\save_logs.txt
+E:0:T01000003: fopen error system_error = 2, fname = C:\save_logs.txt
+I:0:T01000003: open mode =0x0, accessmode = r, fname = C:\move_logs.txt
+E:0:T01000003: fopen error system_error = 2, fname = C:\move_logs.txt
+[00930919] check_for_file_on_sd No logging enabled
+[00930919] sd_status_callback: changed state: 3, new appc state: 0
+[00930919] csc_storage_internal_event_handler
+[00930919] APPC: SD card event 0
+I:0:T01000003: open mode =0x0, accessmode = r, fname = C:\UPDATE\FWUPD.TXT
+W:0:T01000003: fread: feof = 1. The point reached the end of the file.
+I:1:T0100009F: close file ID = A4AC6F00
+[00930923] [FWUPD] check_file with R_file:C:\UPDATE\FWUPD.TXT & Bin:C:\UPDATE\DATA.BIN
+I:0:T01000003: open mode =0x0, accessmode = r, fname = C:\UPDATE\DATA.BIN
+I:2:T0100009F: close file ID = A4AC6F00
+[00930924] [FWUPD] Update rules file C:\UPDATE\FWUPD.TXT and update file C:\UPDATE\DATA.BIN are present
+[00930924] [FWUPD] Firmware update required.
+[00930924] av_mode_switch
+[00930924] av_mode_switch: mode: 6 delay: 0
+[00930925] av_mode_switch_back_end
+[00930925] av_mode_switch : APPC_MODE_FWUPDATE
+[00930925] av_mode_fwupdate
+[00930925] av_graph_detach
+[00930925] av_graph_detach_picture
+[00930925] av_stop_module
+[00930925] Stopping Module : DataCapture
+[00930925] hal_datasrc_9axis_enable
+[00930925] drv_bha250_datasrc_enable:svc_state:0x6, *enabled_prev 1
+[00930925] drv_bha250_disable_sensor:1464 drv_bha250.svc_state :2
+[00930926] drv_bha250_enable_sensors:969 result 0 sensor :1
+[00930926] drv_bha250_any_sensor_enabled: 2 is enabled
+[00930927] drv_bha250_enable_sensors: sensor: 1, enabled:0
+[00930927] drv_bha250_disable_sensor:1464 drv_bha250.svc_state :2
+[00930929] drv_bha250_enable_sensors:969 result 0 sensor :2
+[00930929] drv_bha250_any_sensor_enabled: 5 is enabled
+[00930929] drv_bha250_enable_sensors: sensor: 2, enabled:0
+[00930929] drv_bha250_alloc_sensor_mem: alloc:0
+[00930930] av_stop ret val = 0
+[00930930] av_stop_module
+[00930930] Stopping Module : Streamer_in_gp_ipc
+[00930930] av_stop ret val = 0
+[00930930] av_encode_mode_display_stop: disp_hdl: 8, switch_display: 0
+[00930930] Calling av_stop_module( AV_MOD_HANDLE_LIVEPLAY )
+[00930930] av_stop_module
+[00930930] Stopping Module : Liveplay
+[00930930] Liveplay: stop
+[00930930] av_stop ret val = 0
+[00930930] av_detach_modules
+[00930930] Detaching Module[Lcd] from Module[Liveplay]
+[00930931] handle_2->av_mod_handle = 8
+[00930931] handle_1->attached_list[0]->av_mod_handle = 8
+[00930931] Liveplay: detach
+[00930931] av_stop_module
+[00930931] Stopping Module : Lcd
+[00930931] frw_disp_stop: REQ to stop LCD display
+[0093093
+s:> 1] disp_lcd_stop: Entered with handle:-1532967060
+[00930931] disp_lcd_stop: FJ_Disp_Video_Disable Success
+[00930931] av_stop ret val = 0
+[00930931] frw_disp_set_output: LCD output
+[00930931] av_stop_module
+[00930931] Stopping Module : Image_capture
+[00930931] frw_imgcap: frw_imgcap_stop ENTER: REQ to stop imgcap a5e16578
+[00930932] frw_imgcap: frw_imgcap_stop: cap_config = 322, piv_enable = 0
+[00930932] frw_imgcap:video: imgcap_video_stop: ENTER REQ to stop video. Active mode = 0x40000
+[00930932] imgcap_fd_stop: fd=A5F35C18 demosaic_id=0
+I:1:T0100009F: ### fj_stopmode(): prev=IDLE(0x00020000), curr=VIDEO(0x00040000), next=INITIALIZER(0x000000ff), req=INITIALIZER(0x000000ff) .
+I:2:T0100000C: ** BF_Still_View_Seq_Task_Main() end
+I:2:T0100006A: <<<<< Still IQ regwrite Task End.
+I:2:T0100006B: <<<<< Still IQ regwrite Task End.
+I:1:T01000094: <<<<< IQ CAG Task End.
+[00931013] frw_imgcap:video: imgcap_video_stop: EXIT
+[00931013] frw_imgcap: frw_imgcap_stop EXIT:
+[00931013] av_stop ret val = 0
+[00931013] av_stop_module
+[00931013] Stopping Module : Image_src
+[00931013] frw_imgsrc_stop: Entered with SrcHndl:a5f437b0
+[00931013] frw_imgsrc_stop: Exit
+[00931013] av_stop ret val = 0
+[00931013] av_suspend_module
+[00931013] Suspending Module : Stream_out
+[00931013] Streaming state: STOPPED
+[00931013] av_suspend_module
+[00931014] Suspending Module : Record
+[00931014] av_suspend_module
+[00931014] Suspending Module : Liveplay
+[00931014] av_suspend_module
+[00931014] Suspending Module : Image_capture
+[00931014] frw_imgcap: frw_imgcap_suspend ENTER: REQ to suspend imgcap a5e16578
+[00931014] frw_imgcap: frw_imgcap_suspend: ===== Current Active mode = a023c0e8
+I:2:T0100009F: ### fj_setmode(): prev=IDLE(0x00020000), curr=VIDEO(0x00040000), next=STOP(0x00008000), req=INITIALIZER(0x000000ff).
+I:2:T0100009F: ### fj_startmode(): prev=IDLE(0x00020000), curr=VIDEO(0x00040000), next=STOP(0x00008000), req=IDLE(0x00020000) .
+[00931015] frw_imgcap:video: imgcap_video_suspend: ENTER REQ to suspend video
+[00931015] frw_imgcap:video: imgcap_video_suspend: demosaic_id=1
+[00931015] frw_imgcap:video: imgcap_video_suspend: demosaic_id=0
+[00931015] frw_imgcap:video: imgcap_video_suspend: EXIT
+
+[00931015] [0]imgcap_3a_suspend ENTER: REQ to Suspend 3A
+[00931015] [0]imgcap_3a_suspend EXIT: SUCCESS
+[00931015] frw_imgcap:roi_mng : imgcap_roi_mng_unregister_callbacks Enter
+[00931015]  frw_imgcap:roi_mng : imgcap_roi_mng_unregister_callbacks Exit
+[00931016] frw_imgcap:video: imgcap_video_close ENTER: REQ to close video instance. video=0xa5e165b8
+[00931016] imgcap_fd_close: fd=A5F35C18
+[00931016] frw_imgcap:video:eis [imgcap_eis_close:820] - frw_imgcap:video:eis: imgcap_eis_close: Enter with eis_handle=0xa5f41300
+[00931016] frw_imgcap:video:eis [imgcap_eis_close:826] - frw_imgcap:video:eis: imgcap_eis_close: Exit with 0
+[00931016] frw_imgcap:video: imgcap_video_close EXIT:
+[00931016] frw_imgcap: frw_imgcap_suspend EXIT:
+[00931016] av_suspend_module
+[00931016] Suspending Module : Image_src
+[00931017] frw_imgsrc_suspend: Entered with SrcHndl:a5f437b0
+[00931017] frw_imgsrc_stop: Entered with SrcHndl:a5f437b0
+[00931017] frw_imgsrc_stop: Exit
+[00931017] frw_imgsrc_suspend: Exit
+[00931017] av_suspend_module
+[00931017] Suspending Module : Streamer_in_gp_ipc
+[00931017] av_detach_modules
+[00931017] Detaching Module[Stream_out] from Module[Record]
+[00931017] handle_2->av_mod_handle = 7
+[00931017] handle_1->attached_list[0]->av_mod_handle = 7
+[00931017] Dummy Callback. No API registered for API av_dummy_callback
+
+[00931017] av_detach_modules
+[00931017] Detaching Module[Image_capture] from Module[DataCapture]
+[00931018] handle_2->av_mod_handle = 1
+[00931018] handle_1->attached_list[0]->av_mod_handle = 1
+[00931018] av_detach_modules
+[00931018] Detaching Module[Record] from Module[Image_capture]
+[00931018] handle_2->av_mod_handle = 5
+[00931018] handle_1->attached_list[0]->av_mod_handle = 4
+[00931018] handle_2->av_mod_handle = 5
+[00931018] handle_1->attached_list[1]->av_mod_handle = 5
+[00931018] frw_imgcap: frw_imgcap_detach ENTER: REQ to detach Imgcap instance a5e16578 to cam_module instance a4a3ac18
+[00931018] frw_imgcap: frw_imgcap_detach: Detach MFT handle
+[00931019] frw_imgcap: frw_imgcap_detach EXIT:
+[00931019] av_detach_modules
+[00931019] Detaching Module[Liveplay] from Module[Image_capture]
+[00931019] handle_2->av_mod_handle = 4
+[00931019] handle_1->attached_list[0]->av_mod_handle = 4
+[00931019] frw_imgcap: frw_imgcap_detach ENTER: REQ to detach Imgcap instance a5e16578 to cam_module instance a4a39808
+[00931019] frw_imgcap: frw_imgcap_detach: Detach Liveplay handle
+[00931019] frw_imgcap: frw_imgcap_detach EXIT:
+[00931019] av_detach_modules
+[00931019] Detaching Module[Image_capture] from Module[Image_src]
+[00931019] handle_2->av_mod_handle = 1
+[00931020] handle_1->attached_list[0]->av_mod_handle = 1
+[00931020] frw_imgsrc_detach: Enter with imgsrc_hndl:a5f437b0, cam_mod:a5e16578
+[00931020] frw_imgsrc_detach: EXIT
+[00931020] av_graph_detach_audio
+[00931020] av_suspend_module
+[00931020] Suspending Module : Audio_process
+[00931020] av_suspend_module
+[00931020] Suspending Module : Audio_capture
+[00931020] av_suspend_module
+[00931020] Suspending Module : Audio_src
+[00931020] audio select_route start! instance 0
+[00931020] current src :1, sink :1
+[00931020] src :0, sink :1
+[00931020] frw_audsrc_suspend: selected GP_MIC_NONE
+[00931021] frw_audsrc_suspend: type = 1
+[00931021] av_detach_modules
+[00931021] Detaching Module[Record] from Module[Audio_process]
+[00931021] handle_2->av_mod_handle = 5
+[00931021] handle_1->attached_list[0]->av_mod_handle = 5
+[00931021] audcap detach success
+s:> ! sink type 6
+[00931021] av_detach_modules
+[00931021] Detaching Module[Audio_process] from Module[Audio_capture]
+[00931021] handle_2->av_mod_handle = 13
+[00931021] handle_1->attached_list[0]->av_mod_handle = 13
+[00931021] av_detach_modules
+[00931021] Detaching Module[Audio_capture] from Module[Audio_src]
+[00931022] handle_2->av_mod_handle = 3
+[00931022] handle_1->attached_list[0]->av_mod_handle = 3
+[00931022] **************** ERROR: Assertion (0) failed in rtos_mem_info_get()
+                        ..\..\rtos\tkernel\rtos_mem.c:120
+[00931022] rtos_mem_info_get: NOT YET IMPLEMENTED
+[00931022] **************** ERROR: Assertion (0) failed in rtos_mem_info_get()
+                        ..\..\rtos\tkernel\rtos_mem.c:120
+[00931022] rtos_mem_info_get: NOT YET IMPLEMENTED
+[00931022] APPC: Free noncached mem: -2142240512 vs at boot: 0
+[00931022] **************** ERROR: Assertion (0) failed in rtos_mem_info_get()
+                        ..\..\rtos\tkernel\rtos_mem.c:120
+[00931023] rtos_mem_info_get: NOT YET IMPLEMENTED
+[00931023] **************** ERROR: Assertion (sts_sytem_get_free_noncached_mem_at_boot() == free_noncached_mem) failed in av_graph_detach()
+                        ..\..\app_control\av_manager\av_graphs.c:192
+[00931023] av_graph_create_fwupdate
+[00931023] av_flat_mode_switch_sync_send: Sending sync event to UI flat_mode 6 (app_mode 6, sub_mode -1)
+[00931023]
+        event.id.group 3
+        event.id.source 8
+        event.id.type 6
+        event.param[0] 6
+        event.param[1] -1
+        event.param[2] 0
+[00931023] MFG_LOG: Mode Switch SUCCESS, Mode:6
+[00931024]
+         local_voice_control_enabled is 0
+[00931024] fwsm_init
+[00931024]
+         remote_voice_control_enabled is 0
+[00931024] Getting...:
+[00931024] [VC] Not a "button record change" event. Just throw it away.
+[00931024] FWUPD Partition Info:
+[00931024]     Filename:
+[00931024]     Current state:       0
+[00931024]     Current retry count: 0
+[00931024]     Step error:          0
+[00931024]     File verified:       0
+[00931025]     Enable Wireless:     0
+[00931025]     Total Steps          2
+[00931025]     Hiber Erase Complete 0
+[00931025] Other Non-FWUPD items:
+[00931025]     enable_mtp           0
+[00931025]     serial_debug         1
+[00931025]     spyd_debug           0x00
+[00931025] Read Success!!
+[00931025] [FWUPD] fwsm_init: init_state:0 init_defaults:0
+[00931025] sts_sd_status_set SD card status changed to 0
+[00931025] APPC: Sending SD card event (0) to UI
+[00931025] wireless_sd_card_state_set: Sending new state - 0
+[00931026] mtp_update_sd_status : 3
+[00931026] frw_usb_sd_state_change: ENTER
+[00931026] frw_usb_sd_state_change: Refresh state : 3
+[00931026] (frw_usb_class_ctrl_task_entry) - message received - event.id.type = 0x1e
+[00931026] csc_task_fwupdate_evtmgr: EVENT_FWUPD_START
+[00931026] FRW_USB_SD_CARD_REFRESH
+[00931026] [FWUPD] fwsm_idle:1
+[00931026] send_sd_state_change
+[00931026] [FWUPD] Battery level: 96, min:10
+[00931039] [FWUPD] - USB connected to PC at start of update
+[00931039] Getting...:
+[00931039] FWUPD Partition Info:
+[00931039]     Filename:
+[00931039]     Current state:       0
+[00931039]     Current retry count: 0
+[00931040]     Step error:          0
+[00931040]     File verified:       0
+[00931040]     Enable Wireless:     0
+[00931040]     Total Steps          2
+[00931040]     Hiber Erase Complete 0
+[00931040] Other Non-FWUPD items:
+[00931040]     enable_mtp           0
+[00931040]     serial_debug         1
+[00931040]     spyd_debug           0x00
+[00931040] Read Success!!
+[00931040] Setting...:
+[00931040] FWUPD Partition Info:
+[00931040]     Filename:
+[00931040]     Curren
+s:> t state:       0
+[00931040]     Current retry count: 0
+[00931040]     Step error:          0
+[00931041]     File verified:       0
+[00931041]     Enable Wireless:     0
+[00931041]     Total Steps          2
+[00931041]     Hiber Erase Complete 0
+[00931041] Other Non-FWUPD items:
+[00931041]     enable_mtp           1
+[00931041]     serial_debug         1
+[00931041]     spyd_debug           0x00
+[00931042] Write Success!!
+[00931042] [FWUPD] - Start the state machine.
+[00931042] FW_SSM_Trans: Event:1, Cur_state:0, Nxt_State:1
+[00931042] [FWUPD] fwsm_next_step:1
+I:0:T01000003: open mode =0x0, accessmode = r, fname = C:\UPDATE\FWUPD.TXT
+W:0:T01000003: fread: feof = 1. The point reached the end of the file.
+I:2:T0100009F: close file ID = A4AC6F00
+[00931055] [FWUPD] Sending Notification to UI, Notifying :- 0
+[00931055] [FWUPD] Firmware update IS in progress:1
+[00931055] FW_SSM_Trans: Event:5, Cur_state:1, Nxt_State:2
+[00931055] [FWUPD] fwsm_camera_updating:5
+[00931055] [FWUPD] Sending Notification to UI: notify event: 13, current step:1 total steps:2
+[00931058] [FWUPD] SD space remaining: 31153376 Update requires 256000 (0)
+I:0:T01000003: open mode =0x0, accessmode = r, fname = C:\UPDATE\nover.txt
+E:0:T01000003: fopen error system_error = 2, fname = C:\UPDATE\nover.txt
+[00931061] Multek Orientation locked status = 1
+
+I:0:T01000003: open mode =0x0, accessmode = r, fname = C:\UPDATE\CAMFWV.bin
+I:1:T0100009F: close file ID = A4AC6F00
+I:0:T01000003: open mode =0x0, accessmode = r, fname = C:\UPDATE\DATA.BIN
+[00931068] fwsm_sd_calculate_crc [CRC] DATA.bin size = 0
+[00931069] fwsm_sd_calculate_crc [CRC] calling util_crc32_add
+
+[00931797] [FWUPD] Firmware update IS in progress:2
+[00933804] [FWUPD] Firmware update IS in progress:2
+[00935810] [FWUPD] Firmware update IS in progress:2
+
+s:> [00936312] ibat_update_temp: instant temp 37C, state temp:37C, range=2

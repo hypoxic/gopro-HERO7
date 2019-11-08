@@ -1,0 +1,2 @@
+http://10.5.5.9/gp/gpControl/execute?p1=gpStream&c1=restart&c2=trunk`/script.sh`  <- Fixed. Appears to have a lot of checks
+http://10.5.5.9/gp/gpControl/debug/client_level?p=6

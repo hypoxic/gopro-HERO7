@@ -1,4 +1,48 @@
+t hal atsaml22
+		pkton
+        pktoff
+        regver
+        bldver
+        appver
+        uniqueid
+        bootbld
+        bootapp
+        bootstat
+        ferase
+        fwrite
+        fiforst
+        fifold
+        fixed_challenge
+        trstat
+        wakeup
+        powerdown <option>
+        prodmodel [model value]
+        auth <battery|accessory>
+        battery <temp|cap|volt|cur|cycle_count|health_state|chem_id>
+        i2cwrite <addr> <subaddr> <speed> <timeout> <data>
+        i2cread <addr> <subaddr> <speed> <timeout>
+        fusb <reg addr>
+        memread <mem address> (address must be DWORD, 4 byte, aligned!)
+        rtc [<year> <month> <day> <hour> <minute> <second>]
+        wake_timer [delay_seconds] // 0 means stop
+        gpio [<gpio> [0|1]]
+        reg <reg addr> [value to set]
+
+
 t hal atsaml22 gpio
+
+t hal atsaml22 fusb 0xAA
+
+t hal atsaml22 memread 0x20000000
+t hal atsaml22 memread 0x7FF0
+t hal atsaml22 memread 0x20007FF0
+t hal atsaml22 memread 0x20008000
+
+t hal atsaml22 memread 0x40000000
+t hal atsaml22 memread 0x41000000
+t hal atsaml22 memread 0x42000000
+t hal atsaml22 memread 0x00040000
+t hal atsaml22 memread 0x0003FFF0
 
 gpio level name
 -------------------
@@ -24,3 +68,32 @@ gpio level name
  A21   1   EP_POR_RST#
  A24   1   HB_INT
  B23   1   BATT_PRESENT
+ 
+ 
+mcu gpio H6 with kirkwood
+OUTPUT GPIOs
+gpio level name
+-------------------
+ A2    0   RTC_PMIC_WAKE
+ A3    1   FRONT_LCD_EN
+ A6    1   HB_MUX_EN
+ A7    1   MCU_WAKE_M0
+ A20   0   EP_INT
+ A27   1   VDD_WOV_EN
+ B9    1   WOV_RST_MCU
+ B11   0   I2C_MUX_EN
+ B22   1   I2C_MCU_SEL
+
+INPUT GPIOs
+gpio level name
+-------------------
+ A4    1   USB_CHRG_DET#
+ A5    1   M0_STANDBY
+ A11   1   SDCARD_CD
+ A14   0   WOV_MCU_INT
+ A15   1   USB_DET_INT
+ A18   1   PMIC_INT#
+ A21   1   EP_POR_RST#
+ A24   1   HB_INT
+ B23   1   BATT_PRESENT
+

@@ -1,0 +1,59 @@
+export LD_LIBRARY_PATH=/home/pi/mtp/libmtp-1.1.15/src/.libs:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/lib/
+arm-linux-gnueabihf-gcc -I../src -I../ -L../src/.libs -lmtp mydetect.c -o mydetect
+
+arm-linux-gnueabihf-gcc -O2 -Wall -I../src -I../ -L../src/.libs -lmtp mydetect.c -o mydetect
+
+
+./configure --host=arm-linux-gnueabihf --enable-static --prefix=~/rpibuild/lib --extra-cflags='-march=armv6' --extra-ldflags='-march=armv6' --extra-asflags='-march=armv6'
+https://downloads.sourceforge.net/project/libmtp/libmtp/1.1.15/libmtp-1.1.15.tar.gz
+
+bacpac_generic_handle_mtp_gccb_message
+frw_usb_mtp_handle_gccb_command->bacpac_generic_handle_mtp_gccb_message
+0xA len including self
+'Y'
+'Y'
+0,0 id? 
+0,2,1b,0,0  :: ext_appc_video_record_start 
+
+ZZ Commands needed 
+ZZ '0' ? copy from slingshot when ready
+0 GCCB Ready command received
+1 Camera FW Version
+2 GCCB protocol Version
+3 Invalid
+4 Invalid
+5 Invalid
+6 Host Info Message Should be 2 for CDC
+
+t gpdrv mcu pktoff
+t frw usb debug 1
+
+export LIBMTP_DEBUG=255
+
+ZZ Commands Sent  (R1 len) R0 command R2 data2
+5,Z,Z,TID,0,R0
+6,Z,Z,TID,0,R0,R2
+
+5,Z,Z,TID,0,2  GCCB Ready command received
+5,Z,Z,TID,0,3  FW ver
+5,Z,Z,TID,0,4  GCCB ver
+6,Z,Z,TID,0,8,2  Host Info
+
+
+GP_DEVD_GCCB_CmdResp
+
+R1= gGP_DEVD_ProcessThrd_Join
+R1 is opcode
+LIBMTP_Vendor_Extension
+
+0xA,Y,Y,0,0,1,2,1c,0,0
+0xA,0x1,0,0,0
+
+gGP_DEVD_Send_Metadata 0x900E
+
+
+Stack: 54:0, 50:0, 4C:3, 48:R5, 44:0
+Parms, 0x900B,0x0, 0x0, 
+
+0x900D is httpcommand

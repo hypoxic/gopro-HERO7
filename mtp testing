@@ -1,0 +1,56 @@
+pi@raspberrypi:~/mtp/gphoto2 $ gphoto2 --summary
+Camera summary:
+Manufacturer: GoPro
+Model: HERO 6 BLACK
+  Version: HD6.01.01.00.00
+  Serial Number: C3221324550325
+Vendor Extension ID: 0x6 (1.0)
+Vendor Extension Description: microsoft.com: 1.0; android.com: 1.0;
+
+Capture Formats: Association/Directory PNG
+Display Formats: Undefined Type, Association/Directory, Text, HTML, Unknown(4000), Defined Type, JPEG, Unknown(4001), TIFF EP, BMP, GIF, JF                                  IF, PNG, TIFF, TIFF_IT, JP2, JPX, OGG, MP3, MS Wave, WMA, AAC, FLAC, Abstract Audio Album, Abstract Audio Video Playlist
+Supported MTP Object Properties:
+        Undefined Type/3000: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/Height                                   dce0/DisplayName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreated dc0                                  9/DateModified dc0d/Hidden dc4f/NonConsumable
+        Association/Directory/3001: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/                                  Height dce0/DisplayName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCrea                                  ted dc09/DateModified dc0d/Hidden dc4f/NonConsumable
+        Text/3004: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/Height dce0/Displ                                  ayName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreated dc09/DateModi                                  fied dc0d/Hidden dc4f/NonConsumable
+        HTML/3005: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/Height dce0/Displ                                  ayName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreated dc09/DateModi                                  fied dc0d/Hidden dc4f/NonConsumable
+        Unknown(4000)/4000: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/Height d                                  ce0/DisplayName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreated dc09                                  /DateModified dc0d/Hidden dc4f/NonConsumable
+        Defined Type/3800: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/Height dc                                  e0/DisplayName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreated dc09/                                  DateModified dc0d/Hidden dc4f/NonConsumable
+        JPEG/3801: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/Height dce0/Displ                                  ayName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreated dc09/DateModi                                  fied dc0d/Hidden dc4f/NonConsumable
+        Unknown(4001)/4001: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/Height d                                  ce0/DisplayName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreated dc09                                  /DateModified dc0d/Hidden dc4f/NonConsumable
+        TIFF EP/3802: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/Height dce0/Di                                  splayName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreated dc09/DateM                                  odified dc0d/Hidden dc4f/NonConsumable
+        BMP/3804: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/Height dce0/Displa                                  yName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreated dc09/DateModif                                  ied dc0d/Hidden dc4f/NonConsumable
+        GIF/3807: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/Height dce0/Displa                                  yName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreated dc09/DateModif                                  ied dc0d/Hidden dc4f/NonConsumable
+        JFIF/3808: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/Height dce0/Displ                                  ayName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreated dc09/DateModi                                  fied dc0d/Hidden dc4f/NonConsumable
+        PNG/380b: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/Height dce0/Displa                                  yName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreated dc09/DateModif                                  ied dc0d/Hidden dc4f/NonConsumable
+        TIFF/380d: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/Height dce0/Displ                                  ayName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreated dc09/DateModi                                  fied dc0d/Hidden dc4f/NonConsumable
+        TIFF_IT/380e: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/Height dce0/Di                                  splayName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreated dc09/DateM                                  odified dc0d/Hidden dc4f/NonConsumable
+        JP2/380f: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/Height dce0/Displa                                  yName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreated dc09/DateModif                                  ied dc0d/Hidden dc4f/NonConsumable
+        JPX/3810: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/Height dce0/Displa                                  yName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreated dc09/DateModif                                  ied dc0d/Hidden dc4f/NonConsumable
+        OGG/b902: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/Height dce0/Displa                                  yName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreated dc09/DateModif                                  ied dc0d/Hidden dc4f/NonConsumable
+        MP3/3009: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/Height dce0/Displa                                  yName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreated dc09/DateModif                                  ied dc0d/Hidden dc4f/NonConsumable
+        MS Wave/3008: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/Height dce0/Di                                  splayName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreated dc09/DateM                                  odified dc0d/Hidden dc4f/NonConsumable
+        WMA/b901: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/Height dce0/Displa                                  yName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreated dc09/DateModif                                  ied dc0d/Hidden dc4f/NonConsumable
+        AAC/b903: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/Height dce0/Displa                                  yName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreated dc09/DateModif                                  ied dc0d/Hidden dc4f/NonConsumable
+        FLAC/b906: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/Height dce0/Displ                                  ayName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreated dc09/DateModi                                  fied dc0d/Hidden dc4f/NonConsumable
+        Abstract Audio Album/ba03: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Width dc88/H                                  eight dce0/DisplayName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/DateCreat                                  ed dc09/DateModified dc0d/Hidden dc4f/NonConsumable
+        Abstract Audio Video Playlist/ba05: dc01/StorageID dc0b/ParentObject dc02/ObjectFormat dc04/ObjectSize dc07/ObjectFileName dc87/Wid                                  th dc88/Height dce0/DisplayName dc41/PersistantUniqueObjectIdentifier dc05/AssociationType dc06/AssociationDesc dc03/ProtectionStatus dc08/                                  DateCreated dc09/DateModified dc0d/Hidden dc4f/NonConsumable
+
+Device Capabilities:
+        File Download, File Deletion, File Upload
+        No Image Capture, No Open Capture, No vendor specific capture
+
+Storage Devices Summary:
+store_00000004:
+        StorageDescription: GoPro MTP Client Disk Volume
+        VolumeLabel: None
+        Storage Type: Removable RAM (memory card)
+        Filesystemtype: Generic Hierarchical
+        Access Capability: Read-Write
+        Maximum Capability: 31902400512 (30424 MB)
+        Free Space (Bytes): 31794921472 (30322 MB)
+        Free Space (Images): 1073741824
+
+Device Property Summary:
+Friendly Device Name(0xd402):(read only) (type=0x0) invalid type, expected STR (Undefined)
+Synchronization Partner(0xd401):(read only) (type=0x0) invalid type, expected STR (Undefined)
